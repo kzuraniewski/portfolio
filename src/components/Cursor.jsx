@@ -59,7 +59,7 @@ const Cursor = () => {
 			<div ref={cursorInner} className={classNames('cursor', { 'cursor--hover': hover })} />
 			<div
 				ref={cursorOuter}
-				className={classNames('cursor cursor--smooth', { 'cursor--hover': hover })}
+				className={classNames('cursor cursor--outer', { 'cursor--hover': hover })}
 			/>
 		</>
 	);
