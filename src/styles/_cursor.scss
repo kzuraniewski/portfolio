@@ -19,7 +19,7 @@
 
 	transition: $transition width, $transition height, $transition background-color;
 
-	&--smooth {
+	&--outer {
 		width: $size * $outline-scale;
 		height: $size * $outline-scale;
 
@@ -32,7 +32,7 @@
 		height: $hover-size;
 	}
 
-	&--smooth.cursor--hover {
+	&--outer.cursor--hover {
 		filter: opacity(0);
 	}
 }
