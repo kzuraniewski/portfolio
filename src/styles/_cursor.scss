@@ -17,7 +17,7 @@
 	background-color: $cursor-color;
 	border-radius: 50%;
 
-	transition: $transition width, $transition height, $transition background-color;
+	transition: $transition width, $transition height, $transition background-color, 0.1s opacity;
 
 	&--outer {
 		width: $size * $outline-scale;
@@ -34,5 +34,9 @@
 
 	&--outer.cursor--hover {
 		filter: opacity(0);
+	}
+
+	&--hidden {
+		opacity: 0;
 	}
 }

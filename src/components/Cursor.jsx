@@ -6,6 +6,7 @@ const Cursor = () => {
 	const cursorOuter = useRef(null);
 	const mousePos = useRef({ pageX: 0, pageY: 0 });
 	const [hover, setHover] = useState(false);
+	const [hide, setHide] = useState(false);
 
 	/**
 	 * Lerp
@@ -52,14 +53,24 @@ const Cursor = () => {
 				el.addEventListener('mouseleave', () => setHover(false));
 			})
 		);
+
+		// hide cursor when mouse is outside of window
+		document.addEventListener('mouseleave', () => setHide(true));
+		document.addEventListener('mouseenter', () => setHide(false));
 	}, [moveSmooth]);
 
 	return (
 		<>
-			<div ref={cursorInner} className={classNames('cursor', { 'cursor--hover': hover })} />
+			<div
+				ref={cursorInner}
+				className={classNames('cursor', { 'cursor--hover': hover, 'cursor--hidden': hide })}
+			/>
 			<div
 				ref={cursorOuter}
-				className={classNames('cursor cursor--outer', { 'cursor--hover': hover })}
+				className={classNames('cursor cursor--outer', {
+					'cursor--hover': hover,
+					'cursor--hidden': hide,
+				})}
 			/>
 		</>
 	);
