@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
-const DELAY = 5;
+const SPEED = 0.3;
 
 const Cursor = () => {
 	const cursor = useRef(null);
@@ -9,14 +9,16 @@ const Cursor = () => {
 	const mousePos = useRef({ pageX: 0, pageY: 0 });
 	const [hover, setHover] = useState(false);
 
+	const lerp = (start, end, value) => (1 - value) * start + value * end;
+
 	const moveSmoothCursor = () => {
 		const style = cursorSmooth.current.style;
 		const { pageX, pageY } = mousePos.current;
 		const topParsed = parseFloat(style.top),
 			leftParsed = parseFloat(style.left);
 
-		style.top = `${topParsed + (pageY - topParsed) / DELAY}px`;
-		style.left = `${leftParsed + (pageX - leftParsed) / DELAY}px`;
+		style.top = `${lerp(topParsed, pageY, SPEED)}px`;
+		style.left = `${lerp(leftParsed, pageX, SPEED)}px`;
 
 		requestAnimationFrame(moveSmoothCursor);
 	};
