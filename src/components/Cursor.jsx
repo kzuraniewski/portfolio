@@ -1,40 +1,46 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
-const SPEED = 0.3;
-
 const Cursor = () => {
-	const cursor = useRef(null);
-	const cursorSmooth = useRef(null);
+	const cursorInner = useRef(null);
+	const cursorOuter = useRef(null);
 	const mousePos = useRef({ pageX: 0, pageY: 0 });
 	const [hover, setHover] = useState(false);
 
+	/**
+	 * Lerp
+	 * @param {number} start
+	 * @param {number} end
+	 * @param {number} value
+	 * @returns {number}
+	 */
 	const lerp = (start, end, value) => (1 - value) * start + value * end;
 
-	const moveSmoothCursor = () => {
-		const style = cursorSmooth.current.style;
+	/**
+	 * Moves an alement smoothly using lerp
+	 * @param {React.MutableRefObject} ref - reference to the element
+	 * @param {number} speed - movement speed between 0 and 1
+	 * @returns {() => void}
+	 */
+	const moveSmooth = (ref, speed) => () => {
+		const style = ref.current.style;
 		const { pageX, pageY } = mousePos.current;
-		const topParsed = parseFloat(style.top),
-			leftParsed = parseFloat(style.left);
 
-		style.top = `${lerp(topParsed, pageY, SPEED)}px`;
-		style.left = `${lerp(leftParsed, pageX, SPEED)}px`;
+		style.top = `${lerp(parseFloat(style.top) || 0, pageY, speed)}px`;
+		style.left = `${lerp(parseFloat(style.left) || 0, pageX, speed)}px`;
 
-		requestAnimationFrame(moveSmoothCursor);
+		requestAnimationFrame(moveSmooth(ref, speed));
 	};
 
 	useEffect(() => {
+		// update mousePos for movement updates
 		document.addEventListener('mousemove', ({ pageX, pageY }) => {
-			// update normal cursor's position
-			cursor.current.style.top = `${pageY}px`;
-			cursor.current.style.left = `${pageX}px`;
-
-			// update mousePos for smooth movement updates
 			mousePos.current = { pageX, pageY };
 		});
 
-		// update smooth cursor's position
-		requestAnimationFrame(moveSmoothCursor);
+		// update cursor positions
+		requestAnimationFrame(moveSmooth(cursorInner, 0.8));
+		requestAnimationFrame(moveSmooth(cursorOuter, 0.3));
 
 		// add hover effect for given elements
 		['a', 'btn'].forEach(query =>
@@ -47,10 +53,9 @@ const Cursor = () => {
 
 	return (
 		<>
-			<div ref={cursor} className={classNames('cursor', { 'cursor--hover': hover })} />
+			<div ref={cursorInner} className={classNames('cursor', { 'cursor--hover': hover })} />
 			<div
-				ref={cursorSmooth}
-				style={{ top: '0px', left: '0px' }}
+				ref={cursorOuter}
 				className={classNames('cursor cursor--smooth', { 'cursor--hover': hover })}
 			/>
 		</>
