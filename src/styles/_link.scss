@@ -1,0 +1,9 @@
+.link {
+	color: inherit;
+	font-weight: bold;
+	transition: 0.5s;
+
+	&:hover {
+		color: $color-alt;
+	}
+}
