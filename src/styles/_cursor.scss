@@ -1,0 +1,40 @@
+* {
+	cursor: none;
+}
+
+.cursor {
+	$transition: 0.2s;
+	$size: 6px;
+	$hover-size: 15px;
+	$outline-scale: 3;
+
+	position: absolute;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+
+	width: $size;
+	height: $size;
+	background-color: $cursor-color;
+	border-radius: 50%;
+
+	transition: $transition width, $transition height, $transition background-color;
+
+	&--smooth {
+		width: $size * $outline-scale;
+		height: $size * $outline-scale;
+
+		background: none;
+		border: 2px solid $cursor-color;
+	}
+
+	&--hover {
+		width: $hover-size;
+		height: $hover-size;
+		background-color: $cursor-hover-color;
+		border-color: $cursor-hover-color;
+	}
+
+	&--smooth.cursor--hover {
+		filter: opacity(0);
+	}
+}
