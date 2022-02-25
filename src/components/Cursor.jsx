@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
 const Cursor = () => {
@@ -14,7 +14,7 @@ const Cursor = () => {
 	 * @param {number} value
 	 * @returns {number}
 	 */
-	const lerp = (start, end, value) => (1 - value) * start + value * end;
+	const lerp = useCallback((start, end, value) => (1 - value) * start + value * end, []);
 
 	/**
 	 * Moves an alement smoothly using lerp
@@ -22,15 +22,18 @@ const Cursor = () => {
 	 * @param {number} speed - movement speed between 0 and 1
 	 * @returns {() => void}
 	 */
-	const moveSmooth = (ref, speed) => () => {
-		const style = ref.current.style;
-		const { pageX, pageY } = mousePos.current;
+	const moveSmooth = useCallback(
+		(ref, speed) => () => {
+			const style = ref.current.style;
+			const { pageX, pageY } = mousePos.current;
 
-		style.top = `${lerp(parseFloat(style.top) || 0, pageY, speed)}px`;
-		style.left = `${lerp(parseFloat(style.left) || 0, pageX, speed)}px`;
+			style.top = `${lerp(parseFloat(style.top) || 0, pageY, speed)}px`;
+			style.left = `${lerp(parseFloat(style.left) || 0, pageX, speed)}px`;
 
-		requestAnimationFrame(moveSmooth(ref, speed));
-	};
+			requestAnimationFrame(moveSmooth(ref, speed));
+		},
+		[lerp]
+	);
 
 	useEffect(() => {
 		// update mousePos for movement updates
@@ -49,7 +52,7 @@ const Cursor = () => {
 				el.addEventListener('mouseleave', () => setHover(false));
 			})
 		);
-	}, []);
+	}, [moveSmooth]);
 
 	return (
 		<>
