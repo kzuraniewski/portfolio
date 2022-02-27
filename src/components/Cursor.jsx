@@ -4,7 +4,7 @@ import classNames from 'classnames';
 const Cursor = () => {
 	const cursorInner = useRef(null);
 	const cursorOuter = useRef(null);
-	const mousePos = useRef({ pageX: 0, pageY: 0 });
+	const mousePos = useRef({ clientX: 0, clientY: 0 });
 	const [hover, setHover] = useState(false);
 	const [hide, setHide] = useState(false);
 
@@ -26,10 +26,10 @@ const Cursor = () => {
 	const moveSmooth = useCallback(
 		(ref, speed) => () => {
 			const style = ref.current.style;
-			const { pageX, pageY } = mousePos.current;
+			const { clientX, clientY } = mousePos.current;
 
-			style.top = `${lerp(parseFloat(style.top) || 0, pageY, speed)}px`;
-			style.left = `${lerp(parseFloat(style.left) || 0, pageX, speed)}px`;
+			style.top = `${lerp(parseFloat(style.top) || 0, clientY, speed)}px`;
+			style.left = `${lerp(parseFloat(style.left) || 0, clientX, speed)}px`;
 
 			requestAnimationFrame(moveSmooth(ref, speed));
 		},
@@ -37,9 +37,9 @@ const Cursor = () => {
 	);
 
 	useEffect(() => {
-		// update mousePos for movement updates
-		document.addEventListener('mousemove', ({ pageX, pageY }) => {
-			mousePos.current = { pageX, pageY };
+		// update mousePos when mouse moves
+		document.addEventListener('mousemove', ({ clientX, clientY }) => {
+			mousePos.current = { clientX, clientY };
 		});
 
 		// update cursor positions
