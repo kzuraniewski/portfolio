@@ -8,23 +8,15 @@ const Cursor = () => {
 	const [hover, setHover] = useState(false);
 	const [hide, setHide] = useState(false);
 
-	/**
-	 * Lerp
-	 * @param {number} start
-	 * @param {number} end
-	 * @param {number} value
-	 * @returns {number}
-	 */
-	const lerp = useCallback((start, end, value) => (1 - value) * start + value * end, []);
+	const lerp = useCallback((start: number, end: number, value: number) => {
+		return (1 - value) * start + value * end;
+	}, []);
 
 	/**
 	 * Moves an alement smoothly using lerp
-	 * @param {React.MutableRefObject} ref - reference to the element
-	 * @param {number} speed - movement speed between 0 and 1
-	 * @returns {() => void}
 	 */
 	const moveSmooth = useCallback(
-		(ref, speed) => () => {
+		(ref: React.MutableRefObject<any>, speed: number) => () => {
 			const style = ref.current.style;
 			const { clientX, clientY } = mousePos.current;
 
