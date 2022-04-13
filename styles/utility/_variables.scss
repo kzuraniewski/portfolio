@@ -1,11 +1,16 @@
 // colors
-$color-primary: white;
-$color-secondary: blue;
-$color-alt: yellow;
+$color-primary: #efefef;
+$color-primary-light: #ffffff;
+$color-primary-dark: #e5e5e5;
+$color-secondary: #333333;
+$color-secondary-light: #5c5c5c;
+$color-secondary-dark: #0c0c0c;
+$color-alt: #dfea0a;
+$color-alt-light: ffff57;
+$color-alt-dark: a9b800;
 
-$bg-color: #141414;
-
-$cursor-color: white;
+$cursor-color: black;
 
 // fonts
-$text-color: #e9e9e9;
+$text-light: #ffffff;
+$text-dark: #0d0d0d;
