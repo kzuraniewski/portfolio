@@ -1,8 +1,8 @@
-import "styled-components";
+import 'styled-components';
 
-type ColorProperties = Record<"main" | "light" | "dark", string>;
+type ColorProperties = Record<'main' | 'light' | 'dark', string>;
 
-type TextProperties = Record<"light" | "dark", string>;
+type TextProperties = Record<'light' | 'dark', string>;
 
 type Colors = {
 	primary: ColorProperties;
@@ -16,9 +16,9 @@ type Shadow = {
 	string: string;
 };
 
-type Breakpoint = "sm" | "md" | "lg" | "xl" | "xxl";
+type Breakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
-declare module "styled-components" {
+declare module 'styled-components' {
 	export interface DefaultTheme {
 		colors: Colors;
 		shadow: Shadow;
