@@ -1,4 +1,10 @@
-.link {
+body {
+	color: $text-dark;
+	background-color: $color-primary;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+a {
 	color: inherit;
 	font-weight: bold;
 	text-decoration: none;
