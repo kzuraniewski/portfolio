@@ -5,6 +5,8 @@ import HeaderLink from '../HeaderLink';
 import style from './style.module.scss';
 import type { HeaderProps, Position } from './types.d';
 
+// FIXME: Header links not working
+
 export default function Header({ currentId }: HeaderProps) {
 	const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 	const [highlightPosition, setHighlightPosition] = useState<Position | null>(
@@ -16,6 +18,7 @@ export default function Header({ currentId }: HeaderProps) {
 
 	useEffect(() => {
 		if (!highlightPosition && linkRefs.current[0]) {
+			// TODO: Infer position from url hash
 			setHighlightPosition(getElementRectCenter(linkRefs.current[0]));
 			setHighlightVisible(true);
 		}
