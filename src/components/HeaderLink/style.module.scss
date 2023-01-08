@@ -1,0 +1,12 @@
+@import '../../app/variables';
+
+.root {
+	position: relative;
+	color: #e0e0e0;
+	text-transform: uppercase;
+	transition: 0.15s;
+}
+
+.highlighted {
+	color: $text-on-primary;
+}

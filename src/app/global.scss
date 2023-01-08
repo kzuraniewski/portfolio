@@ -1,7 +1,7 @@
-@import './variables.scss';
+@import './variables';
 
 body {
-	color: $text-dark;
+	color: $text-on-primary;
 	background-color: $color-primary;
 	font-family: 'Noto Sans', sans-serif;
 }
@@ -10,9 +10,11 @@ a {
 	color: inherit;
 	font-weight: bold;
 	text-decoration: none;
-	transition: 0.5s;
+	transition: 0.15s;
+	text-decoration: underline;
+	text-decoration-color: transparent;
 
 	&:hover {
-		color: $color-alt;
+		text-decoration-color: initial;
 	}
 }

@@ -1,0 +1,20 @@
+.root {
+	position: fixed;
+	padding: 40px;
+}
+
+.links {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+
+.highlight {
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	transform: translate(-50%, calc(0.5em + 7px));
+	border-radius: 50%;
+	transition: 0.15s;
+	background-color: white;
+}
