@@ -4,6 +4,7 @@ body {
 	color: $text-on-primary;
 	background-color: $color-primary;
 	font-family: 'Noto Sans', sans-serif;
+	padding: 0 10px;
 }
 
 a {
@@ -17,4 +18,10 @@ a {
 	&:hover {
 		text-decoration-color: initial;
 	}
+}
+
+h1 {
+	font-size: $text-big;
+	font-weight: 700;
+	margin-bottom: 1.4rem;
 }

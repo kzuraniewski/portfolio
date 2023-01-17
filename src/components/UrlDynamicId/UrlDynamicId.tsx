@@ -1,37 +1,47 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { UrlScrollSyncProps } from './types';
 import useScroll from '../../lib/useScroll';
+import { useStore } from '../../lib/context';
+import _ from 'lodash';
+import React from 'react';
 
-export default function UrlDynamicId({
-	onChange,
-	children,
-}: UrlScrollSyncProps) {
-	const ref = useRef<HTMLDivElement>(null);
+export default function UrlDynamicId({ children }: UrlScrollSyncProps) {
+	const parentRef = useRef<HTMLDivElement | null>(null);
+	// const [currentSectionIndex, setStore] = useStore(
+	// 	(store) => store.currentSectionIndex
+	// );
+	const [a, sa] = useState<any>();
 
-	const updateUrlId = () => {
-		const elements = ref.current?.querySelectorAll(':scope > [id]');
-		if (!elements) return;
+	const handleScroll = useCallback(() => {
+		if (!parentRef.current) return;
 
-		const upperElements = Array.from(elements).filter((element) => {
-			const { top } = element.getBoundingClientRect();
-			return top < window.innerHeight / 2;
+		const elements = Array.from(parentRef.current.children).filter(
+			(el) => el.id
+		);
+
+		const currentSection = _.findLast(elements, (element) => {
+			const { top, bottom } = element.getBoundingClientRect();
+			const altitude = (bottom + top) / 2;
+
+			const { pageTop, height } = window.visualViewport;
+			const viewportAltitude = (pageTop + pageTop + height) / 2;
+
+			console.log(
+				altitude,
+				viewportAltitude,
+				altitude < viewportAltitude
+			);
+
+			return altitude < viewportAltitude;
 		});
 
-		if (!upperElements.length) return;
-		const id = (upperElements.at(-1) as Element).id;
-		if (
-			!id.length ||
-			id === new URL(window.location.href).hash.substring(1)
-		)
-			return;
+		// setStore({ currentSectionIndex ?? 0 });
+		sa(`${currentSection}, {currentSection?.getBoundingClientRect().top}`);
+	}, [parentRef.current]);
 
-		window.history.pushState(null, '', `#${id}`);
-		onChange?.(id);
-	};
+	useEffect(() => console.log(a), [a]);
 
-	useEffect(updateUrlId, []);
+	useScroll(handleScroll);
 
-	useScroll(updateUrlId);
-
-	return <div ref={ref}>{children}</div>;
+	return <div ref={parentRef}>{children}</div>;
 }

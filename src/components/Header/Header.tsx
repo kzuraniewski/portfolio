@@ -1,39 +1,21 @@
-'use client';
-
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
+import { useStore } from '../../lib/context';
 import HeaderLink from '../HeaderLink';
 import style from './style.module.scss';
 import type { HeaderProps, Position } from './types.d';
 
-// FIXME: Header links not working
-
-export default function Header({ currentId }: HeaderProps) {
+export default function Header({}: HeaderProps) {
 	const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-	const [highlightPosition, setHighlightPosition] = useState<Position | null>(
-		null
-	);
-	const [highlightVisible, setHighlightVisible] = useState(false);
+	const [currentSectionIndex] = useStore(store => store.currentSectionIndex);
 
-	const highlightIndex = currentId ? sectionIds.indexOf(currentId) : -1;
+	const firstLink = linkRefs.current[0];
+	const currentLink = linkRefs.current[currentSectionIndex];
+	// prettier-ignore
+	const highlightPosition = currentLink ? getElementRectCenter(currentLink)
+							: firstLink ? getElementRectCenter(firstLink)
+							: null;
 
-	useEffect(() => {
-		if (!highlightPosition && linkRefs.current[0]) {
-			// TODO: Infer position from url hash
-			setHighlightPosition(getElementRectCenter(linkRefs.current[0]));
-			setHighlightVisible(true);
-		}
-
-		const highlightedElement = linkRefs.current[highlightIndex];
-		if (!highlightedElement) {
-			if (highlightPosition) setHighlightVisible(false);
-			return;
-		}
-
-		const newPosition = getElementRectCenter(highlightedElement);
-
-		setHighlightVisible(true);
-		setHighlightPosition(newPosition);
-	}, [highlightIndex]);
+	console.log(linkRefs.current, highlightPosition);
 
 	return (
 		<header className={style.root}>
@@ -41,9 +23,9 @@ export default function Header({ currentId }: HeaderProps) {
 				{sectionIds.map((sectionId, index) => (
 					<li key={sectionId}>
 						<HeaderLink
-							ref={(el) => (linkRefs.current[index] = el)}
+							ref={el => (linkRefs.current[index] = el)}
 							href={`#${sectionId}`}
-							highlighted={index === highlightIndex}
+							highlighted={index === currentSectionIndex}
 						>
 							{sectionId}
 						</HeaderLink>
@@ -55,7 +37,7 @@ export default function Header({ currentId }: HeaderProps) {
 				style={{
 					left: highlightPosition?.x,
 					top: highlightPosition?.y,
-					opacity: highlightVisible ? 100 : 0,
+					opacity: highlightPosition ? 100 : 0,
 				}}
 				className={style.highlight}
 			/>

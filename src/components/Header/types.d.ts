@@ -1,6 +1,4 @@
-export type HeaderProps = {
-	currentId: string | null;
-};
+export type HeaderProps = {};
 
 export type Position = {
 	x: number;
