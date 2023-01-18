@@ -1,8 +1,12 @@
+import { Link, Typography } from '../components';
+
 export default function LandingPage() {
 	return (
 		<section>
-			<h1>Some title</h1>
-			<p>Professional fullstack developer </p>
+			<Typography>Some title</Typography>
+			<p>
+				Professional fullstack <Link href="#">asd</Link> developer
+			</p>
 		</section>
 	);
 }

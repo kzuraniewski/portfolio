@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { UrlScrollSyncProps } from './types';
-import useScroll from '../../lib/useScroll';
-import { useStore } from '../../lib/context';
+import useScroll from '../lib/useScroll';
 import _ from 'lodash';
-import React from 'react';
+
+export type UrlScrollSyncProps = {
+	children?: React.ReactNode;
+};
 
 export default function UrlDynamicId({ children }: UrlScrollSyncProps) {
 	const parentRef = useRef<HTMLDivElement | null>(null);

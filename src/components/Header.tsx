@@ -1,12 +1,17 @@
 import { useRef } from 'react';
-import { useStore } from '../../lib/context';
-import HeaderLink from '../HeaderLink';
-import style from './style.module.scss';
-import type { HeaderProps, Position } from './types.d';
+import { useStore } from '../lib/context';
+import HeaderLink from './HeaderLink';
 
-export default function Header({}: HeaderProps) {
+export type Position = {
+	x: number;
+	y: number;
+};
+
+export default function Header() {
 	const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-	const [currentSectionIndex] = useStore(store => store.currentSectionIndex);
+	const [currentSectionIndex] = useStore(
+		(store) => store.currentSectionIndex
+	);
 
 	const firstLink = linkRefs.current[0];
 	const currentLink = linkRefs.current[currentSectionIndex];
@@ -18,12 +23,12 @@ export default function Header({}: HeaderProps) {
 	console.log(linkRefs.current, highlightPosition);
 
 	return (
-		<header className={style.root}>
-			<ul className={style.links}>
+		<header className="sticky top-0 p-10">
+			<ul className="flex justify-center gap-10">
 				{sectionIds.map((sectionId, index) => (
 					<li key={sectionId}>
 						<HeaderLink
-							ref={el => (linkRefs.current[index] = el)}
+							ref={(el) => (linkRefs.current[index] = el)}
 							href={`#${sectionId}`}
 							highlighted={index === currentSectionIndex}
 						>
@@ -39,7 +44,7 @@ export default function Header({}: HeaderProps) {
 					top: highlightPosition?.y,
 					opacity: highlightPosition ? 100 : 0,
 				}}
-				className={style.highlight}
+				className="absolute w-1 h-1 -translate-x-1/2 translate-y-4 rounded-full bg-white"
 			/>
 		</header>
 	);
