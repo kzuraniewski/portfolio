@@ -13,8 +13,8 @@ const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
 			ref={ref}
 			href={href}
 			className={cx(
-				'relative text-gray-300 hover:text-gray-50 uppercase font-normal transition-colors',
-				{ 'text-gray-100': highlighted }
+				'relative hover:text-gray-500 uppercase font-normal transition-colors',
+				{ 'text-gray-600': highlighted }
 			)}
 		>
 			{children}

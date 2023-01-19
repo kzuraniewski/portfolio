@@ -23,7 +23,7 @@ export default function Header() {
 	console.log(linkRefs.current, highlightPosition);
 
 	return (
-		<header className="sticky top-0 p-10">
+		<header className="fixed left-1/2 -translate-x-1/2 p-10">
 			<ul className="flex justify-center gap-10">
 				{sectionIds.map((sectionId, index) => (
 					<li key={sectionId}>
@@ -44,7 +44,7 @@ export default function Header() {
 					top: highlightPosition?.y,
 					opacity: highlightPosition ? 100 : 0,
 				}}
-				className="absolute w-1 h-1 -translate-x-1/2 translate-y-4 rounded-full bg-white"
+				className="absolute w-1 h-1 -translate-x-1/2 translate-y-4 rounded-full bg-black"
 			/>
 		</header>
 	);

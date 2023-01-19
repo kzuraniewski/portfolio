@@ -1,5 +1,7 @@
-export type StackProps = {};
+export type StackProps = {
+	children?: React.ReactNode;
+};
 
-export default function Stack({}: StackProps) {
-	return <div className="flex"></div>;
+export default function Stack({ children }: StackProps) {
+	return <div className="flex items-center justify-between">{children}</div>;
 }
