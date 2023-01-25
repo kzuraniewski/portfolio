@@ -1,9 +1,7 @@
-import { Stack } from '../components';
-
 export default function LandingPage() {
 	return (
 		<section className="py-16 h-[95vh]">
-			<Stack>
+			<div className="flex items-center justify-between">
 				<div>
 					<h1 className="text-7xl font-light mb-6">Some title</h1>
 
@@ -19,7 +17,7 @@ export default function LandingPage() {
 				</div>
 
 				<div className="border border-black w-[600px] h-[500px]" />
-			</Stack>
+			</div>
 		</section>
 	);
 }

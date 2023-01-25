@@ -1,11 +1,10 @@
 import cx from 'classnames';
-import { forwardRef } from 'react';
+import { forwardRef, PropsWithChildren } from 'react';
 
-export type HeaderLinkProps = {
+export type HeaderLinkProps = PropsWithChildren<{
 	href: string;
 	highlighted?: boolean;
-	children?: React.ReactNode;
-};
+}>;
 
 const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
 	({ href, highlighted = false, children }, ref) => (

@@ -1,9 +1,9 @@
-import { Stack } from '../components';
+import { Paper, Skills, Tab, Tabs } from '../components';
 
 export default function LandingPage() {
 	return (
 		<section className="py-48">
-			<Stack>
+			<div className="flex justify-between">
 				<div>
 					<h2 className="text-3xl uppercase font-bold mb-4">
 						About me
@@ -14,7 +14,11 @@ export default function LandingPage() {
 						diam luctus elit, rhoncus semper nunc turpis et est.
 					</p>
 				</div>
-			</Stack>
+
+				<div className="w-1/2 max-w-lg">
+					<Skills />
+				</div>
+			</div>
 		</section>
 	);
 }
