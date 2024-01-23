@@ -7,7 +7,7 @@ export default function RootLayout() {
 	return (
 		<html lang="en">
 			<AppContextProvider>
-				<body className="text-black bg-gray-100 min-h-screen">
+				<body className="text-silver bg-charcoal min-h-screen">
 					<Header />
 					<main className="container mx-auto py-10 px-5">
 						<UrlDynamicId>
