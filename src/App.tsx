@@ -8,7 +8,7 @@ export default function RootLayout() {
 			<AppContextProvider>
 				<body className="min-h-screen text-silver bg-charcoal">
 					<Header />
-					<main className="container px-5 py-10 mx-auto">
+					<main className="container py-10">
 						<LandingPage />
 						<About />
 					</main>

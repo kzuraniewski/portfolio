@@ -8,6 +8,10 @@ module.exports = {
 			mustard: '#FFD369',
 			silver: '#EEEEEE',
 		},
+		container: {
+			center: true,
+			padding: '1.25rem',
+		},
 	},
 	plugins: [],
 };
