@@ -5,18 +5,24 @@ export default function LandingPage() {
 		<section className="py-16 h-[95vh]">
 			<div className="flex items-center justify-between">
 				<div>
-					<h1 className="mb-6 font-light text-7xl">Some title</h1>
+					<span className="-ml-2 tracking-wide text-small text-mustard">
+						My name is
+					</span>
+					<h1 className="mb-6 font-bold leading-tight text-7xl">
+						Karol Żuraniewski
+					</h1>
+
+					<div className="flex-grow w-48 my-5 border-b-2 border-dashed border-b-gunmetal" />
 
 					<p className="max-w-sm mb-10">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Fusce facilisis, ipsum sit amet pretium molestie, libero
-						diam luctus elit, rhoncus semper nunc turpis et est.
+						And I'm a web developer that specializes in TypeScript,
+						React and Java.
 					</p>
 
-					<Button variant="big">Fancy cta</Button>
+					<Button variant="big">See more</Button>
 				</div>
 
-				<div className="border border-black w-[500px] h-[500px]" />
+				<div className="border border-gunmetal w-[500px] h-[500px]" />
 			</div>
 		</section>
 	);
