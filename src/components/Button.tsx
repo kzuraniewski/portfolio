@@ -12,7 +12,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		return (
 			<button
 				className={cn(
-					'px-4 py-2 text-lg leading-none transition-colors border rounded-md text-mustard border-mustard hover:bg-mustard hover:border-mustard hover:text-charcoal',
+					'px-4 py-2 text-lg leading-none transition-colors border rounded-sm text-mustard border-mustard hover:bg-mustard hover:border-mustard hover:text-charcoal',
 					{ 'px-6 py-3': variant === 'big' },
 					className
 				)}
