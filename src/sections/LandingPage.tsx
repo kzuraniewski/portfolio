@@ -16,7 +16,7 @@ export default function LandingPage() {
 					<Button variant="big">Fancy cta</Button>
 				</div>
 
-				<div className="border border-black w-[600px] h-[500px]" />
+				<div className="border border-black w-[500px] h-[500px]" />
 			</div>
 		</section>
 	);
