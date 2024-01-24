@@ -1,5 +1,6 @@
 import { Button } from '../components/Button';
 import { Divider } from '../components/Divider';
+import { FaArrowTurnDown } from 'react-icons/fa6';
 
 export default function LandingPage() {
 	return (
@@ -20,7 +21,10 @@ export default function LandingPage() {
 						React and Java.
 					</p>
 
-					<Button variant="big">See more</Button>
+					<Button variant="big">
+						See more
+						<FaArrowTurnDown className='inline-block w-2 ml-2' />
+					</Button>
 				</div>
 
 				<div className="border border-gunmetal w-[500px] h-[500px]" />
