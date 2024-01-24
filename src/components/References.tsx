@@ -16,7 +16,7 @@ export type ReferenceProps = {
 export const Reference = ({ href, children }: ReferenceProps) => {
 	return (
 		<li>
-			<a href={href} className="block hover:text-mustard [&>svg]:w-7 [&>svg]:h-7 [&>svg]:transition-colors">
+			<a href={href} className="block text-silver hover:text-mustard [&>svg]:w-7 [&>svg]:h-7 [&>svg]:transition-colors">
 				{children}
 			</a>
 		</li>
