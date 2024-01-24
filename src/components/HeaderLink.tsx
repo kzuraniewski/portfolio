@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import cn from 'classnames';
 import { forwardRef, PropsWithChildren } from 'react';
 
 export type HeaderLinkProps = PropsWithChildren<{
@@ -11,8 +11,8 @@ const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
 		<a
 			ref={ref}
 			href={href}
-			className={cx(
-				'relative hover:text-gray-500 uppercase font-normal transition-colors',
+			className={cn(
+				'relative font-normal uppercase transition-colors hover:text-gray-500',
 				{ 'text-gray-600': highlighted }
 			)}
 		>

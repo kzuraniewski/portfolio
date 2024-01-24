@@ -1,11 +1,11 @@
-import { Paper, Skills, Tab, Tabs } from '../components';
+import { Skills } from '../components';
 
 export default function LandingPage() {
 	return (
 		<section className="py-48">
 			<div className="flex justify-between">
 				<div>
-					<h2 className="text-3xl uppercase font-bold mb-4">
+					<h2 className="mb-4 text-3xl font-bold uppercase">
 						About me
 					</h2>
 					<p className="max-w-sm">

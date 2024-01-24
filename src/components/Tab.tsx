@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import cn from 'classnames';
 import { PropsWithChildren, useContext, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { TabsContext } from './Tabs';
@@ -22,8 +22,8 @@ export default function Tab({ label, children }: TabProps) {
 			{heading?.current &&
 				createPortal(
 					<button
-						className={cx(
-							'px-5 py-1 uppercase text-sm font-semibold bg-slate-50 transition-colors first-of-type:rounded-l last-of-type:rounded-r',
+						className={cn(
+							'px-5 py-1 text-sm font-semibold uppercase transition-colors bg-slate-50 first-of-type:rounded-l last-of-type:rounded-r',
 							{ 'bg-yellow-200': isSelected }
 						)}
 						onClick={() => setCurrentTab(label)}

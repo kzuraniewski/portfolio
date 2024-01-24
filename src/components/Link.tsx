@@ -8,7 +8,7 @@ export default function Link({ props }: LinkProps) {
 	return (
 		<a
 			{...props}
-			className="font-bold transition-colors underline decoration-transparent hover:decoration-current"
+			className="font-bold underline transition-colors decoration-transparent hover:decoration-current"
 		/>
 	);
 }
