@@ -13,7 +13,7 @@ export default function LandingPage() {
 						Karol Żuraniewski
 					</h1>
 
-					<Divider className='w-48' />
+					<Divider className="w-48" />
 
 					<p className="max-w-sm mb-10">
 						And I'm a web developer that specializes in TypeScript,
