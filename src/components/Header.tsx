@@ -4,7 +4,7 @@ import { Button } from './Button';
 
 export default function Header() {
 	return (
-		<header className="container fixed flex items-center justify-end gap-12 py-7">
+		<header className="container fixed flex items-center justify-end gap-12 py-5 shadow bg-charcoal">
 			<References>
 				{references.map(({ href, Icon }, index) => (
 					<Reference href={href} key={`reference-${index}`}>
