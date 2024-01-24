@@ -1,23 +1,34 @@
-import Section from '../components/Section';
+import { Section } from '../components/Section';
 
 export default function LandingPage() {
 	return (
 		<Section title="About me">
-			<p className="text-center w-2/3 mx-auto mb-5">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Suspendisse bibendum auctor blandit. Donec porta sapien at
-				fermentum venenatis. Aenean finibus posuere cursus. Donec
-				tristique hendrerit diam nec blandit. Maecenas dictum bibendum
-				nunc, nec varius nisl varius non.
-			</p>
+			<div className="flex items-center">
+				<p className="w-1/2 mb-5">
+					My name is Karol and I develop web stuff. My web development
+					journey started in 2021 - when I got to know React. Since
+					then I've had the opportunity to design, develop and
+					maintain websites, E-commerce services and fullstack web
+					applications at <a href="#work">different&nbsp;companies</a>
+					.
+				</p>
 
-			<p className="text-center w-2/3 mx-auto mb-5">
-				Etiam pretium lobortis erat consequat consectetur. Proin at
-				ipsum a dolor facilisis convallis. Phasellus egestas, felis in
-				cursus ultrices, urna urna scelerisque nisi, eu euismod sem
-				mauris sit amet ligula. Integer ac orci quis nulla varius
-				pulvinar.
-			</p>
+				<fieldset className="px-10 mx-auto border-2 border-dashed rounded py-7 w-fit border-gunmetal">
+					<legend className="px-3 mx-auto font-bold uppercase">
+						Technologies I've used
+					</legend>
+
+					<ul className="list-['>'] marker:text-mustard grid grid-cols-2 gap-y-2 gap-x-10">
+						{skills.map((skill) => (
+							<li className="px-3 w-max">
+								<span className="-ml-2">{skill}</span>
+							</li>
+						))}
+					</ul>
+				</fieldset>
+			</div>
 		</Section>
 	);
 }
+
+const skills = ['TypeScript', 'React', 'MUI', 'Java', 'Node.js', 'WordPress'];
