@@ -1,61 +1,30 @@
-import { useRef } from 'react';
-import { useStore } from '../lib/context';
-import HeaderLink from './HeaderLink';
-
-export type Position = {
-	x: number;
-	y: number;
-};
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { Reference, References } from './References';
+import { Button } from './Button';
 
 export default function Header() {
-	const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-	const [currentSectionIndex] = useStore(
-		(store) => store.currentSectionIndex
-	);
-
-	const firstLink = linkRefs.current[0];
-	const currentLink = linkRefs.current[currentSectionIndex];
-	// prettier-ignore
-	const highlightPosition = currentLink ? getElementRectCenter(currentLink)
-							: firstLink ? getElementRectCenter(firstLink)
-							: null;
-
-	console.log(linkRefs.current, highlightPosition);
-
 	return (
-		<header className="fixed left-1/2 -translate-x-1/2 p-10">
-			<ul className="flex justify-center gap-10">
-				{sectionIds.map((sectionId, index) => (
-					<li key={sectionId}>
-						<HeaderLink
-							ref={(el) => (linkRefs.current[index] = el)}
-							href={`#${sectionId}`}
-							highlighted={index === currentSectionIndex}
-						>
-							{sectionId}
-						</HeaderLink>
-					</li>
+		<header className="fixed flex items-center justify-end w-screen gap-12 px-12 py-7">
+			<References>
+				{references.map(({ href, Icon }, index) => (
+					<Reference href={href} key={`reference-${index}`}>
+						<Icon />
+					</Reference>
 				))}
-			</ul>
+			</References>
 
-			<div
-				style={{
-					left: highlightPosition?.x,
-					top: highlightPosition?.y,
-					opacity: highlightPosition ? 100 : 0,
-				}}
-				className="absolute w-1 h-1 -translate-x-1/2 translate-y-4 rounded-full bg-black"
-			/>
+			<Button>Resume</Button>
 		</header>
 	);
 }
 
-function getElementRectCenter(element: HTMLElement): Position {
-	const rect = element.getBoundingClientRect();
-	return {
-		x: (rect.right + rect.left) / 2,
-		y: (rect.bottom + rect.top) / 2,
-	};
-}
-
-const sectionIds = ['home', 'about', 'contact'];
+const references = [
+	{
+		href: 'https://github.com/kzuraniewski',
+		Icon: FaGithub,
+	},
+	{
+		href: 'https://www.linkedin.com/in/karol-zuraniewski',
+		Icon: FaLinkedin,
+	},
+];
