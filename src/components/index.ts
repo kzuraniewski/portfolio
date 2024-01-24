@@ -1,7 +1,6 @@
 export { default as Header } from './Header';
 export { default as HeaderLink } from './HeaderLink';
 export { default as Link } from './Link';
-export { default as UrlDynamicId } from './UrlDynamicId';
 export { default as Tabs } from './Tabs';
 export { default as Tab } from './Tab';
 export { default as Paper } from './Paper';
