@@ -1,8 +1,8 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
-import { Reference, References } from './References';
 import { Button } from './Button';
+import { Reference, References } from './References';
 
-export default function Header() {
+export const Header = () => {
 	return (
 		<header className="container fixed flex items-center justify-end gap-12 py-5 border-b-2 border-dashed bg-charcoal border-b-gunmetal">
 			<References>
@@ -16,7 +16,7 @@ export default function Header() {
 			<Button>Resume</Button>
 		</header>
 	);
-}
+};
 
 const references = [
 	{

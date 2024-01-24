@@ -1,5 +1,5 @@
-import { ContactMe } from './components';
-import Header from './components/Header';
+import { ContactMe } from './components/ContactMe';
+import { Header } from './components/Header';
 import { AppContextProvider } from './lib/context';
 import { About, LandingPage, Skills } from './sections';
 

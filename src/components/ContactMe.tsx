@@ -1,6 +1,4 @@
-export type ContactMeProps = {};
-
-export default function ContactMe() {
+export const ContactMe = () => {
 	return (
 		<a
 			href="mailto:zuraniewski.karol@gmail.com"
@@ -9,4 +7,4 @@ export default function ContactMe() {
 			Contact me
 		</a>
 	);
-}
+};

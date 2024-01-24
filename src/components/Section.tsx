@@ -6,7 +6,12 @@ export type SectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
 };
 
-const Section = ({ title, className, children, ...props }: SectionProps) => {
+export const Section = ({
+	title,
+	className,
+	children,
+	...props
+}: SectionProps) => {
 	return (
 		<section className={cn('pt-24', className)} {...props}>
 			<div className="flex items-center gap-8 mb-16">
@@ -21,5 +26,3 @@ const Section = ({ title, className, children, ...props }: SectionProps) => {
 		</section>
 	);
 };
-
-export default Section;
