@@ -2,7 +2,7 @@ import { Section } from '../components/Section';
 
 export default function LandingPage() {
 	return (
-		<Section title="About me">
+		<Section title="About me" id="about">
 			<div className="flex items-center">
 				<p className="w-1/2 mb-5">
 					My name is Karol and I develop web stuff. My web development

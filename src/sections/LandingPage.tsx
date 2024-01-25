@@ -4,10 +4,10 @@ import { FaArrowTurnDown } from 'react-icons/fa6';
 
 export default function LandingPage() {
 	return (
-		<section className="py-24 h-[95vh]">
+		<section id="home" className="py-24 h-[95vh]">
 			<div className="flex items-center justify-between">
 				<div>
-					<span className="-ml-2 tracking-wide text-small text-mustard">
+					<span className="tracking-wide text-small text-mustard">
 						My name is
 					</span>
 					<h1 className="mb-6 font-bold leading-tight text-7xl">
@@ -23,7 +23,7 @@ export default function LandingPage() {
 
 					<Button variant="big">
 						See more
-						<FaArrowTurnDown className='inline-block w-2 ml-2' />
+						<FaArrowTurnDown className="inline-block w-2 ml-2" />
 					</Button>
 				</div>
 

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+	html {
+		@apply scroll-smooth;
+	}
+
 	a {
 		@apply hover:underline text-mustard;
 	}

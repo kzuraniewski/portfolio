@@ -1,11 +1,14 @@
-import { ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
+import cn from '../lib/cn';
 
-export type ReferencesProps = {
-	children?: ReactNode;
-};
+export type ReferencesProps = HTMLAttributes<HTMLUListElement>;
 
-export const References = ({ children }: ReferencesProps) => {
-	return <ul className="flex justify-center gap-8">{children}</ul>;
+export const References = ({ className, children }: ReferencesProps) => {
+	return (
+		<ul className={cn('flex justify-center gap-8', className)}>
+			{children}
+		</ul>
+	);
 };
 
 export type ReferenceProps = {
@@ -16,7 +19,10 @@ export type ReferenceProps = {
 export const Reference = ({ href, children }: ReferenceProps) => {
 	return (
 		<li>
-			<a href={href} className="block text-silver hover:text-mustard [&>svg]:w-7 [&>svg]:h-7 [&>svg]:transition-colors">
+			<a
+				href={href}
+				className="block text-silver hover:text-mustard [&>svg]:w-6 [&>svg]:h-6 [&>svg]:transition-colors"
+			>
 				{children}
 			</a>
 		</li>
