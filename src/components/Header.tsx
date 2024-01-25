@@ -4,7 +4,7 @@ import { Reference, References } from './References';
 
 export const Header = () => {
 	return (
-		<header className="fixed w-full border-b-2 border-dashed bg-primary border-b-secondary">
+		<header className="fixed z-50 w-full border-b-2 border-dashed bg-primary border-b-secondary">
 			<div className="container flex items-center max-w-screen-lg gap-12 py-5">
 				<nav className="grow">
 					<ul className="flex gap-10">
