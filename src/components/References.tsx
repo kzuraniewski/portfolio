@@ -21,7 +21,7 @@ export const Reference = ({ href, children }: ReferenceProps) => {
 		<li>
 			<a
 				href={href}
-				className="block text-silver hover:text-mustard [&>svg]:w-6 [&>svg]:h-6 [&>svg]:transition-colors"
+				className="block text-light hover:text-accent [&>svg]:w-6 [&>svg]:h-6 [&>svg]:transition-colors"
 			>
 				{children}
 			</a>

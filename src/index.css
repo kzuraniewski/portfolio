@@ -8,6 +8,10 @@
 	}
 
 	a {
-		@apply hover:underline text-mustard;
+		@apply hover:underline text-accent;
+	}
+
+	h1 {
+		@apply mb-6 font-bold leading-tight text-7xl;
 	}
 }

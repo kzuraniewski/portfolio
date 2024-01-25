@@ -7,7 +7,7 @@ export default function RootLayout() {
 	return (
 		<html lang="en">
 			<AppContextProvider>
-				<body className="min-h-screen text-silver bg-charcoal">
+				<body className="min-h-screen text-light bg-primary">
 					<Header />
 					<main>
 						<div className="container max-w-screen-lg py-10">

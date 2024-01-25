@@ -4,15 +4,13 @@ import { FaArrowTurnDown } from 'react-icons/fa6';
 
 export default function LandingPage() {
 	return (
-		<section id="home" className="py-24 h-[95vh]">
-			<div className="flex items-center justify-between">
+		<section id="home" className="h-screen">
+			<div className="flex items-center justify-between h-full">
 				<div>
-					<span className="tracking-wide text-small text-mustard">
+					<span className="tracking-wide text-small text-accent">
 						My name is
 					</span>
-					<h1 className="mb-6 font-bold leading-tight text-7xl">
-						Karol Żuraniewski
-					</h1>
+					<h1>Karol Żuraniewski</h1>
 
 					<Divider className="w-48" />
 
@@ -21,13 +19,13 @@ export default function LandingPage() {
 						React and Java.
 					</p>
 
-					<Button variant="big">
+					<Button variant="big" href="#about">
 						See more
 						<FaArrowTurnDown className="inline-block w-2 ml-2" />
 					</Button>
 				</div>
 
-				<div className="border border-gunmetal w-[500px] h-[500px]" />
+				<div className="border border-secondary w-[400px] 2xl:w-[500px] h-[400px] 2xl:h-[500px]" />
 			</div>
 		</section>
 	);

@@ -8,7 +8,7 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
 		return (
 			<div
 				className={cn(
-					'my-5 border-b-2 border-dashed border-b-gunmetal',
+					'my-5 border-b-2 border-dashed border-b-secondary',
 					className
 				)}
 				ref={ref}

@@ -4,7 +4,7 @@ import { Reference, References } from './References';
 
 export const Header = () => {
 	return (
-		<header className="fixed w-full border-b-2 border-dashed bg-charcoal border-b-gunmetal">
+		<header className="fixed w-full border-b-2 border-dashed bg-primary border-b-secondary">
 			<div className="container flex items-center max-w-screen-lg gap-12 py-5">
 				<nav className="grow">
 					<ul className="flex gap-10">
@@ -12,7 +12,7 @@ export const Header = () => {
 							<li key={`nav-${index}`}>
 								<a
 									href={href}
-									className="text-lg tracking-wider text-silver hover:no-underline hover:text-mustard before:content-['#'] before:mr-0.5 before:text-mustard"
+									className="text-lg tracking-wider text-light hover:no-underline hover:text-accent before:content-['#'] before:mr-0.5 before:text-accent"
 								>
 									{label}
 								</a>

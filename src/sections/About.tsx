@@ -13,12 +13,12 @@ export default function LandingPage() {
 					.
 				</p>
 
-				<fieldset className="px-10 mx-auto border-2 border-dashed rounded py-7 w-fit border-gunmetal">
+				<fieldset className="px-10 mx-auto border-2 border-dashed rounded py-7 w-fit border-secondary">
 					<legend className="px-3 mx-auto font-bold uppercase">
 						Technologies I've used
 					</legend>
 
-					<ul className="list-['>'] marker:text-mustard grid grid-cols-2 gap-y-2 gap-x-10">
+					<ul className="list-['>'] marker:text-accent grid grid-cols-2 gap-y-2 gap-x-10">
 						{skills.map((skill) => (
 							<li className="px-3 w-max">
 								<span className="-ml-2">{skill}</span>

@@ -3,10 +3,10 @@ module.exports = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		colors: {
-			charcoal: '#222831',
-			gunmetal: '#393E46',
-			mustard: '#FFD369',
-			silver: '#EEEEEE',
+			primary: '#222831',
+			secondary: '#393E46',
+			accent: '#FFD369',
+			light: '#EEEEEE',
 		},
 		container: {
 			center: true,
