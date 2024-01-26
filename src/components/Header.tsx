@@ -5,7 +5,7 @@ import Container from './Container';
 
 export const Header = () => {
 	return (
-		<header className="fixed z-50 w-full border-b-2 border-dashed bg-primary border-b-secondary">
+		<header className="fixed z-50 w-full border-b-2 border-dashed border-b-secondary bg-primary bg-opacity-80 backdrop-blur-sm">
 			<Container className="flex items-center gap-12 py-5">
 				<nav className="grow">
 					<ul className="flex gap-10">
