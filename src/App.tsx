@@ -1,5 +1,6 @@
 import { ContactMe } from './components/ContactMe';
 import Container from './components/Container';
+import Footer from './components/Footer';
 import { Header } from './components/Header';
 import { AppContextProvider } from './lib/context';
 import { About, LandingPage, Skills } from './sections';
@@ -20,7 +21,8 @@ export default function RootLayout() {
 
 						<ContactMe />
 					</main>
-					{/* <Footer /> */}
+
+					<Footer />
 				</body>
 			</AppContextProvider>
 		</html>
