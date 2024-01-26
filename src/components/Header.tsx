@@ -1,18 +1,19 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { Button } from './Button';
 import { Reference, References } from './References';
+import Container from './Container';
 
 export const Header = () => {
 	return (
 		<header className="fixed z-50 w-full border-b-2 border-dashed bg-primary border-b-secondary">
-			<div className="container flex items-center max-w-screen-lg gap-12 py-5">
+			<Container className="flex items-center gap-12 py-5">
 				<nav className="grow">
 					<ul className="flex gap-10">
 						{navigation.map(({ href, label }, index) => (
 							<li key={`nav-${index}`}>
 								<a
 									href={href}
-									className="tracking-wider  text-light hover:no-underline hover:text-accent before:content-['#'] before:mr-0.5 before:text-accent"
+									className="tracking-wider text-light hover:no-underline hover:text-accent before:content-['#'] before:mr-0.5 before:text-accent"
 								>
 									{label}
 								</a>
@@ -30,7 +31,7 @@ export const Header = () => {
 				</References>
 
 				<Button>Resume</Button>
-			</div>
+			</Container>
 		</header>
 	);
 };
