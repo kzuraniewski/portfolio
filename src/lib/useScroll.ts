@@ -1,13 +1,21 @@
-import _ from 'lodash';
 import { useEffect, useRef } from 'react';
 
-const SYNC_DELAY_MS = 100;
+const DEFAULT_OFFSET = 1;
 
 export type ScrollDirection = 'up' | 'down';
 
 export type ScrollHandler = (direction: ScrollDirection) => void;
 
-export default function useScroll(handler: ScrollHandler) {
+export type UseScrollOptions = {
+	offset?: number;
+};
+
+export default function useScroll(
+	handler: ScrollHandler,
+	options: UseScrollOptions = {}
+) {
+	const { offset = DEFAULT_OFFSET } = options;
+
 	const previousY = useRef(0);
 
 	const getScrollDirection = (): ScrollDirection => {
@@ -15,16 +23,20 @@ export default function useScroll(handler: ScrollHandler) {
 		return window.scrollY > previousY.current ? 'down' : 'up';
 	};
 
+	const hasSurpassedOffset = () => {
+		return Math.abs(window.scrollY - previousY.current) > offset;
+	};
+
 	const handleScroll = () => {
+		if (!hasSurpassedOffset()) return;
+
 		const direction = getScrollDirection();
 		handler(direction);
 		previousY.current = window.scrollY;
 	};
 
 	useEffect(() => {
-		const event = _.throttle(handleScroll, SYNC_DELAY_MS);
-		document.addEventListener('scroll', event);
-
-		return () => document.removeEventListener('scroll', event);
+		document.addEventListener('scroll', handleScroll);
+		return () => document.removeEventListener('scroll', handleScroll);
 	}, []);
 }

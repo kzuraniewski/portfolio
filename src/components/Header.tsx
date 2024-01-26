@@ -12,18 +12,24 @@ export const Header = () => {
 	const [mountState, setMountState] = useState<MountState>('mounted');
 	const rootRef = useRef<HTMLElement>(null);
 
-	useScroll((direction) => {
-		if (!rootRef.current || window.scrollY < rootRef.current.offsetHeight) {
-			setMountState('mounted');
-			return;
-		}
+	useScroll(
+		(direction) => {
+			if (
+				!rootRef.current ||
+				window.scrollY < rootRef.current.offsetHeight
+			) {
+				setMountState('mounted');
+				return;
+			}
 
-		if (direction === 'up') {
-			setMountState('floating');
-		} else {
-			setMountState('collapsed');
-		}
-	});
+			if (direction === 'up') {
+				setMountState('floating');
+			} else {
+				setMountState('collapsed');
+			}
+		},
+		{ offset: 20 }
+	);
 
 	return (
 		<header
