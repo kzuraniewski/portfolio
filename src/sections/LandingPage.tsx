@@ -15,7 +15,7 @@ export default function LandingPage() {
 					<Divider className="w-48" />
 
 					<p className="max-w-sm mb-10">
-						And I'm a web developer that specializes in TypeScript,
+						And I'm a fullstack web developer that specializes in TypeScript,
 						React and Java.
 					</p>
 
