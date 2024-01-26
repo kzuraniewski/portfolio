@@ -1,11 +1,40 @@
+import { useRef, useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import cn from '../lib/cn';
+import useScroll from '../lib/useScroll';
 import { Button } from './Button';
-import { Reference, References } from './References';
 import Container from './Container';
+import { Reference, References } from './References';
+
+type MountState = 'mounted' | 'floating' | 'collapsed';
 
 export const Header = () => {
+	const [mountState, setMountState] = useState<MountState>('mounted');
+	const rootRef = useRef<HTMLElement>(null);
+
+	useScroll((direction) => {
+		if (!rootRef.current || window.scrollY < rootRef.current.offsetHeight) {
+			setMountState('mounted');
+			return;
+		}
+
+		if (direction === 'up') {
+			setMountState('floating');
+		} else {
+			setMountState('collapsed');
+		}
+	});
+
 	return (
-		<header className="fixed z-50 w-full border-b-2 border-dashed border-b-secondary bg-primary bg-opacity-80 backdrop-blur-sm">
+		<header
+			ref={rootRef}
+			// prettier-ignore
+			className={cn(
+				'fixed z-50 w-full transition-transform border-b-2 border-dashed border-b-secondary bg-primary',
+				{ '-translate-y-full': mountState === 'collapsed' },
+				{ 'bg-opacity-80 backdrop-blur-sm shadow-xl': mountState === 'floating' }
+			)}
+		>
 			<Container className="flex items-center gap-12 py-5">
 				<nav className="grow">
 					<ul className="flex gap-10">
