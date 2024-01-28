@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import { Header } from './components/Header';
 import { About, LandingPage, Projects } from './sections';
 
-export default function RootLayout() {
+export default function App() {
 	return (
 		<html lang="en" className="text-[18px]">
 			<body className="min-h-screen text-light bg-primary">
