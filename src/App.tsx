@@ -3,7 +3,7 @@ import Container from './components/Container';
 import Footer from './components/Footer';
 import { Header } from './components/Header';
 import { AppContextProvider } from './lib/context';
-import { About, LandingPage, Skills } from './sections';
+import { About, LandingPage, Projects } from './sections';
 
 export default function RootLayout() {
 	return (
@@ -16,7 +16,7 @@ export default function RootLayout() {
 						<Container className="py-10">
 							<LandingPage />
 							<About />
-							<Skills />
+							<Projects />
 						</Container>
 
 						<ContactMe />
