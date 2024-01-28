@@ -10,6 +10,8 @@ const NO_COLLAPSE_AREA_HEIGHT = 100;
 
 type MountState = 'mounted' | 'floating' | 'collapsed';
 
+// FIXME: after double refresh, header in mounted state. Should depend on scrollY
+
 export const Header = () => {
 	const [mountState, setMountState] = useState<MountState>('mounted');
 
