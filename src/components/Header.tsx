@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import cn from '../lib/cn';
 import useScroll from '../lib/useScroll';
@@ -6,34 +6,30 @@ import { Button } from './Button';
 import Container from './Container';
 import { Reference, References } from './References';
 
+const NO_COLLAPSE_AREA_HEIGHT = 50;
+
 type MountState = 'mounted' | 'floating' | 'collapsed';
 
 export const Header = () => {
 	const [mountState, setMountState] = useState<MountState>('mounted');
-	const rootRef = useRef<HTMLElement>(null);
 
-	useScroll(
-		(direction) => {
-			if (
-				!rootRef.current ||
-				window.scrollY < rootRef.current.offsetHeight
-			) {
-				setMountState('mounted');
-				return;
-			}
+	useScroll((direction) => {
+		if (window.scrollY === 0) {
+			setMountState('mounted');
+			return;
+		}
 
-			if (direction === 'up') {
-				setMountState('floating');
-			} else {
-				setMountState('collapsed');
-			}
-		},
-		{ offset: 20 }
-	);
+		const collapsible = window.scrollY > NO_COLLAPSE_AREA_HEIGHT;
+
+		if (direction === 'up' || !collapsible) {
+			setMountState('floating');
+		} else {
+			setMountState('collapsed');
+		}
+	});
 
 	return (
 		<header
-			ref={rootRef}
 			// prettier-ignore
 			className={cn(
 				'fixed z-50 w-full transition-transform border-b-2 border-dashed border-b-secondary bg-primary',
