@@ -6,7 +6,7 @@ import { Button } from './Button';
 import Container from './Container';
 import { Reference, References } from './References';
 
-const NO_COLLAPSE_AREA_HEIGHT = 50;
+const NO_COLLAPSE_AREA_HEIGHT = 100;
 
 type MountState = 'mounted' | 'floating' | 'collapsed';
 
