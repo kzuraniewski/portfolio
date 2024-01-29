@@ -1,3 +1,20 @@
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+
+export const navigation = [
+	{
+		label: 'About',
+		href: '#about',
+	},
+	{
+		label: 'Experience',
+		href: '#experience',
+	},
+	{
+		label: 'Projects',
+		href: '#projects',
+	},
+];
+
 export const mainTechIcons = [
 	{
 		src: '/react-logo.png',
@@ -22,6 +39,17 @@ export const mainTechIcons = [
 	{
 		src: '/wordpress-logo.png',
 		alt: 'Wordpress logo',
+	},
+];
+
+export const references = [
+	{
+		href: 'https://github.com/kzuraniewski',
+		Icon: FaGithub,
+	},
+	{
+		href: 'https://www.linkedin.com/in/karol-zuraniewski',
+		Icon: FaLinkedin,
 	},
 ];
 

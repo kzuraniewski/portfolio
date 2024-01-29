@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import cn from '../lib/cn';
+import { navigation, references } from '../lib/data';
 import useScroll from '../lib/useScroll';
 import { Button } from './Button';
 import Container from './Container';
@@ -68,29 +68,3 @@ export const Header = () => {
 		</header>
 	);
 };
-
-const references = [
-	{
-		href: 'https://github.com/kzuraniewski',
-		Icon: FaGithub,
-	},
-	{
-		href: 'https://www.linkedin.com/in/karol-zuraniewski',
-		Icon: FaLinkedin,
-	},
-];
-
-const navigation = [
-	{
-		label: 'About',
-		href: '#about',
-	},
-	{
-		label: 'Experience',
-		href: '#experience',
-	},
-	{
-		label: 'Projects',
-		href: '#projects',
-	},
-];
