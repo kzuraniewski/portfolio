@@ -1,6 +1,6 @@
 import { Section, SubSection } from '../components/Section';
 import { Separated } from '../components/Separated';
-import techIcons from '../lib/techIcons';
+import { companies, mainTechIcons } from '../lib/data';
 
 export default function LandingPage() {
 	return (
@@ -21,7 +21,7 @@ export default function LandingPage() {
 					}
 					className="flex items-center justify-between w-5/6 mx-auto mb-20"
 				>
-					{techIcons.map(({ src, alt }) => (
+					{mainTechIcons.map(({ src, alt }) => (
 						<li>
 							<img src={src} alt={alt} className="w-14" />
 						</li>
@@ -37,15 +37,12 @@ export default function LandingPage() {
 					}
 					className="flex flex-col gap-3 mx-auto text-sm tracking-wide w-fit"
 				>
-					{[
-						['09.2022 - 08.2023', 'All for One Poland'],
-						['02.2022 - 07.2022', 'Olimp Agency'],
-					].map(([timeSpan, company]) => (
+					{companies.map(({ timeSpan, name }) => (
 						<li>
 							<span className="inline-block mr-2 text-accent">
 								{timeSpan}
 							</span>{' '}
-							{company}
+							{name}
 						</li>
 					))}
 				</Separated>
