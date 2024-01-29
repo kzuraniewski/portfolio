@@ -1,3 +1,4 @@
+import { Divider } from '../components/Divider';
 import { Section, SubSection } from '../components/Section';
 import { Separated } from '../components/Separated';
 import { companies, mainTechIcons } from '../lib/data';
@@ -16,9 +17,7 @@ export default function LandingPage() {
 			<SubSection title="Technologies I've worked with">
 				<Separated
 					as="ul"
-					separator={
-						<div className="h-10 border-r-2 border-dashed border-secondary" />
-					}
+					separator={<Divider vertical className="h-10" />}
 					className="flex items-center justify-between w-5/6 mx-auto mb-20"
 				>
 					{mainTechIcons.map(({ src, alt }) => (
@@ -32,9 +31,7 @@ export default function LandingPage() {
 			<SubSection title="Companies I worked in">
 				<Separated
 					as="ul"
-					separator={
-						<div className="w-full border-b-2 border-dashed border-secondary" />
-					}
+					separator={<Divider />}
 					className="flex flex-col gap-3 mx-auto text-sm tracking-wide w-fit"
 				>
 					{companies.map(({ timeSpan, name }) => (
