@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, forwardRef } from 'react';
 import { Divider } from './Divider';
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {
@@ -26,3 +26,21 @@ export const Section = ({
 		</section>
 	);
 };
+
+export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
+	title: string;
+};
+
+export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
+	({ title, children, ...props }, ref) => {
+		return (
+			<div ref={ref} {...props}>
+				<h3 className="px-3 font-bold text-center uppercase mb-14">
+					<span className="text-accent">{'>'}</span> {title}
+				</h3>
+
+				{children}
+			</div>
+		);
+	}
+);
