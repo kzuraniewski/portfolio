@@ -10,7 +10,7 @@ export default function LandingPage() {
 					<span className="tracking-wide text-small text-accent">
 						My name is
 					</span>
-					<h1>Karol Żuraniewski</h1>
+					<h1 className='font-display'>Karol Żuraniewski</h1>
 
 					<Divider className="w-48 my-5" />
 

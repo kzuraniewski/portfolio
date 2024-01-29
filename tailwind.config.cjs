@@ -12,6 +12,9 @@ module.exports = {
 			center: true,
 			padding: '1.25rem',
 		},
+		fontFamily: {
+			display: ['Oswald', 'ui-sans-serif'],
+		},
 	},
 	plugins: [],
 };
