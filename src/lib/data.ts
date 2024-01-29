@@ -2,12 +2,12 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 export const navigation = [
 	{
-		label: 'About',
-		href: '#about',
+		label: 'Home',
+		href: '#',
 	},
 	{
-		label: 'Experience',
-		href: '#experience',
+		label: 'About',
+		href: '#about',
 	},
 	{
 		label: 'Projects',
