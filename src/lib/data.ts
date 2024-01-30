@@ -66,10 +66,27 @@ export const companies = [
 	},
 ];
 
-export const projects = [
+export type ProjectData = {
+	name: string;
+	description: string;
+	previewImage: string;
+	tech: string[];
+	links: {
+		github: string;
+		website?: string;
+	};
+};
+
+export const projects: ProjectData[] = [
 	{
 		name: 'Test',
-		url: 'test',
+		description:
+			'Vestibulum et pellentesque nulla. Phasellus ac quam et erat tincidunt pulvinar.',
 		previewImage: '/test.png',
+		tech: ['React', 'MUI', 'styled-components'],
+		links: {
+			github: '#',
+			website: '#',
+		},
 	},
 ];
