@@ -10,13 +10,13 @@ export default function LandingPage() {
 					<span className="tracking-wide text-small text-accent">
 						My name is
 					</span>
-					<h1 className='font-display'>Karol Żuraniewski</h1>
+					<h1 className="font-display">Karol Żuraniewski</h1>
 
 					<Divider className="w-48 my-5" />
 
 					<p className="max-w-sm mb-10">
-						And I'm a fullstack web developer that specializes in TypeScript,
-						React and Java.
+						And I'm a fullstack web developer that specializes in
+						TypeScript, React and Java.
 					</p>
 
 					<Button variant="big" href="#about">
