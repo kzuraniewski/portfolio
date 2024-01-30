@@ -57,10 +57,12 @@ export const companies = [
 	{
 		timeSpan: '09.2022 - 08.2023',
 		name: 'All for One Poland',
+		description: 'test a41',
 	},
 	{
 		timeSpan: '02.2022 - 07.2022',
 		name: 'Olimp Agency',
+		description: 'test oa',
 	},
 ];
 
