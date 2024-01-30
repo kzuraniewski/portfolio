@@ -1,8 +1,8 @@
 import cn from '@/lib/cn';
 import { HTMLAttributes, useEffect, useRef, useState } from 'react';
 
-const BACKGROUND_PADDING_X = 40;
-const BACKGROUND_PADDING_Y = 30;
+const DEFAULT_PADDING_X = 40;
+const DEFAULT_PADDING_Y = 30;
 const BORDER_RADIUS = 2;
 
 export type PolygonPoints = [number, number][];
@@ -28,13 +28,23 @@ const getDefaultPoints: PolygonPointsFactory = (width, height) => [
 
 export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 	getPoints?: PolygonPointsFactory;
-	padding?: number;
+	/**
+	 * Order as in CSS `padding` shorthand property
+	 * @default [30, 40]
+	 */
+	padding?:
+		| number
+		| [number]
+		| [number, number]
+		| [number, number, number]
+		| [number, number, number, number];
 };
 
 const PolygonBackground = ({
 	className,
 	children,
 	getPoints = getDefaultPoints,
+	padding = [DEFAULT_PADDING_Y, DEFAULT_PADDING_X],
 	style,
 	...props
 }: PolygonBackgroundProps) => {
@@ -68,12 +78,16 @@ const PolygonBackground = ({
 		};
 	}, [children]);
 
+	const parsedPadding = Array.isArray(padding)
+		? padding.map((value) => value + 'px').join(' ')
+		: padding + 'px';
+
 	return (
 		<div
 			ref={rootRef}
 			className={cn('relative w-fit', className)}
 			style={{
-				padding: `${BACKGROUND_PADDING_Y}px ${BACKGROUND_PADDING_X}px`,
+				padding: parsedPadding,
 				...style,
 			}}
 			{...props}
