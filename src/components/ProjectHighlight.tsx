@@ -6,6 +6,8 @@ import { ProjectData } from '@/lib/data';
 import { FaGithub } from 'react-icons/fa6';
 import { RxCross2 } from 'react-icons/rx';
 
+// FEATURE: Define shape by providing edge angles to preserve it on any size, i.e. [85, 190, 95, 170]
+
 export type ProjectHighlightProps = Omit<
 	React.HTMLAttributes<HTMLDivElement>,
 	'children'
@@ -21,7 +23,7 @@ const ProjectHighlight = ({
 	const { name, description, links, previewImage, tech } = project;
 
 	return (
-		<div className={cn('flex gap-10', className)} {...props}>
+		<div className={cn('flex gap-10 mb-24', className)} {...props}>
 			<div className="flex flex-col">
 				<div className="flex items-end justify-between w-full mb-5">
 					<h3 className="text-2xl font-bold uppercase font-display">
