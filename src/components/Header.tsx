@@ -2,9 +2,10 @@ import { Button } from '@/components/Button';
 import Container from '@/components/Container';
 import { Reference, References } from '@/components/References';
 import cn from '@/lib/cn';
-import { navigation, references } from '@/lib/data';
+import { navigation, personalLinks } from '@/lib/data';
 import useScroll from '@/lib/useScroll';
 import { useState } from 'react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 const NO_COLLAPSE_AREA_HEIGHT = 100;
 
@@ -56,14 +57,16 @@ export const Header = () => {
 				</nav>
 
 				<References>
-					{references.map(({ href, Icon }, index) => (
-						<Reference href={href} key={`reference-${index}`}>
-							<Icon />
-						</Reference>
-					))}
+					<Reference href={personalLinks.github}>
+						<FaGithub />
+					</Reference>
+
+					<Reference href={personalLinks.linkedIn}>
+						<FaLinkedin />
+					</Reference>
 				</References>
 
-				<Button variant='primary'>Resume</Button>
+				<Button variant="primary">Resume</Button>
 			</Container>
 		</header>
 	);

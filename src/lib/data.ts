@@ -1,4 +1,7 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+export const personalLinks = {
+	github: 'https://github.com/kzuraniewski',
+	linkedIn: 'https://www.linkedin.com/in/karol-zuraniewski',
+};
 
 export const navigation = [
 	{
@@ -42,17 +45,6 @@ export const mainTechIcons = [
 	},
 ];
 
-export const references = [
-	{
-		href: 'https://github.com/kzuraniewski',
-		Icon: FaGithub,
-	},
-	{
-		href: 'https://www.linkedin.com/in/karol-zuraniewski',
-		Icon: FaLinkedin,
-	},
-];
-
 export const companies = [
 	{
 		timeSpan: '09.2022 - 08.2023',
@@ -68,6 +60,8 @@ export const companies = [
 
 export type ProjectData = {
 	name: string;
+	featured?: boolean;
+	wip?: boolean;
 	description: string;
 	previewImage: string;
 	tech: string[];
@@ -79,14 +73,65 @@ export type ProjectData = {
 
 export const projects: ProjectData[] = [
 	{
-		name: 'Test',
-		description:
-			'Vestibulum et pellentesque nulla. Phasellus ac quam et erat tincidunt pulvinar.',
+		name: 'Catalog',
+		featured: true,
+		description: 'PDF viewer with annotation edit tool',
 		previewImage: '/test.png',
-		tech: ['React', 'MUI', 'styled-components'],
+		tech: ['Next.js', 'MUI', 'TypeScript'],
 		links: {
-			github: '#',
-			website: '#',
+			github: 'https://github.com/kzuraniewski/catalog',
+			website: 'https://catalog-view.vercel.app',
+		},
+	},
+	{
+		name: 'Simulator 8086',
+		featured: true,
+		description: 'A web app simulating the Intel 8086 processor',
+		previewImage: '#',
+		tech: ['React', 'MUI', 'TypeScript'],
+		links: {
+			github: 'https://github.com/kzuraniewski/symulator-8086',
+		},
+	},
+	{
+		name: 'Interactive Comments',
+		featured: true,
+		description: 'Interactive comment thread system',
+		previewImage: '#',
+		tech: ['React', 'CSS', 'JavaScript'],
+		links: {
+			github: 'https://github.com/kzuraniewski/interactive-comments',
+			website: 'https://interactive-comments-beta.vercel.app',
+		},
+	},
+	{
+		name: 'Photography Website',
+		featured: true,
+		wip: true,
+		description: 'Photography portfolio website with image preview',
+		previewImage: '#',
+		tech: ['Next.js', 'MUI', 'TypeScript'],
+		links: {
+			github: 'https://github.com/kzuraniewski/photos',
+		},
+	},
+	{
+		name: 'Link Board',
+		description:
+			'A web app allowing the user to store links in grouped tiles',
+		previewImage: '#',
+		tech: ['React', 'SASS', 'Firebase', 'JavaScript'],
+		links: {
+			github: 'https://github.com/kzuraniewski/photos',
+		},
+	},
+	{
+		name: 'Hand Over',
+		description: "Example charity company's website",
+		previewImage: '#',
+		tech: ['React', 'SASS', 'JavaScript'],
+		links: {
+			github: 'https://github.com/kzuraniewski/photos',
 		},
 	},
 ];
