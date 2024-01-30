@@ -3,6 +3,7 @@ import { HTMLAttributes, useEffect, useRef, useState } from 'react';
 
 const BACKGROUND_PADDING_X = 40;
 const BACKGROUND_PADDING_Y = 30;
+const BORDER_RADIUS = 2;
 
 export type PolygonPoints = [number, number][];
 
@@ -40,12 +41,18 @@ const PolygonBackground = ({
 	const rootRef = useRef<HTMLDivElement>(null!);
 	const [attributes, setAttributes] = useState<BackgroundAttributes>();
 
+	const strokeWidth = 2 * BORDER_RADIUS;
+
 	useEffect(() => {
 		const updatePolygonSize = () => {
 			const { width, height } = rootRef.current.getBoundingClientRect();
 
-			const points = getPoints(width, height)
-				.map(([x, y]) => x + ',' + y)
+			// project smaller point map over viewBox expanded by strokeWidth
+			// to prevent clipping due to stroke overflowing
+			const points = getPoints(width - strokeWidth, height - strokeWidth)
+				.map(([x, y]) => {
+					return `${x + BORDER_RADIUS}, ${y + BORDER_RADIUS}`;
+				})
 				.join(' ');
 
 			const viewBox = [0, 0, width, height].join(' ');
@@ -83,6 +90,9 @@ const PolygonBackground = ({
 					<polygon
 						points={attributes.points}
 						fill="#393E46" // secondary
+						strokeLinejoin="round"
+						strokeWidth={`${strokeWidth}px`}
+						stroke="#393E46"
 					/>
 				</svg>
 			)}
