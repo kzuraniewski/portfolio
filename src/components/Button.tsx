@@ -14,6 +14,8 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	href?: string;
 };
 
+// FIXME: Props type needs to be conditional whether it is a button or an anchor
+
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{ variant = 'default', size = 'normal', href, className, ...props },
@@ -29,6 +31,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 				className
 			),
 			href,
+			target: href ? '_blank' : null,
 			ref,
 			...props,
 		});
