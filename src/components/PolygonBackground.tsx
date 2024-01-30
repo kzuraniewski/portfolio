@@ -4,7 +4,12 @@ import cn from '../lib/cn';
 const BACKGROUND_PADDING_X = 40;
 const BACKGROUND_PADDING_Y = 30;
 
-export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {};
+export type PolygonPoints = [number, number][];
+
+export type PolygonPointsFactory = (
+	width: number,
+	height: number
+) => PolygonPoints;
 
 type BackgroundAttributes = {
 	viewBox: string;
@@ -13,9 +18,22 @@ type BackgroundAttributes = {
 	height: number;
 };
 
+const getDefaultPoints: PolygonPointsFactory = (width, height) => [
+	[0, 0],
+	[width, 0],
+	[width, height],
+	[0, height],
+];
+
+export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
+	getPoints?: PolygonPointsFactory;
+	padding?: number;
+};
+
 const PolygonBackground = ({
 	className,
 	children,
+	getPoints = getDefaultPoints,
 	...props
 }: PolygonBackgroundProps) => {
 	const rootRef = useRef<HTMLDivElement>(null!);
@@ -27,12 +45,7 @@ const PolygonBackground = ({
 			const boxWidth = width + 2 * BACKGROUND_PADDING_X;
 			const boxHeight = height + 2 * BACKGROUND_PADDING_Y;
 
-			const points = [
-				[20, 10],
-				[boxWidth, 0],
-				[boxWidth - 35, boxHeight],
-				[0, boxHeight - 15],
-			]
+			const points = getPoints(boxWidth, boxHeight)
 				.map(([x, y]) => x + ',' + y)
 				.join(' ');
 
