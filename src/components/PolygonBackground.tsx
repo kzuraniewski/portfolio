@@ -4,7 +4,7 @@ import cn from '../lib/cn';
 const BACKGROUND_PADDING_X = 40;
 const BACKGROUND_PADDING_Y = 30;
 
-export type ParagraphProps = HTMLAttributes<HTMLParagraphElement> & {};
+export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {};
 
 type BackgroundAttributes = {
 	viewBox: string;
@@ -13,8 +13,12 @@ type BackgroundAttributes = {
 	height: number;
 };
 
-const Paragraph = ({ className, children, ...props }: ParagraphProps) => {
-	const rootRef = useRef<HTMLParagraphElement>(null!);
+const PolygonBackground = ({
+	className,
+	children,
+	...props
+}: PolygonBackgroundProps) => {
+	const rootRef = useRef<HTMLDivElement>(null!);
 	const [attributes, setAttributes] = useState<BackgroundAttributes>();
 
 	useEffect(() => {
@@ -51,7 +55,7 @@ const Paragraph = ({ className, children, ...props }: ParagraphProps) => {
 	}, [children]);
 
 	return (
-		<p ref={rootRef} className={cn('relative', className)} {...props}>
+		<div ref={rootRef} className={cn('relative', className)} {...props}>
 			{attributes && (
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +77,8 @@ const Paragraph = ({ className, children, ...props }: ParagraphProps) => {
 			)}
 
 			<div className="relative z-10">{children}</div>
-		</p>
+		</div>
 	);
 };
 
-export default Paragraph;
+export default PolygonBackground;

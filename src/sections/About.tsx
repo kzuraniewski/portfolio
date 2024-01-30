@@ -1,6 +1,6 @@
 import { CompanyHistory } from '../components/CompanyHistory';
 import { Divider } from '../components/Divider';
-import Paragraph from '../components/Paragraph';
+import PolygonBackground from '../components/PolygonBackground';
 import { Section, SubSection } from '../components/Section';
 import { Separated } from '../components/Separated';
 import { mainTechIcons } from '../lib/data';
@@ -8,13 +8,15 @@ import { mainTechIcons } from '../lib/data';
 export default function LandingPage() {
 	return (
 		<Section title="About me" id="about">
-			<Paragraph className="w-2/3 mx-auto mb-20 text-center">
-				My name is Karol and I develop web stuff. My web development
-				journey started in 2021 - when I got to know React. Since then
-				I've had the opportunity to design, develop and maintain
-				websites, E-commerce services and fullstack web applications at
-				different&nbsp;companies.
-			</Paragraph>
+			<PolygonBackground className="w-2/3 mx-auto mb-20 text-center">
+				<p>
+					My name is Karol and I develop web stuff. My web development
+					journey started in 2021 - when I got to know React. Since
+					then I've had the opportunity to design, develop and
+					maintain websites, E-commerce services and fullstack web
+					applications at different&nbsp;companies.
+				</p>
+			</PolygonBackground>
 
 			<div className="flex justify-evenly">
 				<SubSection title="Technologies I've worked with">
