@@ -34,6 +34,7 @@ const PolygonBackground = ({
 	className,
 	children,
 	getPoints = getDefaultPoints,
+	style,
 	...props
 }: PolygonBackgroundProps) => {
 	const rootRef = useRef<HTMLDivElement>(null!);
@@ -42,21 +43,14 @@ const PolygonBackground = ({
 	useEffect(() => {
 		const updatePolygonSize = () => {
 			const { width, height } = rootRef.current.getBoundingClientRect();
-			const boxWidth = width + 2 * BACKGROUND_PADDING_X;
-			const boxHeight = height + 2 * BACKGROUND_PADDING_Y;
 
-			const points = getPoints(boxWidth, boxHeight)
+			const points = getPoints(width, height)
 				.map(([x, y]) => x + ',' + y)
 				.join(' ');
 
-			const viewBox = [0, 0, boxWidth, boxHeight].join(' ');
+			const viewBox = [0, 0, width, height].join(' ');
 
-			setAttributes({
-				viewBox,
-				points,
-				width: boxWidth,
-				height: boxHeight,
-			});
+			setAttributes({ viewBox, points, width, height });
 		};
 
 		updatePolygonSize();
@@ -68,7 +62,15 @@ const PolygonBackground = ({
 	}, [children]);
 
 	return (
-		<div ref={rootRef} className={cn('relative', className)} {...props}>
+		<div
+			ref={rootRef}
+			className={cn('relative w-fit', className)}
+			style={{
+				padding: `${BACKGROUND_PADDING_Y}px ${BACKGROUND_PADDING_X}px`,
+				...style,
+			}}
+			{...props}
+		>
 			{attributes && (
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -76,11 +78,7 @@ const PolygonBackground = ({
 					preserveAspectRatio="none"
 					width={attributes.width}
 					height={attributes.height}
-					style={{
-						position: 'absolute',
-						top: -BACKGROUND_PADDING_Y,
-						left: -BACKGROUND_PADDING_X,
-					}}
+					className="absolute top-0 left-0"
 				>
 					<polygon
 						points={attributes.points}
