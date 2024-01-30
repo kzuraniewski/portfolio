@@ -1,6 +1,6 @@
-import { Button } from '../components/Button';
 import { CompanyHistory } from '../components/CompanyHistory';
 import { Divider } from '../components/Divider';
+import Paragraph from '../components/Paragraph';
 import { Section, SubSection } from '../components/Section';
 import { Separated } from '../components/Separated';
 import { mainTechIcons } from '../lib/data';
@@ -8,13 +8,13 @@ import { mainTechIcons } from '../lib/data';
 export default function LandingPage() {
 	return (
 		<Section title="About me" id="about">
-			<p className="w-2/3 mx-auto mb-20 text-center">
+			<Paragraph className="w-2/3 mx-auto mb-20 text-center">
 				My name is Karol and I develop web stuff. My web development
 				journey started in 2021 - when I got to know React. Since then
 				I've had the opportunity to design, develop and maintain
 				websites, E-commerce services and fullstack web applications at
 				different&nbsp;companies.
-			</p>
+			</Paragraph>
 
 			<div className="flex justify-evenly">
 				<SubSection title="Technologies I've worked with">
@@ -32,7 +32,7 @@ export default function LandingPage() {
 					</Separated>
 				</SubSection>
 
-				<SubSection title="Companies I worked in" className='w-1/2'>
+				<SubSection title="Companies I worked in" className="w-1/2">
 					<CompanyHistory />
 				</SubSection>
 			</div>
