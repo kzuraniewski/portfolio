@@ -63,7 +63,7 @@ export const Header = () => {
 					))}
 				</References>
 
-				<Button>Resume</Button>
+				<Button variant='primary'>Resume</Button>
 			</Container>
 		</header>
 	);

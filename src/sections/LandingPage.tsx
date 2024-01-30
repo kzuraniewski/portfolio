@@ -19,7 +19,7 @@ export default function LandingPage() {
 						TypeScript, React and Java.
 					</p>
 
-					<Button variant="big" href="#about">
+					<Button variant="primary" size="big" href="#about">
 						See more
 						<FaArrowTurnDown className="inline-block w-2 ml-2" />
 					</Button>
