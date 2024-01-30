@@ -1,8 +1,8 @@
+import { Divider } from '@/components/Divider';
+import { Separated } from '@/components/Separated';
+import cn from '@/lib/cn';
+import { companies } from '@/lib/data';
 import { useState } from 'react';
-import { companies } from '../lib/data';
-import { Divider } from './Divider';
-import { Separated } from './Separated';
-import cn from '../lib/cn';
 
 export const CompanyHistory = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);

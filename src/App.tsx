@@ -1,8 +1,8 @@
-import { ContactMe } from './components/ContactMe';
-import Container from './components/Container';
-import Footer from './components/Footer';
-import { Header } from './components/Header';
-import { About, LandingPage, Projects } from './sections';
+import { ContactMe } from '@/components/ContactMe';
+import Container from '@/components/Container';
+import Footer from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { About, LandingPage, Projects } from '@/sections';
 
 export default function App() {
 	return (

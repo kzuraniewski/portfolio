@@ -1,6 +1,6 @@
+import { Divider } from '@/components/Divider';
 import cn from 'classnames';
 import { HTMLAttributes, forwardRef } from 'react';
-import { Divider } from './Divider';
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;

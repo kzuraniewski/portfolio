@@ -1,5 +1,5 @@
+import cn from '@/lib/cn';
 import { HTMLAttributes, ReactNode } from 'react';
-import cn from '../lib/cn';
 
 export type ReferencesProps = HTMLAttributes<HTMLUListElement>;
 

@@ -1,10 +1,10 @@
+import { Button } from '@/components/Button';
+import Container from '@/components/Container';
+import { Reference, References } from '@/components/References';
+import cn from '@/lib/cn';
+import { navigation, references } from '@/lib/data';
+import useScroll from '@/lib/useScroll';
 import { useState } from 'react';
-import cn from '../lib/cn';
-import { navigation, references } from '../lib/data';
-import useScroll from '../lib/useScroll';
-import { Button } from './Button';
-import Container from './Container';
-import { Reference, References } from './References';
 
 const NO_COLLAPSE_AREA_HEIGHT = 100;
 

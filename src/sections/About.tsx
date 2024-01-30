@@ -1,11 +1,11 @@
-import { CompanyHistory } from '../components/CompanyHistory';
-import { Divider } from '../components/Divider';
+import { CompanyHistory } from '@/components/CompanyHistory';
+import { Divider } from '@/components/Divider';
 import PolygonBackground, {
 	PolygonPointsFactory,
-} from '../components/PolygonBackground';
-import { Section, SubSection } from '../components/Section';
-import { Separated } from '../components/Separated';
-import { mainTechIcons } from '../lib/data';
+} from '@/components/PolygonBackground';
+import { Section, SubSection } from '@/components/Section';
+import { Separated } from '@/components/Separated';
+import { mainTechIcons } from '@/lib/data';
 
 const getParagraphPoints: PolygonPointsFactory = (width, height) => [
 	[20, 10],

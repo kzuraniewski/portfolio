@@ -1,4 +1,4 @@
-import { Section } from '../components/Section';
+import { Section } from '@/components/Section';
 
 export default function Projects() {
 	return <Section title="Projects" id="projects"></Section>;

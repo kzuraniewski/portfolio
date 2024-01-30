@@ -1,5 +1,5 @@
+import cn from '@/lib/cn';
 import { HTMLAttributes, useEffect, useRef, useState } from 'react';
-import cn from '../lib/cn';
 
 const BACKGROUND_PADDING_X = 40;
 const BACKGROUND_PADDING_Y = 30;

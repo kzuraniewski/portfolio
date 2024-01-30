@@ -1,5 +1,5 @@
-import { Button } from '../components/Button';
-import { Divider } from '../components/Divider';
+import { Button } from '@/components/Button';
+import { Divider } from '@/components/Divider';
 import { FaArrowTurnDown } from 'react-icons/fa6';
 
 export default function LandingPage() {
