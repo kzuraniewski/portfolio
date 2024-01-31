@@ -16,6 +16,10 @@ export const navigation = [
 		label: 'Projects',
 		href: '#projects',
 	},
+	{
+		label: 'Contact',
+		href: '#contact'
+	}
 ];
 
 export const mainTechIcons = [
