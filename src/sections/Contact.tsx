@@ -9,7 +9,7 @@ import { useRef, useState } from 'react';
 
 const Contact = () => {
 	const rootRef = useRef<HTMLDivElement>(null!);
-	const [showBanner, setShowBanner] = useState(true);
+	const [showBanner, setShowBanner] = useState(false);
 
 	useIntersectionObserver(rootRef, (isIntersecting) =>
 		setShowBanner(!isIntersecting)
