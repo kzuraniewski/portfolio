@@ -7,10 +7,13 @@ export default function Projects() {
 		<Section title="My Projects" id="projects">
 			{projects
 				.filter((project) => project.featured)
-				.map((project) => (
+				.map((project, index) => (
 					<ProjectHighlight
 						project={project}
-						className="w-4/5 mx-auto"
+						className={
+							'relative w-4/5 mx-auto ' +
+							(index % 2 ? '-translate-x-4' : 'translate-x-4')
+						}
 					/>
 				))}
 
