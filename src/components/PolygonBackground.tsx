@@ -70,11 +70,12 @@ const PolygonBackground = ({
 			setAttributes({ viewBox, points, width, height });
 		};
 
-		updatePolygonSize();
-
+		window.addEventListener('load', updatePolygonSize);
 		window.addEventListener('resize', updatePolygonSize);
+
 		return () => {
 			window.removeEventListener('resize', updatePolygonSize);
+			window.removeEventListener('load', updatePolygonSize);
 		};
 	}, [children]);
 
