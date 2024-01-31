@@ -15,21 +15,27 @@ type MountState = 'mounted' | 'floating' | 'collapsed';
 
 export const Header = () => {
 	const [mountState, setMountState] = useState<MountState>('mounted');
+	const [isHovered, setIsHovered] = useState(false);
 
-	useScroll((direction) => {
-		if (window.scrollY === 0) {
-			setMountState('mounted');
-			return;
-		}
+	useScroll(
+		(direction) => {
+			if (window.scrollY === 0) {
+				setMountState('mounted');
+				return;
+			}
 
-		const collapsible = window.scrollY > NO_COLLAPSE_AREA_HEIGHT;
-
-		if (direction === 'up' || !collapsible) {
-			setMountState('floating');
-		} else {
-			setMountState('collapsed');
-		}
-	});
+			if (
+				direction === 'up' ||
+				window.scrollY <= NO_COLLAPSE_AREA_HEIGHT ||
+				isHovered
+			) {
+				setMountState('floating');
+			} else {
+				setMountState('collapsed');
+			}
+		},
+		[isHovered]
+	);
 
 	return (
 		<header
@@ -39,6 +45,8 @@ export const Header = () => {
 				{ '-translate-y-full': mountState === 'collapsed' },
 				{ 'bg-opacity-80 backdrop-blur-sm shadow-xl': mountState === 'floating' }
 			)}
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
 		>
 			<Container className="flex items-center gap-12 py-5">
 				<nav className="grow">
