@@ -107,7 +107,7 @@ export const projects: ProjectData[] = [
 	{
 		name: 'Interactive Comments',
 		featured: true,
-		description: 'Interactive comment thread system',
+		description: 'Interactive social media comment thread system',
 		previewImage: '/preview/interactive-comments.png',
 		tech: ['React', 'CSS', 'JavaScript'],
 		links: {
