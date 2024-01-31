@@ -20,6 +20,8 @@ const ProjectHighlight = ({
 	className,
 	...props
 }: ProjectHighlightProps) => {
+	const previewLink = project.links.website ?? project.links.github;
+
 	return (
 		<div className={cn('flex gap-20 mb-24', className)} {...props}>
 			<div className="flex flex-col">
@@ -68,16 +70,36 @@ const ProjectHighlight = ({
 
 			<div className="relative shrink-0">
 				{project.wip && (
-					<div className="absolute top-0 px-6 py-1 uppercase -right-5 rotate-12 text-primary bg-accent">
+					<PolygonBackground
+						padding={[7, 25]}
+						rotation={30}
+						background="accent"
+						className="absolute z-10 px-6 py-1 text-sm font-bold uppercase pointer-events-none top-2 -right-6 text-primary"
+						getPoints={(width, height) => [
+							[30, 0],
+							[width - 13, 5],
+							[width - 4, height],
+							[0, height - 5],
+						]}
+					>
 						Working on
-					</div>
+					</PolygonBackground>
 				)}
 
-				<img
-					src={project.previewImage}
-					alt={`${project.name} preview`}
-					className="h-56 aspect-video"
-				/>
+				<a
+					href={previewLink}
+					className="relative block overflow-hidden hover:[&>div]:opacity-100"
+				>
+					<div className="absolute z-10 w-5/6 px-5 text-center transition-opacity -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none overflow-ellipsis top-1/2 left-1/2 text-accent">
+						{previewLink}
+					</div>
+
+					<img
+						src={project.previewImage}
+						alt={`${project.name} preview`}
+						className="h-56 scale-[1.03] transition-[filter] aspect-video hover:blur-[2px]"
+					/>
+				</a>
 			</div>
 		</div>
 	);

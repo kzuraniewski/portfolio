@@ -1,4 +1,5 @@
 import cn from '@/lib/cn';
+import useEventActivatedValue from '@/lib/useEventActivatedValue';
 import { HTMLAttributes, useEffect, useRef, useState } from 'react';
 
 const DEFAULT_PADDING_X = 40;
@@ -26,6 +27,14 @@ const getDefaultPoints: PolygonPointsFactory = (width, height) => [
 	[0, height],
 ];
 
+// TODO: infer from theme
+const backgroundColors = {
+	primary: '#222831',
+	secondary: '#393E46',
+	accent: '#FFD369',
+	light: '#EEEEEE',
+};
+
 export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 	getPoints?: PolygonPointsFactory;
 	/**
@@ -38,6 +47,11 @@ export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 		| [number, number]
 		| [number, number, number]
 		| [number, number, number, number];
+	/**
+	 * @default 'secondary'
+	 */
+	background?: keyof typeof backgroundColors;
+	rotation?: number | string;
 };
 
 const PolygonBackground = ({
@@ -45,13 +59,23 @@ const PolygonBackground = ({
 	children,
 	getPoints = getDefaultPoints,
 	padding = [DEFAULT_PADDING_Y, DEFAULT_PADDING_X],
+	background = 'secondary',
+	rotation,
 	style,
 	...props
 }: PolygonBackgroundProps) => {
 	const rootRef = useRef<HTMLDivElement>(null!);
 	const [attributes, setAttributes] = useState<BackgroundAttributes>();
 
+	const appliedRotation = useEventActivatedValue(() => {
+		if (!rotation) return null;
+
+		if (typeof rotation === 'string') return rotation;
+		return rotation + 'deg';
+	}, 'load');
+
 	const strokeWidth = 2 * BORDER_RADIUS;
+	const backgroundColor = backgroundColors[background];
 
 	useEffect(() => {
 		const updatePolygonSize = () => {
@@ -71,11 +95,15 @@ const PolygonBackground = ({
 		};
 
 		window.addEventListener('load', updatePolygonSize);
-		window.addEventListener('resize', updatePolygonSize);
+		if (!rotation) {
+			window.addEventListener('resize', updatePolygonSize);
+		}
 
 		return () => {
-			window.removeEventListener('resize', updatePolygonSize);
 			window.removeEventListener('load', updatePolygonSize);
+			if (!rotation) {
+				window.removeEventListener('resize', updatePolygonSize);
+			}
 		};
 	}, [children]);
 
@@ -89,6 +117,7 @@ const PolygonBackground = ({
 			className={cn('relative w-fit', className)}
 			style={{
 				padding: parsedPadding,
+				rotate: appliedRotation ?? undefined,
 				...style,
 			}}
 			{...props}
@@ -104,10 +133,10 @@ const PolygonBackground = ({
 				>
 					<polygon
 						points={attributes.points}
-						fill="#393E46" // secondary
 						strokeLinejoin="round"
 						strokeWidth={`${strokeWidth}px`}
-						stroke="#393E46"
+						stroke={backgroundColor}
+						fill={backgroundColor}
 					/>
 				</svg>
 			)}
