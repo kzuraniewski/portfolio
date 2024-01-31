@@ -5,6 +5,7 @@ import cn from '@/lib/cn';
 import { ProjectData } from '@/lib/data';
 import { FaGithub } from 'react-icons/fa6';
 import { RxCross2 } from 'react-icons/rx';
+import { MdOutlineArrowOutward } from 'react-icons/md';
 
 // FEATURE: Define shape by providing edge angles to preserve it on any size, i.e. [85, 190, 95, 170]
 
@@ -88,16 +89,18 @@ const ProjectHighlight = ({
 
 				<a
 					href={previewLink}
-					className="relative block overflow-hidden hover:[&>div]:opacity-100"
+					className="relative block overflow-hidden rounded-sm group"
+					target="_blank"
 				>
-					<div className="absolute z-10 w-5/6 px-5 text-center transition-opacity -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none overflow-ellipsis top-1/2 left-1/2 text-accent">
+					<div className="absolute z-10 w-5/6 px-5 text-sm text-center transition-opacity -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none group-hover:opacity-100 overflow-ellipsis top-1/2 left-1/2 text-light">
 						{previewLink}
+						<MdOutlineArrowOutward className="inline-block w-4 h-4 ml-2" />
 					</div>
 
 					<img
 						src={project.previewImage}
 						alt={`${project.name} preview`}
-						className="h-56 scale-[1.03] transition-[filter] aspect-video hover:blur-[2px]"
+						className="h-56 scale-[1.03] transition-[filter] aspect-video group-hover:blur-[2px] group-hover:brightness-75"
 					/>
 				</a>
 			</div>
