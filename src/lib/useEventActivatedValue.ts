@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import useWindowEvent from './useWindowEvent';
 
 /**
  * Ensures the value is `null` until specified window event is triggered
@@ -14,15 +15,8 @@ const useEventActivatedValue = <T>(
 		return value;
 	};
 
-	useEffect(() => {
-		const updateState = () => {
-			setState(getValue());
-		};
-
-		window.addEventListener(event, updateState);
-		return () => {
-			window.removeEventListener(event, updateState);
-		};
+	useWindowEvent(event, () => {
+		setState(getValue());
 	});
 
 	return state;

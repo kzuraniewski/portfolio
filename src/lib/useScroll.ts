@@ -1,4 +1,5 @@
-import { DependencyList, useEffect, useRef } from 'react';
+import { DependencyList, useRef } from 'react';
+import useWindowEvent from './useWindowEvent';
 
 export type ScrollDirection = 'up' | 'down';
 
@@ -15,14 +16,11 @@ export default function useScroll(
 		return window.scrollY > previousY.current ? 'down' : 'up';
 	};
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const direction = getScrollDirection();
-			handler(direction);
-			previousY.current = window.scrollY;
-		};
+	const handleScroll = () => {
+		const direction = getScrollDirection();
+		handler(direction);
+		previousY.current = window.scrollY;
+	};
 
-		document.addEventListener('scroll', handleScroll);
-		return () => document.removeEventListener('scroll', handleScroll);
-	}, deps);
+	useWindowEvent('scroll', handleScroll, deps);
 }

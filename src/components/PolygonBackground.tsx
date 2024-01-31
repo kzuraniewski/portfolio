@@ -1,6 +1,7 @@
 import cn from '@/lib/cn';
 import useEventActivatedValue from '@/lib/useEventActivatedValue';
-import { HTMLAttributes, useEffect, useRef, useState } from 'react';
+import useWindowEvent from '@/lib/useWindowEvent';
+import { HTMLAttributes, useRef, useState } from 'react';
 
 const DEFAULT_PADDING_X = 40;
 const DEFAULT_PADDING_Y = 30;
@@ -77,35 +78,26 @@ const PolygonBackground = ({
 	const strokeWidth = 2 * BORDER_RADIUS;
 	const backgroundColor = backgroundColors[background];
 
-	useEffect(() => {
-		const updatePolygonSize = () => {
-			const { width, height } = rootRef.current.getBoundingClientRect();
+	const updatePolygonSize = () => {
+		const { width, height } = rootRef.current.getBoundingClientRect();
 
-			// project smaller point map over viewBox expanded by strokeWidth
-			// to prevent clipping due to stroke overflowing
-			const points = getPoints(width - strokeWidth, height - strokeWidth)
-				.map(([x, y]) => {
-					return `${x + BORDER_RADIUS}, ${y + BORDER_RADIUS}`;
-				})
-				.join(' ');
+		// project smaller point map over viewBox expanded by strokeWidth
+		// to prevent clipping due to stroke overflowing
+		const points = getPoints(width - strokeWidth, height - strokeWidth)
+			.map(([x, y]) => {
+				return `${x + BORDER_RADIUS}, ${y + BORDER_RADIUS}`;
+			})
+			.join(' ');
 
-			const viewBox = [0, 0, width, height].join(' ');
+		const viewBox = [0, 0, width, height].join(' ');
 
-			setAttributes({ viewBox, points, width, height });
-		};
+		setAttributes({ viewBox, points, width, height });
+	};
 
-		window.addEventListener('load', updatePolygonSize);
-		if (!rotation) {
-			window.addEventListener('resize', updatePolygonSize);
-		}
-
-		return () => {
-			window.removeEventListener('load', updatePolygonSize);
-			if (!rotation) {
-				window.removeEventListener('resize', updatePolygonSize);
-			}
-		};
-	}, [children]);
+	useWindowEvent('load', updatePolygonSize, [children]);
+	useWindowEvent('resize', () => !rotation && updatePolygonSize(), [
+		children,
+	]);
 
 	const parsedPadding = Array.isArray(padding)
 		? padding.map((value) => value + 'px').join(' ')
