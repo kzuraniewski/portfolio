@@ -100,7 +100,7 @@ const ProjectHighlight = ({
 					<img
 						src={project.previewImage}
 						alt={`${project.name} preview`}
-						className="h-56 scale-[1.03] transition-[filter] aspect-video group-hover:blur-[2px] group-hover:brightness-75"
+						className="h-56 scale-[1.03] transition-[filter] aspect-video group-hover:blur-[2px] group-hover:brightness-50"
 					/>
 				</a>
 			</div>
