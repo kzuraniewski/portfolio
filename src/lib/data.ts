@@ -60,23 +60,34 @@ export const companies = [
 
 export type ProjectData = {
 	name: string;
-	featured?: boolean;
-	wip?: boolean;
 	description: string;
-	previewImage: string;
 	tech: string[];
 	links: {
 		github: string;
 		website?: string;
 	};
+	previewImage?: string;
+	featured?: boolean;
+	wip?: boolean;
 };
 
 export const projects: ProjectData[] = [
 	{
+		name: 'Photography Website',
+		featured: true,
+		wip: true,
+		description: 'Photography portfolio website with image preview',
+		previewImage: '/preview/photo-website.png',
+		tech: ['Next.js', 'MUI', 'TypeScript'],
+		links: {
+			github: 'https://github.com/kzuraniewski/photos',
+		},
+	},
+	{
 		name: 'Catalog',
 		featured: true,
 		description: 'PDF viewer with annotation edit tool',
-		previewImage: '/test.png',
+		previewImage: '/preview/catalog.png',
 		tech: ['Next.js', 'MUI', 'TypeScript'],
 		links: {
 			github: 'https://github.com/kzuraniewski/catalog',
@@ -87,7 +98,7 @@ export const projects: ProjectData[] = [
 		name: 'Simulator 8086',
 		featured: true,
 		description: 'A web app simulating the Intel 8086 processor',
-		previewImage: '#',
+		previewImage: '/preview/8086.png',
 		tech: ['React', 'MUI', 'TypeScript'],
 		links: {
 			github: 'https://github.com/kzuraniewski/symulator-8086',
@@ -97,24 +108,14 @@ export const projects: ProjectData[] = [
 		name: 'Interactive Comments',
 		featured: true,
 		description: 'Interactive comment thread system',
-		previewImage: '#',
+		previewImage: '/preview/interactive-comments.png',
 		tech: ['React', 'CSS', 'JavaScript'],
 		links: {
 			github: 'https://github.com/kzuraniewski/interactive-comments',
 			website: 'https://interactive-comments-beta.vercel.app',
 		},
 	},
-	{
-		name: 'Photography Website',
-		featured: true,
-		wip: true,
-		description: 'Photography portfolio website with image preview',
-		previewImage: '#',
-		tech: ['Next.js', 'MUI', 'TypeScript'],
-		links: {
-			github: 'https://github.com/kzuraniewski/photos',
-		},
-	},
+
 	{
 		name: 'Link Board',
 		description:
