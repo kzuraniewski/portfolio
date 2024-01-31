@@ -18,7 +18,7 @@ export default function LandingPage() {
 	return (
 		<Section title="About me" id="about">
 			<PolygonBackground
-				className="w-2/3 mx-auto mb-20 text-center"
+				className="w-2/3 mx-auto text-center"
 				getPoints={getParagraphPoints}
 			>
 				<p>
