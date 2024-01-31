@@ -7,6 +7,7 @@ const Footer = () => {
 				<a
 					href="https://github.com/kzuraniewski/portfolio"
 					className="text-light hover:text-accent"
+					target="_blank"
 				>
 					Designed and developed by Karol Żuraniewski
 				</a>
