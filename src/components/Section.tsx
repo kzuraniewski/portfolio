@@ -13,7 +13,7 @@ export const Section = ({
 	...props
 }: SectionProps) => {
 	return (
-		<section className={cn('my-24 scroll-mt-20', className)} {...props}>
+		<section className={cn('my-24 scroll-mt-32', className)} {...props}>
 			<div className="flex items-center gap-8 mb-16">
 				<h2 className="relative text-3xl font-bold uppercase w-max font-display">
 					<span className="text-accent">#</span> {title}
