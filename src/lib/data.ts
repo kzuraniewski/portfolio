@@ -18,8 +18,8 @@ export const navigation = [
 	},
 	{
 		label: 'Contact',
-		href: '#contact'
-	}
+		href: '#contact',
+	},
 ];
 
 export const mainTechIcons = [
