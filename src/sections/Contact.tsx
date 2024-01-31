@@ -1,11 +1,22 @@
+import { CornerBanner } from '@/components/CornerBanner';
 import { Divider } from '@/components/Divider';
 import PolygonBackground from '@/components/PolygonBackground';
 import { Section, SubSection } from '@/components/Section';
 import { Separated } from '@/components/Separated';
+import cn from '@/lib/cn';
+import useIntersectionObserver from '@/lib/useIntersectionObserver';
+import { useRef, useState } from 'react';
 
 const Contact = () => {
+	const rootRef = useRef<HTMLDivElement>(null!);
+	const [showBanner, setShowBanner] = useState(true);
+
+	useIntersectionObserver(rootRef, (isIntersecting) =>
+		setShowBanner(!isIntersecting)
+	);
+
 	return (
-		<Section title="Contact me" id="contact">
+		<Section title="Contact me" id="contact" ref={rootRef}>
 			<Separated
 				separator={<Divider vertical className="self-center h-52" />}
 				className="flex items-start justify-between w-4/5 gap-10 mx-auto"
@@ -41,11 +52,22 @@ const Contact = () => {
 						</a>
 					</PolygonBackground>
 
-					<div className='text-sm'>
+					<div className="text-sm">
 						Or call me: <a href="tel:+48503129246">503 129 246</a>
 					</div>
 				</div>
 			</Separated>
+
+			<CornerBanner
+				href="#contact"
+				// prettier-ignore
+				className={cn(
+					'transition-opacity opacity-0 pointer-events-none',
+					{ 'opacity-100 pointer-events-auto': showBanner }
+				)}
+			>
+				Contact me
+			</CornerBanner>
 		</Section>
 	);
 };

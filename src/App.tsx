@@ -1,4 +1,3 @@
-import { ContactMe } from '@/components/ContactMe';
 import Container from '@/components/Container';
 import Footer from '@/components/Footer';
 import { Header } from '@/components/Header';
@@ -17,8 +16,6 @@ export default function App() {
 						<Projects />
 						<Contact />
 					</Container>
-
-					<ContactMe />
 				</main>
 
 				<Footer />
