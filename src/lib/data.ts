@@ -99,7 +99,7 @@ export const projects: ProjectData[] = [
 		},
 	},
 	{
-		name: 'Simulator 8086',
+		name: 'Intel 8086 Simulator',
 		featured: true,
 		description: 'A web app simulating the Intel 8086 processor',
 		previewImage: '/preview/8086.png',
