@@ -16,7 +16,9 @@ export default function Projects() {
 
 			<div className="mx-auto w-fit">
 				See more projects on my{' '}
-				<a href={personalLinks.github}>GitHub</a>
+				<a href={personalLinks.github} target="_blank">
+					GitHub
+				</a>
 			</div>
 		</Section>
 	);

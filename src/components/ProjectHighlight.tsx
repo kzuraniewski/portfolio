@@ -4,8 +4,8 @@ import { Separated } from '@/components/Separated';
 import cn from '@/lib/cn';
 import { ProjectData } from '@/lib/data';
 import { FaGithub } from 'react-icons/fa6';
-import { RxCross2 } from 'react-icons/rx';
 import { MdOutlineArrowOutward } from 'react-icons/md';
+import { RxCross2 } from 'react-icons/rx';
 
 // FEATURE: Define shape by providing edge angles to preserve it on any size, i.e. [85, 190, 95, 170]
 
@@ -57,12 +57,20 @@ const ProjectHighlight = ({
 				<div className="grow" />
 
 				<div className="flex items-center justify-end gap-5 ml-auto">
-					<IconButton size="big" href={project.links.github}>
+					<IconButton
+						size="big"
+						href={project.links.github}
+						target="_blank"
+					>
 						<FaGithub />
 					</IconButton>
 
 					{project.links.website && (
-						<Button variant="primary" href={project.links.website}>
+						<Button
+							variant="primary"
+							href={project.links.website}
+							target="_blank"
+						>
 							See live
 						</Button>
 					)}

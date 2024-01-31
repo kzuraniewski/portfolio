@@ -1,6 +1,9 @@
 import cn from 'classnames';
-import React from 'react';
-import { ButtonHTMLAttributes, forwardRef } from 'react';
+import React, {
+	AnchorHTMLAttributes,
+	ButtonHTMLAttributes,
+	forwardRef,
+} from 'react';
 
 export type ButtonSize = 'normal' | 'big';
 
@@ -12,6 +15,9 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	/** @default 'normal' */
 	size?: ButtonSize;
 	href?: string;
+
+	// FIXME: infer anchor props when href is present instead
+	target?: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
 };
 
 // FIXME: Props type needs to be conditional whether it is a button or an anchor
@@ -31,7 +37,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 				className
 			),
 			href,
-			target: href ? '_blank' : null,
 			ref,
 			...props,
 		});
