@@ -88,7 +88,7 @@ export const projects: ProjectData[] = [
 		},
 	},
 	{
-		name: 'Catalog',
+		name: 'PDF Catalog',
 		featured: true,
 		description: 'PDF viewer with annotation edit tool',
 		previewImage: '/preview/catalog.png',
