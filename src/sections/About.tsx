@@ -8,6 +8,7 @@ export default function LandingPage() {
 	return (
 		<Section title="About me" id="about">
 			<PolygonBackground
+				noFill
 				padding={[15, 25]}
 				className="mx-auto"
 				getPoints={(width, height) => [

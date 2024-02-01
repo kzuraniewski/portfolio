@@ -54,6 +54,10 @@ export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 	 */
 	background?: keyof typeof backgroundColors;
 	rotation?: number | string;
+	/**
+	 * @default false
+	 */
+	noFill?: boolean;
 };
 
 const PolygonBackground = ({
@@ -63,6 +67,7 @@ const PolygonBackground = ({
 	padding = [DEFAULT_PADDING_Y, DEFAULT_PADDING_X],
 	background = 'secondary',
 	rotation,
+	noFill = false,
 	style,
 	...props
 }: PolygonBackgroundProps) => {
@@ -130,6 +135,7 @@ const PolygonBackground = ({
 						strokeWidth={`${strokeWidth}px`}
 						stroke={backgroundColor}
 						fill={backgroundColor}
+						fillOpacity={noFill ? 0 : 100}
 					/>
 				</svg>
 			)}
