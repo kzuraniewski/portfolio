@@ -16,7 +16,7 @@ export const CompanyHistory = () => {
 						<div className="flex justify-between">
 							<PolygonBackground
 								padding={[10.2]}
-								className="mb-3 font-bold uppercase font-display h-fit w-fit"
+								className="mb-3 h-fit w-fit"
 								getPoints={(width, height) => [
 									[0, 5],
 									[width, 0],
@@ -24,10 +24,13 @@ export const CompanyHistory = () => {
 									[3, height],
 								]}
 							>
-								<ul className="text-accent">
+								<ul>
 									{company.positions.map(
 										(position, index) => (
-											<li key={`position-${index}`}>
+											<li
+												key={`position-${index}`}
+												className="font-bold uppercase text-accent font-display"
+											>
 												{position}
 											</li>
 										)
@@ -35,7 +38,9 @@ export const CompanyHistory = () => {
 								</ul>
 							</PolygonBackground>
 
-							<div className="mt-2 mr-3">{company.timeSpan}</div>
+							<div className="mt-2 mr-3 tracking-wide">
+								{company.timeSpan}
+							</div>
 						</div>
 
 						<div className="mt-4">
