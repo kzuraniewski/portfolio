@@ -37,7 +37,7 @@ const ProjectHighlight = ({
 						separator={<RxCross2 className="text-xs text-accent" />}
 					>
 						{project.tech.map((el) => (
-							<li>{el}</li>
+							<li key={el}>{el}</li>
 						))}
 					</Separated>
 				</div>

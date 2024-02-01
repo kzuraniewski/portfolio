@@ -4,8 +4,8 @@ import { companies } from '@/lib/data';
 export const CompanyHistory = () => {
 	return (
 		<ul className="flex flex-col gap-16">
-			{companies.map((company, index) => (
-				<li key={`company-${index}`} className="flex gap-5">
+			{companies.map((company) => (
+				<li key={company.name} className="flex gap-5">
 					<div className="w-44 shrink-0">
 						<h3 className="font-bold uppercase font-display">
 							{company.name}
@@ -28,7 +28,7 @@ export const CompanyHistory = () => {
 									{company.positions.map(
 										(position, index) => (
 											<li
-												key={`position-${index}`}
+												key={company.name + position}
 												className="font-bold uppercase text-accent font-display"
 											>
 												{position}
@@ -46,7 +46,10 @@ export const CompanyHistory = () => {
 						<div className="mt-4">
 							<ul>
 								{company.summary.map((summaryElement) => (
-									<li className="relative mb-1 -left-2 marker:content-['-'] marker:text-accent">
+									<li
+										key={summaryElement}
+										className="relative mb-1 -left-2 marker:content-['-'] marker:text-accent"
+									>
 										<span className="relative left-2">
 											{summaryElement}
 										</span>
