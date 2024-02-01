@@ -21,7 +21,7 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 			<Separated
 				ref={ref}
 				className={cn(
-					'grid items-center grid-cols-1 mx-auto mb-20 list-none w-fit justify-items-center gap-y-10 gap-x-1',
+					'grid items-center grid-cols-1 mx-auto list-none w-fit justify-items-center gap-y-10 gap-x-1',
 					{ 'grid-cols-3': icons.length === 2 },
 					{ 'grid-cols-5': icons.length >= 3 },
 					className
