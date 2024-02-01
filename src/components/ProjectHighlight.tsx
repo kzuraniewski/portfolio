@@ -25,10 +25,10 @@ const ProjectHighlight = ({
 	const previewLink = project.links.website ?? project.links.github;
 
 	return (
-		<div className={cn('flex gap-16 mb-24', className)} {...props}>
-			<div className="flex flex-col w-80 shrink-0">
-				<div className="flex items-end justify-between w-full mb-5">
-					<h3 className="text-2xl font-bold uppercase font-display">
+		<div className={cn('mb-24 flex gap-16', className)} {...props}>
+			<div className="flex w-80 shrink-0 flex-col">
+				<div className="mb-5 flex w-full items-end justify-between">
+					<h3 className="font-display text-2xl font-bold uppercase">
 						{project.name}
 					</h3>
 
@@ -68,7 +68,7 @@ const ProjectHighlight = ({
 
 				<div className="grow" />
 
-				<div className="flex items-center justify-end gap-5 mt-10 ml-auto">
+				<div className="ml-auto mt-10 flex items-center justify-end gap-5">
 					<IconButton
 						size="big"
 						href={project.links.github}
@@ -95,7 +95,7 @@ const ProjectHighlight = ({
 						padding={[7, 25]}
 						rotation={30}
 						background="accent"
-						className="absolute z-10 px-6 py-1 text-sm font-bold uppercase pointer-events-none top-2 -right-6 text-primary"
+						className="pointer-events-none absolute -right-6 top-2 z-10 px-6 py-1 text-sm font-bold uppercase text-primary"
 						getPoints={(width, height) => [
 							[30, 0],
 							[width - 13, 5],
@@ -109,18 +109,18 @@ const ProjectHighlight = ({
 
 				<a
 					href={previewLink}
-					className="relative block overflow-hidden rounded-sm group"
+					className="group relative block overflow-hidden rounded-sm"
 					target="_blank"
 				>
-					<div className="absolute z-10 w-5/6 px-5 text-sm text-center transition-opacity -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none group-hover:opacity-100 overflow-ellipsis top-1/2 left-1/2 text-light">
+					<div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-5/6 -translate-x-1/2 -translate-y-1/2 overflow-ellipsis px-5 text-center text-sm text-light opacity-0 transition-opacity group-hover:opacity-100">
 						{previewLink}
-						<MdOutlineArrowOutward className="inline-block w-4 h-4 ml-2" />
+						<MdOutlineArrowOutward className="ml-2 inline-block h-4 w-4" />
 					</div>
 
 					<img
 						src={project.previewImage}
 						alt={`${project.name} preview`}
-						className="h-64 scale-[1.03] transition-[filter] aspect-video group-hover:blur-[2px] group-hover:brightness-50"
+						className="aspect-video h-64 scale-[1.03] transition-[filter] group-hover:blur-[2px] group-hover:brightness-50"
 					/>
 				</a>
 			</div>

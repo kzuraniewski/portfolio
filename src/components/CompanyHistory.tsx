@@ -7,7 +7,7 @@ export const CompanyHistory = () => {
 			{companies.map((company) => (
 				<li key={company.name} className="flex gap-5">
 					<div className="w-44 shrink-0">
-						<h3 className="font-bold uppercase font-display">
+						<h3 className="font-display font-bold uppercase">
 							{company.name}
 						</h3>
 					</div>
@@ -28,7 +28,7 @@ export const CompanyHistory = () => {
 									{company.positions.map((position) => (
 										<li
 											key={company.name + position}
-											className="font-bold uppercase text-accent font-display"
+											className="font-display font-bold uppercase text-accent"
 										>
 											{position}
 										</li>
@@ -36,7 +36,7 @@ export const CompanyHistory = () => {
 								</ul>
 							</PolygonBackground>
 
-							<div className="mt-2 mr-3 tracking-wide">
+							<div className="mr-3 mt-2 tracking-wide">
 								{company.timeSpan}
 							</div>
 						</div>
@@ -46,7 +46,7 @@ export const CompanyHistory = () => {
 								{company.summary.map((summaryElement) => (
 									<li
 										key={summaryElement}
-										className="relative mb-1 -left-2 marker:content-['-'] marker:text-accent"
+										className="relative -left-2 mb-1 marker:text-accent marker:content-['-']"
 									>
 										<span className="relative left-2">
 											{summaryElement}

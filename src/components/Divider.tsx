@@ -12,7 +12,7 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
 				className={cn(
 					'border-dashed border-secondary',
 					{ 'border-b-2': !vertical },
-					{ 'border-r-2 h-10 w-fit': vertical },
+					{ 'h-10 w-fit border-r-2': vertical },
 					className,
 				)}
 				ref={ref}

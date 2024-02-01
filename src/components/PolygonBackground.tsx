@@ -118,7 +118,7 @@ const PolygonBackground = ({
 					preserveAspectRatio="none"
 					width={attributes.width}
 					height={attributes.height}
-					className="absolute top-0 left-0"
+					className="absolute left-0 top-0"
 				>
 					<polygon
 						points={attributes.points}

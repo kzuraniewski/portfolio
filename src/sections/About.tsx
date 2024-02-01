@@ -7,7 +7,7 @@ import { learningTechStack, mainTechStack } from '@/lib/data';
 export default function LandingPage() {
 	return (
 		<Section title="About me" id="about">
-			<div className="flex justify-between w-3/5 gap-20 mx-auto">
+			<div className="mx-auto flex w-3/5 justify-between gap-20">
 				<div className="">
 					<PolygonBackground
 						noFill
@@ -20,12 +20,12 @@ export default function LandingPage() {
 							[0, height - 10],
 						]}
 					>
-						<p className="text-center w-max">
+						<p className="w-max text-center">
 							Hi, my name is Karol. I develop web stuff.
 						</p>
 					</PolygonBackground>
 
-					<p className="mx-auto mt-8 text-center w-fit">
+					<p className="mx-auto mt-8 w-fit text-center">
 						My web development journey started in 2021 - when I got
 						to know React. Since then I've had the opportunity to
 						design, develop and maintain websites, E-commerce
@@ -34,7 +34,7 @@ export default function LandingPage() {
 					</p>
 				</div>
 
-				<div className="flex items-center justify-center w-1/4 shrink-0">
+				<div className="flex w-1/4 shrink-0 items-center justify-center">
 					{/* <PolygonBackground
 						background="accent"
 						padding={10}
@@ -47,11 +47,11 @@ export default function LandingPage() {
 							[0, height],
 						]}
 					> */}
-					<div className="w-full overflow-hidden rounded-full aspect-square border-2 border-accent">
+					<div className="aspect-square w-full overflow-hidden rounded-full border-2 border-accent">
 						<img
 							src="/photo.jpg"
 							alt="My photo"
-							className="w-full h-full"
+							className="h-full w-full"
 						/>
 					</div>
 					{/* </PolygonBackground> */}

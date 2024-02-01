@@ -19,8 +19,8 @@ const Contact = () => {
 	return (
 		<Section title="Contact me" id="contact" ref={rootRef}>
 			<Separated
-				separator={<Divider vertical className="self-center h-52" />}
-				className="flex items-start justify-between w-4/5 gap-10 mx-auto"
+				separator={<Divider vertical className="h-52 self-center" />}
+				className="mx-auto flex w-4/5 items-start justify-between gap-10"
 			>
 				<div className="w-2/5 [&>p]:mb-5">
 					<p>

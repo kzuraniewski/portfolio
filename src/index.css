@@ -8,6 +8,6 @@
 	}
 
 	a {
-		@apply hover:underline text-accent;
+		@apply text-accent hover:underline;
 	}
 }

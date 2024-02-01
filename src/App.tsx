@@ -7,7 +7,7 @@ import { Header } from '@/components/Header';
 export default function App() {
 	return (
 		<html lang="en" className="text-[18px]">
-			<body className="min-h-screen text-light bg-primary">
+			<body className="min-h-screen bg-primary text-light">
 				<Header />
 
 				<main>

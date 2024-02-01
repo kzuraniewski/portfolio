@@ -23,7 +23,7 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 			<Separated
 				ref={ref}
 				className={cn(
-					'grid items-center grid-cols-1 mx-auto list-none w-fit justify-items-center gap-y-10 gap-x-1',
+					'mx-auto grid w-fit list-none grid-cols-1 items-center justify-items-center gap-x-1 gap-y-10',
 					{ 'grid-cols-3': stack.length === 2 },
 					{ 'grid-cols-5': stack.length >= 3 },
 					className,
@@ -39,7 +39,7 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 						{highlighted && (
 							<PolygonBackground
 								background="accent"
-								className="absolute w-6 h-6 -top-1 -right-1"
+								className="absolute -right-1 -top-1 h-6 w-6"
 								// TODO: improve shape
 								getPoints={(width, height) => [
 									[0, 1],
