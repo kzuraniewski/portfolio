@@ -24,27 +24,27 @@ export const navigation = [
 
 export const mainTechIcons = [
 	{
-		src: '/react-logo.png',
+		src: '/icons/react-logo.png',
 		alt: 'React logo',
 	},
 	{
-		src: '/typescript-logo.png',
+		src: '/icons/typescript-logo.png',
 		alt: 'TypeScript logo',
 	},
 	{
-		src: '/mui-logo.png',
+		src: '/icons/mui-logo.png',
 		alt: 'MUI logo',
 	},
 	{
-		src: '/java-logo.png',
+		src: '/icons/java-logo.png',
 		alt: 'Java logo',
 	},
 	{
-		src: '/nodejs-logo.svg',
+		src: '/icons/nodejs-logo.svg',
 		alt: 'Node.js logo',
 	},
 	{
-		src: '/wordpress-logo.png',
+		src: '/icons/wordpress-logo.png',
 		alt: 'Wordpress logo',
 	},
 ];
