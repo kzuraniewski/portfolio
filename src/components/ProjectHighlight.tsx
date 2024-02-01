@@ -43,20 +43,31 @@ const ProjectHighlight = ({
 				</div>
 
 				<PolygonBackground
+					background="accent"
 					padding={[10, 20]}
 					getPoints={(width, height) => [
-						[0, 5],
-						[width, 0],
-						[width - 25, height],
-						[5, height - 3],
+						[40, 5],
+						[width - 10, 25],
+						[width - 75, height],
+						[15, height - 25],
 					]}
 				>
-					<p>{project.description}</p>
+					<PolygonBackground
+						padding={[10, 20]}
+						getPoints={(width, height) => [
+							[0, 5],
+							[width, 0],
+							[width - 25, height],
+							[5, height - 3],
+						]}
+					>
+						<p>{project.description}</p>
+					</PolygonBackground>
 				</PolygonBackground>
 
 				<div className="grow" />
 
-				<div className="flex items-center justify-end gap-5 ml-auto">
+				<div className="flex items-center justify-end gap-5 mt-10 ml-auto">
 					<IconButton
 						size="big"
 						href={project.links.github}
@@ -108,7 +119,7 @@ const ProjectHighlight = ({
 					<img
 						src={project.previewImage}
 						alt={`${project.name} preview`}
-						className="h-56 scale-[1.03] transition-[filter] aspect-video group-hover:blur-[2px] group-hover:brightness-50"
+						className="h-64 scale-[1.03] transition-[filter] aspect-video group-hover:blur-[2px] group-hover:brightness-50"
 					/>
 				</a>
 			</div>
