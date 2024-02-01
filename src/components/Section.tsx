@@ -35,7 +35,7 @@ export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
 	({ title, className, children, ...props }, ref) => {
 		return (
-			<div ref={ref} className={cn('mt-20', className)} {...props}>
+			<div ref={ref} className={cn('mt-28', className)} {...props}>
 				<h3 className="px-3 text-xl font-bold text-center uppercase mb-14 font-display">
 					<span className="text-accent">{'>'}</span> {title}
 				</h3>
