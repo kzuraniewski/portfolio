@@ -62,7 +62,7 @@ const Contact = () => {
 				href="#contact"
 				// prettier-ignore
 				className={cn(
-					'transition-opacity opacity-0 pointer-events-none',
+					'transition-opacity duration-500 opacity-0 pointer-events-none',
 					{ 'opacity-100 pointer-events-auto': showBanner }
 				)}
 			>
