@@ -3,8 +3,6 @@ import useEventActivatedValue from '@/lib/useEventActivatedValue';
 import useWindowEvent from '@/lib/useWindowEvent';
 import { HTMLAttributes, useRef, useState } from 'react';
 
-const DEFAULT_PADDING_X = 40;
-const DEFAULT_PADDING_Y = 30;
 const BORDER_RADIUS = 2;
 
 export type PolygonPoints = [number, number][];
@@ -13,6 +11,13 @@ export type PolygonPointsFactory = (
 	width: number,
 	height: number
 ) => PolygonPoints;
+
+export type PolygonPadding =
+	| number
+	| [number]
+	| [number, number]
+	| [number, number, number]
+	| [number, number, number, number];
 
 type BackgroundAttributes = {
 	viewBox: string;
@@ -41,14 +46,8 @@ export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 	getPoints?: PolygonPointsFactory;
 	/**
 	 * Order as in CSS `padding` shorthand property
-	 * @default [30, 40]
 	 */
-	padding?:
-		| number
-		| [number]
-		| [number, number]
-		| [number, number, number]
-		| [number, number, number, number];
+	padding?: PolygonPadding;
 	/**
 	 * @default 'secondary'
 	 */
@@ -64,7 +63,7 @@ const PolygonBackground = ({
 	className,
 	children,
 	getPoints = getDefaultPoints,
-	padding = [DEFAULT_PADDING_Y, DEFAULT_PADDING_X],
+	padding,
 	background = 'secondary',
 	rotation,
 	noFill = false,
@@ -105,16 +104,12 @@ const PolygonBackground = ({
 		children,
 	]);
 
-	const parsedPadding = Array.isArray(padding)
-		? padding.map((value) => value + 'px').join(' ')
-		: padding + 'px';
-
 	return (
 		<div
 			ref={rootRef}
 			className={cn('relative w-fit', className)}
 			style={{
-				padding: parsedPadding,
+				padding: padding && parsePolygonPadding(padding),
 				rotate: appliedRotation ?? undefined,
 				...style,
 			}}
@@ -143,6 +138,12 @@ const PolygonBackground = ({
 			<div className="relative z-10">{children}</div>
 		</div>
 	);
+};
+
+const parsePolygonPadding = (padding: PolygonPadding) => {
+	return Array.isArray(padding)
+		? padding.map((value) => value + 'px').join(' ')
+		: padding + 'px';
 };
 
 export default PolygonBackground;
