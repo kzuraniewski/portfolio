@@ -62,21 +62,26 @@ export const techIcons = {
 	},
 } satisfies Record<string, Icon>;
 
-export const mainTechIcons: Icon[] = [
-	techIcons.react,
-	techIcons.typeScript,
-	techIcons.mui,
-	techIcons.java,
-	techIcons.nodeJs,
-	techIcons.postgres,
-	techIcons.docker,
-	techIcons.wordPress,
+export type TechStack = {
+	icon: Icon;
+	highlighted?: boolean;
+}[];
+
+export const mainTechStack: TechStack = [
+	{ icon: techIcons.react, highlighted: true },
+	{ icon: techIcons.typeScript, highlighted: true },
+	{ icon: techIcons.mui },
+	{ icon: techIcons.java },
+	{ icon: techIcons.nodeJs },
+	{ icon: techIcons.postgres },
+	{ icon: techIcons.docker },
+	{ icon: techIcons.wordPress },
 ];
 
 // prettier-ignore
-export const learningIcons: Icon[] = [
-	techIcons.java,
-	techIcons.docker,
+export const learningTechStack: TechStack = [
+	{ icon: techIcons.java, highlighted: true },
+	{ icon: techIcons.docker },
 ];
 
 export const companies = [

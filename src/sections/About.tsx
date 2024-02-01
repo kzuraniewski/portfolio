@@ -2,7 +2,7 @@ import { CompanyHistory } from '@/components/CompanyHistory';
 import IconStack from '@/components/IconStack';
 import PolygonBackground from '@/components/PolygonBackground';
 import { Section, SubSection } from '@/components/Section';
-import { learningIcons, mainTechIcons } from '@/lib/data';
+import { learningTechStack, mainTechStack } from '@/lib/data';
 
 export default function LandingPage() {
 	return (
@@ -61,11 +61,11 @@ export default function LandingPage() {
 			<div className="flex justify-around">
 				<div className="flex flex-col">
 					<SubSection title="Technologies I've worked with">
-						<IconStack icons={mainTechIcons} />
+						<IconStack stack={mainTechStack} />
 					</SubSection>
 
 					<SubSection title="What I'm learning">
-						<IconStack icons={learningIcons} />
+						<IconStack stack={learningTechStack} />
 					</SubSection>
 				</div>
 
