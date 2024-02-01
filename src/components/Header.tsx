@@ -55,7 +55,7 @@ export const Header = () => {
 							<li key={`nav-${index}`}>
 								<a
 									href={href}
-									className="tracking-wider text-light hover:no-underline hover:text-accent before:content-['#'] before:mr-0.5 before:text-accent"
+									className="tracking-wider uppercase text-light font-display hover:no-underline hover:text-accent before:content-['#'] before:mr-0.5 before:text-accent"
 								>
 									{label}
 								</a>
