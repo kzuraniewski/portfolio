@@ -1,6 +1,7 @@
 import cn from '@/lib/cn';
 import useEventActivatedValue from '@/lib/useEventActivatedValue';
 import useWindowEvent from '@/lib/useWindowEvent';
+import { tailwindConfig } from '@/lib/util';
 import { HTMLAttributes, useRef, useState } from 'react';
 
 const BORDER_RADIUS = 2;
@@ -33,13 +34,7 @@ const getDefaultPoints: PolygonPointsFactory = (width, height) => [
 	[0, height],
 ];
 
-// TODO: infer from theme
-const backgroundColors = {
-	primary: '#222831',
-	secondary: '#393E46',
-	accent: '#FFD369',
-	light: '#EEEEEE',
-};
+const colors = tailwindConfig.theme.colors;
 
 // TODO: support `as` prop
 export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
@@ -51,7 +46,7 @@ export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 	/**
 	 * @default 'secondary'
 	 */
-	background?: keyof typeof backgroundColors;
+	background?: keyof typeof colors;
 	rotation?: number | string;
 	/**
 	 * @default false
@@ -81,7 +76,7 @@ const PolygonBackground = ({
 	}, 'load');
 
 	const strokeWidth = 2 * BORDER_RADIUS;
-	const backgroundColor = backgroundColors[background];
+	const backgroundColor = colors[background];
 
 	const updatePolygonSize = () => {
 		const { width, height } = rootRef.current.getBoundingClientRect();
