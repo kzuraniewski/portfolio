@@ -37,19 +37,31 @@ const Contact = () => {
 
 				<div className="flex flex-col items-center gap-10">
 					<PolygonBackground
-						padding={[20, 30]}
+						background="accent"
+						padding={10}
+						className="mt-5"
 						getPoints={(width, height) => [
-							[0, 10],
-							[width, 0],
-							[width - 20, height],
-							[10, height - 5],
+							[5, 35],
+							[width - 50, 0],
+							[width - 10, height - 20],
+							[55, height - 5],
 						]}
-						className="mt-5 w-max"
 					>
-						Contact me at{' '}
-						<a href="mailto:zuraniewski.karol@gmail.com">
-							zuraniewski.karol@gmail.com
-						</a>
+						<PolygonBackground
+							padding={[20, 30]}
+							getPoints={(width, height) => [
+								[0, 10],
+								[width, 0],
+								[width - 20, height],
+								[10, height - 5],
+							]}
+							className="w-max"
+						>
+							Contact me at{' '}
+							<a href="mailto:zuraniewski.karol@gmail.com">
+								zuraniewski.karol@gmail.com
+							</a>
+						</PolygonBackground>
 					</PolygonBackground>
 
 					<div className="text-sm">
