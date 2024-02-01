@@ -1,5 +1,5 @@
-import cn from 'classnames';
 import { forwardRef, HTMLAttributes } from 'react';
+import cn from 'classnames';
 
 export type DividerProps = HTMLAttributes<HTMLDivElement> & {
 	vertical?: boolean;
@@ -13,11 +13,11 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
 					'border-dashed border-secondary',
 					{ 'border-b-2': !vertical },
 					{ 'border-r-2 h-10 w-fit': vertical },
-					className
+					className,
 				)}
 				ref={ref}
 				{...props}
 			/>
 		);
-	}
+	},
 );

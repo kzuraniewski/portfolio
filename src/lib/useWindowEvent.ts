@@ -3,7 +3,7 @@ import { DependencyList, useEffect } from 'react';
 const useWindowEvent = (
 	eventName: keyof WindowEventMap,
 	callback: () => void,
-	deps: DependencyList = []
+	deps: DependencyList = [],
 ) => {
 	useEffect(() => {
 		window.addEventListener(eventName, callback);

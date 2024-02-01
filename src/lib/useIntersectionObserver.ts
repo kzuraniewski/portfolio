@@ -4,14 +4,14 @@ export type VisibilityChangeHandler = (isIntersecting: boolean) => void;
 
 const useIntersectionObserver = (
 	ref: RefObject<HTMLElement>,
-	callback: VisibilityChangeHandler
+	callback: VisibilityChangeHandler,
 ) => {
 	const observer = useMemo(
 		() =>
 			new IntersectionObserver(([entry]) =>
-				callback(entry.isIntersecting)
+				callback(entry.isIntersecting),
 			),
-		[ref]
+		[ref],
 	);
 
 	useEffect(() => {

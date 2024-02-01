@@ -1,8 +1,9 @@
+import { HTMLAttributes, useRef, useState } from 'react';
+
 import cn from '@/lib/cn';
 import useEventActivatedValue from '@/lib/useEventActivatedValue';
 import useWindowEvent from '@/lib/useWindowEvent';
 import { tailwindConfig } from '@/lib/util';
-import { HTMLAttributes, useRef, useState } from 'react';
 
 const BORDER_RADIUS = 2;
 
@@ -10,7 +11,7 @@ export type PolygonPoints = [number, number][];
 
 export type PolygonPointsFactory = (
 	width: number,
-	height: number
+	height: number,
 ) => PolygonPoints;
 
 export type PolygonPadding =

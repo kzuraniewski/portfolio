@@ -1,10 +1,10 @@
-import React, { HTMLAttributes, forwardRef } from 'react';
+import React, { forwardRef, HTMLAttributes } from 'react';
 
 export type ListDirection = 'row' | 'column';
 
 export type IndexSelector = (
 	index: number,
-	childrenArray: ReturnType<typeof React.Children.toArray>
+	childrenArray: ReturnType<typeof React.Children.toArray>,
 ) => boolean;
 
 export type SeparatedProps = HTMLAttributes<HTMLElement> & {
@@ -32,22 +32,22 @@ export const Separated = forwardRef<HTMLElement, SeparatedProps>(
 			children,
 			...props
 		},
-		ref
+		ref,
 	) => {
 		return React.createElement(
 			as,
 			{ ref, className, ...props },
 			separator
 				? joinChildren(children, separator, indexSelector)
-				: children
+				: children,
 		);
-	}
+	},
 );
 
 const joinChildren = (
 	children: React.ReactNode,
 	separator: React.ReactElement,
-	indexSelector: IndexSelector
+	indexSelector: IndexSelector,
 ) => {
 	const childrenArray = React.Children.toArray(children).filter(Boolean);
 
@@ -56,7 +56,7 @@ const joinChildren = (
 
 		if (indexSelector(index, childrenArray)) {
 			output.push(
-				React.cloneElement(separator, { key: `separator-${index}` })
+				React.cloneElement(separator, { key: `separator-${index}` }),
 			);
 		}
 

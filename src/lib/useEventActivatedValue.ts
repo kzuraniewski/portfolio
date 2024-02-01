@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import useWindowEvent from './useWindowEvent';
 
 /**
@@ -6,7 +7,7 @@ import useWindowEvent from './useWindowEvent';
  */
 const useEventActivatedValue = <T>(
 	value: T | (() => T),
-	event: keyof WindowEventMap
+	event: keyof WindowEventMap,
 ) => {
 	const [state, setState] = useState<T | null>(null);
 

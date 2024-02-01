@@ -1,11 +1,12 @@
+import { FaGithub } from 'react-icons/fa6';
+import { MdOutlineArrowOutward } from 'react-icons/md';
+import { RxCross2 } from 'react-icons/rx';
+
 import { Button, IconButton } from '@/components/Button';
 import PolygonBackground from '@/components/PolygonBackground';
 import { Separated } from '@/components/Separated';
 import cn from '@/lib/cn';
 import { ProjectData } from '@/lib/data';
-import { FaGithub } from 'react-icons/fa6';
-import { MdOutlineArrowOutward } from 'react-icons/md';
-import { RxCross2 } from 'react-icons/rx';
 
 // FEATURE: Define shape by providing edge angles to preserve it on any size, i.e. [85, 190, 95, 170]
 

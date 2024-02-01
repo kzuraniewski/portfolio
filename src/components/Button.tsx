@@ -1,9 +1,9 @@
-import cn from 'classnames';
 import React, {
 	AnchorHTMLAttributes,
 	ButtonHTMLAttributes,
 	forwardRef,
 } from 'react';
+import cn from 'classnames';
 
 export type ButtonSize = 'normal' | 'big';
 
@@ -25,7 +25,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{ variant = 'default', size = 'normal', href, className, ...props },
-		ref
+		ref,
 	) => {
 		return React.createElement(href ? 'a' : 'button', {
 			// prettier-ignore
@@ -40,7 +40,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			ref,
 			...props,
 		});
-	}
+	},
 );
 
 export type IconButtonProps = ButtonProps;
@@ -48,17 +48,17 @@ export type IconButtonProps = ButtonProps;
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 	(
 		{ variant = 'default', size = 'normal', href, className, ...props },
-		ref
+		ref,
 	) => {
 		return React.createElement(href ? 'a' : 'button', {
 			className: cn(
 				'block text-light hover:text-accent w-6 h-6 [&>svg]:w-full [&>svg]:h-full [&>svg]:transition-colors',
 				{ 'w-8 h-8': size === 'big' },
-				className
+				className,
 			),
 			href,
 			ref,
 			...props,
 		});
-	}
+	},
 );

@@ -25,16 +25,14 @@ export const CompanyHistory = () => {
 								]}
 							>
 								<ul>
-									{company.positions.map(
-										(position, index) => (
-											<li
-												key={company.name + position}
-												className="font-bold uppercase text-accent font-display"
-											>
-												{position}
-											</li>
-										)
-									)}
+									{company.positions.map((position) => (
+										<li
+											key={company.name + position}
+											className="font-bold uppercase text-accent font-display"
+										>
+											{position}
+										</li>
+									))}
 								</ul>
 							</PolygonBackground>
 

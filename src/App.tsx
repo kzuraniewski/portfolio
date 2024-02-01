@@ -1,7 +1,8 @@
+import { About, Contact, LandingPage, Projects } from '@/sections';
+
 import Container from '@/components/Container';
 import Footer from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { About, Contact, LandingPage, Projects } from '@/sections';
 
 export default function App() {
 	return (

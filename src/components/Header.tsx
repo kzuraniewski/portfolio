@@ -1,11 +1,12 @@
-import { Button } from '@/components/Button';
+import { useState } from 'react';
+import { FaBars, FaGithub, FaLinkedin } from 'react-icons/fa6';
+
+import { Button, IconButton } from '@/components/Button';
 import Container from '@/components/Container';
 import { Reference, References } from '@/components/References';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
 import useScroll from '@/lib/useScroll';
-import { useState } from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 const NO_COLLAPSE_AREA_HEIGHT = 100;
 
@@ -34,7 +35,7 @@ export const Header = () => {
 				setMountState('collapsed');
 			}
 		},
-		[isHovered]
+		[isHovered],
 	);
 
 	return (

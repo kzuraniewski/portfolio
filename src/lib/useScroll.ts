@@ -1,4 +1,5 @@
 import { DependencyList, useRef } from 'react';
+
 import useWindowEvent from './useWindowEvent';
 
 export type ScrollDirection = 'up' | 'down';
@@ -7,7 +8,7 @@ export type ScrollHandler = (direction: ScrollDirection) => void;
 
 export default function useScroll(
 	handler: ScrollHandler,
-	deps: DependencyList = []
+	deps: DependencyList = [],
 ) {
 	const previousY = useRef(0);
 

@@ -1,6 +1,7 @@
-import { Divider } from '@/components/Divider';
+import { forwardRef, HTMLAttributes } from 'react';
 import cn from 'classnames';
-import { HTMLAttributes, forwardRef } from 'react';
+
+import { Divider } from '@/components/Divider';
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
@@ -25,7 +26,7 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
 				{children}
 			</section>
 		);
-	}
+	},
 );
 
 export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
@@ -43,5 +44,5 @@ export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
 				{children}
 			</div>
 		);
-	}
+	},
 );

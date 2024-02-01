@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react';
+
 import { CornerBanner } from '@/components/CornerBanner';
 import { Divider } from '@/components/Divider';
 import PolygonBackground from '@/components/PolygonBackground';
@@ -5,15 +7,14 @@ import { Section, SubSection } from '@/components/Section';
 import { Separated } from '@/components/Separated';
 import cn from '@/lib/cn';
 import useIntersectionObserver from '@/lib/useIntersectionObserver';
-import { useRef, useState } from 'react';
 
 const Contact = () => {
 	const rootRef = useRef<HTMLDivElement>(null!);
 	const [showBanner, setShowBanner] = useState(false);
 
-	useIntersectionObserver(rootRef, (isIntersecting) =>
-		setShowBanner(!isIntersecting)
-	);
+	useIntersectionObserver(rootRef, (isIntersecting) => {
+		setShowBanner(!isIntersecting);
+	});
 
 	return (
 		<Section title="Contact me" id="contact" ref={rootRef}>

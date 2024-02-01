@@ -1,7 +1,8 @@
+import { FaArrowTurnDown } from 'react-icons/fa6';
+
 import { Button } from '@/components/Button';
 import { Divider } from '@/components/Divider';
 import PolygonBackground from '@/components/PolygonBackground';
-import { FaArrowTurnDown } from 'react-icons/fa6';
 
 export default function LandingPage() {
 	return (

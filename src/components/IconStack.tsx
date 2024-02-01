@@ -1,9 +1,10 @@
+import { forwardRef, HTMLAttributes } from 'react';
+
 import { Divider } from '@/components/Divider';
+import PolygonBackground from '@/components/PolygonBackground';
 import { IndexSelector, Separated } from '@/components/Separated';
 import cn from '@/lib/cn';
 import { TechStack } from '@/lib/data';
-import { HTMLAttributes, forwardRef } from 'react';
-import PolygonBackground from './PolygonBackground';
 
 const gridIndexSelector: IndexSelector = (index, array) => {
 	return Boolean((index + 1) % 3) && index < array.length - 1;
@@ -25,7 +26,7 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 					'grid items-center grid-cols-1 mx-auto list-none w-fit justify-items-center gap-y-10 gap-x-1',
 					{ 'grid-cols-3': stack.length === 2 },
 					{ 'grid-cols-5': stack.length >= 3 },
-					className
+					className,
 				)}
 				separator={<Divider vertical className="h-8" />}
 				indexSelector={gridIndexSelector}
@@ -52,7 +53,7 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 				))}
 			</Separated>
 		);
-	}
+	},
 );
 
 export default IconStack;
