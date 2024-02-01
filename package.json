@@ -7,7 +7,8 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"format": "npx prettier . --write"
+		"format": "npx prettier . --write",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"classnames": "^2.5.1",
@@ -25,6 +26,7 @@
 		"@types/react-dom": "^18.0.9",
 		"@vitejs/plugin-react": "^4.2.1",
 		"autoprefixer": "^10.4.13",
+		"husky": "^9.0.10",
 		"postcss": "^8.4.21",
 		"prettier": "^3.2.4",
 		"prettier-plugin-tailwindcss": "^0.5.11",
