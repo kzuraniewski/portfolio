@@ -51,7 +51,7 @@ export const mainTechIcons = [
 
 export const companies = [
 	{
-		timeSpan: '09.2022 - 08.2023',
+		timeSpan: 'Sep. 2022 - Aug. 2023',
 		name: 'All for One Poland',
 		summary: [
 			'Web app UI and backend development using React, Spring and PostgreSQL',
@@ -61,7 +61,7 @@ export const companies = [
 		positions: ['Junior Fullstack Developer'],
 	},
 	{
-		timeSpan: '02.2022 - 07.2022',
+		timeSpan: 'Feb. 2022 - July 2022',
 		name: 'Olimp Agency',
 		summary: [
 			'Portfolio website design and development using Wordpress and React',
