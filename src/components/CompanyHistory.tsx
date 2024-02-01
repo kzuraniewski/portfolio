@@ -6,7 +6,7 @@ export const CompanyHistory = () => {
 		<ul className="flex flex-col gap-16">
 			{companies.map((company, index) => (
 				<li key={`company-${index}`} className="flex gap-5">
-					<div className="w-1/3 shrink-0">
+					<div className="w-44 shrink-0">
 						<h3 className="font-bold uppercase font-display">
 							{company.name}
 						</h3>
