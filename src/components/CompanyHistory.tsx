@@ -1,40 +1,57 @@
-import { Divider } from '@/components/Divider';
-import { Separated } from '@/components/Separated';
-import cn from '@/lib/cn';
+import PolygonBackground from '@/components/PolygonBackground';
 import { companies } from '@/lib/data';
-import { useState } from 'react';
 
 export const CompanyHistory = () => {
-	const [selectedIndex, setSelectedIndex] = useState(0);
-
 	return (
-		<div className="flex w-2/3 gap-20 mx-auto">
-			<Separated
-				as="ul"
-				separator={<Divider />}
-				className="flex flex-col tracking-wide w-fit"
-			>
-				{companies.map(({ timeSpan, name }, index) => (
-					<li
-						key={`company-${index}`}
-						onClick={() => setSelectedIndex(index)}
-					>
-						<button
-							className={cn(
-								'w-full px-3 py-2 text-sm transition-colors rounded-sm text-start hover:bg-secondary',
-								{ 'bg-secondary': selectedIndex === index }
-							)}
-						>
-							<span className="inline-block mr-2 text-accent">
-								{timeSpan}
-							</span>{' '}
-							{name}
-						</button>
-					</li>
-				))}
-			</Separated>
+		<ul className="flex flex-col gap-16">
+			{companies.map((company, index) => (
+				<li key={`company-${index}`} className="flex gap-5">
+					<div className="w-1/3 shrink-0">
+						<h3 className="font-bold uppercase font-display">
+							{company.name}
+						</h3>
+					</div>
 
-			<div>{companies[selectedIndex].description}</div>
-		</div>
+					<div className="text-sm">
+						<div className="flex justify-between">
+							<PolygonBackground
+								padding={[10.2]}
+								className="mb-3 font-bold uppercase font-display h-fit w-fit"
+								getPoints={(width, height) => [
+									[0, 5],
+									[width, 0],
+									[width - 5, height - 1],
+									[3, height],
+								]}
+							>
+								<ul className="text-accent">
+									{company.positions.map(
+										(position, index) => (
+											<li key={`position-${index}`}>
+												{position}
+											</li>
+										)
+									)}
+								</ul>
+							</PolygonBackground>
+
+							<div className="mt-2 mr-3">{company.timeSpan}</div>
+						</div>
+
+						<div className="mt-4">
+							<ul>
+								{company.summary.map((summaryElement) => (
+									<li className="relative mb-1 -left-2 marker:content-['-'] marker:text-accent">
+										<span className="relative left-2">
+											{summaryElement}
+										</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				</li>
+			))}
+		</ul>
 	);
 };

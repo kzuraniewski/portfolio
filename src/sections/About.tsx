@@ -30,17 +30,17 @@ export default function LandingPage() {
 				</p>
 			</PolygonBackground>
 
-			<div className="flex justify-evenly">
+			<div className="flex justify-around">
 				<SubSection title="Technologies I've worked with">
 					<Separated
 						as="ul"
-						separator={<Divider vertical className="h-10" />}
-						className="grid items-center grid-cols-5 mx-auto mb-20 justify-items-center gap-y-12"
+						separator={<Divider vertical className="h-8" />}
+						className="grid items-center grid-cols-5 mx-auto mb-20 w-fit justify-items-center gap-y-10 gap-x-1"
 						indexSelector={(index) => Boolean((index + 1) % 3)}
 					>
 						{mainTechIcons.map(({ src, alt }) => (
 							<li>
-								<img src={src} alt={alt} className="w-14" />
+								<img src={src} alt={alt} className="w-12" />
 							</li>
 						))}
 					</Separated>

@@ -36,6 +36,7 @@ const backgroundColors = {
 	light: '#EEEEEE',
 };
 
+// TODO: support `as` prop
 export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 	getPoints?: PolygonPointsFactory;
 	/**

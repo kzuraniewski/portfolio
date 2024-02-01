@@ -53,12 +53,23 @@ export const companies = [
 	{
 		timeSpan: '09.2022 - 08.2023',
 		name: 'All for One Poland',
-		description: 'test a41',
+		summary: [
+			'Web app UI and backend development using React, Spring and PostgreSQL',
+			'Improving and implementing new aspects related to user interfaces and SAP data processing',
+			'Development of UI and RPA processes with MUI and Node.js',
+		],
+		positions: ['Junior Fullstack Developer'],
 	},
 	{
 		timeSpan: '02.2022 - 07.2022',
 		name: 'Olimp Agency',
-		description: 'test oa',
+		summary: [
+			'Portfolio website design and development using Wordpress and React',
+			'E-commerce service development and maintenance in Wordpress',
+			'Bypassing editor limitations with hand written custom JS and CSS to improve the UI in the existing projects',
+			'Backend maintenance for E-commerce serivces using PHP',
+		],
+		positions: ['Frontend Developer', 'Wordpress Developer'],
 	},
 ];
 
