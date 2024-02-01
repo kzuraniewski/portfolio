@@ -3,7 +3,7 @@ import Container from '@/components/Container';
 const Footer = () => {
 	return (
 		<footer className="text-sm text-center border-t-2 border-dashed border-secondary">
-			<Container className="py-16">
+			<Container className="py-8">
 				<a
 					href="https://github.com/kzuraniewski/portfolio"
 					className="text-light hover:text-accent"
