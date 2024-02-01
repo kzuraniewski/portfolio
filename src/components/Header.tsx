@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { FaBars, FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
-import { Button, IconButton } from '@/components/Button';
+import { Button } from '@/components/Button';
 import Container from '@/components/Container';
 import { Reference, References } from '@/components/References';
 import cn from '@/lib/cn';
@@ -56,7 +56,7 @@ export const Header = () => {
 							<li key={`nav-${index}`}>
 								<a
 									href={href}
-									className="tracking-wider uppercase text-light font-display hover:no-underline hover:text-accent before:content-['#'] before:mr-0.5 before:text-accent"
+									className="font-display uppercase tracking-wider text-light before:mr-0.5 before:text-accent before:content-['#'] hover:text-accent hover:no-underline"
 								>
 									{label}
 								</a>
