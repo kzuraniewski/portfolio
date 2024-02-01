@@ -27,42 +27,56 @@ export type Icon = {
 	alt: string;
 };
 
-export const mainTechIcons: Icon[] = [
-	{
+export const techIcons = {
+	react: {
 		src: '/icons/react-logo.png',
 		alt: 'React logo',
 	},
-	{
+	typeScript: {
 		src: '/icons/typescript-logo.png',
 		alt: 'TypeScript logo',
 	},
-	{
+	mui: {
 		src: '/icons/mui-logo.png',
 		alt: 'MUI logo',
 	},
-	{
+	java: {
 		src: '/icons/java-logo.png',
 		alt: 'Java logo',
 	},
-	{
+	nodeJs: {
 		src: '/icons/nodejs-logo.svg',
 		alt: 'Node.js logo',
 	},
-	{
+	wordPress: {
 		src: '/icons/wordpress-logo.png',
 		alt: 'Wordpress logo',
 	},
-];
-
-export const learningIcons: Icon[] = [
-	{
-		src: '/icons/java-logo.png',
-		alt: 'Java icon',
-	},
-	{
+	docker: {
 		src: '/icons/docker-logo.png',
 		alt: 'Docker logo',
 	},
+	postgres: {
+		src: '/icons/postgres-logo.png',
+		alt: 'PostgreSQL logo',
+	},
+} satisfies Record<string, Icon>;
+
+export const mainTechIcons: Icon[] = [
+	techIcons.react,
+	techIcons.typeScript,
+	techIcons.mui,
+	techIcons.java,
+	techIcons.nodeJs,
+	techIcons.postgres,
+	techIcons.docker,
+	techIcons.wordPress,
+];
+
+// prettier-ignore
+export const learningIcons: Icon[] = [
+	techIcons.java,
+	techIcons.docker,
 ];
 
 export const companies = [
