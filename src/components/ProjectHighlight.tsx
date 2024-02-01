@@ -24,7 +24,7 @@ const ProjectHighlight = ({
 	const previewLink = project.links.website ?? project.links.github;
 
 	return (
-		<div className={cn('flex gap-20 mb-24', className)} {...props}>
+		<div className={cn('flex gap-16 mb-24', className)} {...props}>
 			<div className="flex flex-col w-80 shrink-0">
 				<div className="flex items-end justify-between w-full mb-5">
 					<h3 className="text-2xl font-bold uppercase font-display">
