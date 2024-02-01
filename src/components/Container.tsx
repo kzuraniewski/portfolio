@@ -8,7 +8,7 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
 		return (
 			<div
 				ref={ref}
-				className={cn('container max-w-screen-lg', className)}
+				className={cn('container max-w-screen-xl', className)}
 				{...props}
 			></div>
 		);
