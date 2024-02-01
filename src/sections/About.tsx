@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { CompanyHistory } from '@/components/CompanyHistory';
 import IconStack from '@/components/IconStack';
 import PolygonBackground from '@/components/PolygonBackground';
@@ -27,8 +29,8 @@ export default function LandingPage() {
 
 					<p className="mx-auto mt-8 w-fit text-center">
 						My web development journey started in 2021 - when I got
-						to know React. Since then I've had the opportunity to
-						design, develop and maintain websites, E-commerce
+						to know React. Since then I&apos;ve had the opportunity
+						to design, develop and maintain websites, E-commerce
 						services and fullstack web applications at different
 						companies.
 					</p>

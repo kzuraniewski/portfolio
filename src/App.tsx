@@ -1,3 +1,4 @@
+import React from 'react';
 import { About, Contact, LandingPage, Projects } from '@/sections';
 
 import Container from '@/components/Container';

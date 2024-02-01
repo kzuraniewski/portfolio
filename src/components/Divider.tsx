@@ -1,4 +1,4 @@
-import { forwardRef, HTMLAttributes } from 'react';
+import React, { forwardRef, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
 export type DividerProps = HTMLAttributes<HTMLDivElement> & {
@@ -21,3 +21,4 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
 		);
 	},
 );
+Divider.displayName = 'Divider';

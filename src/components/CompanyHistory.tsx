@@ -1,3 +1,5 @@
+import React from 'react';
+
 import PolygonBackground from '@/components/PolygonBackground';
 import { companies } from '@/lib/data';
 

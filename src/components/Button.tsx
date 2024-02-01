@@ -42,14 +42,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		});
 	},
 );
+Button.displayName = 'Button';
 
-export type IconButtonProps = ButtonProps;
+export type IconButtonProps = Omit<ButtonProps, 'variant'>;
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
-	(
-		{ variant = 'default', size = 'normal', href, className, ...props },
-		ref,
-	) => {
+	({ size = 'normal', href, className, ...props }, ref) => {
 		return React.createElement(href ? 'a' : 'button', {
 			className: cn(
 				'block text-light hover:text-accent w-6 h-6 [&>svg]:w-full [&>svg]:h-full [&>svg]:transition-colors',
@@ -62,3 +60,4 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 		});
 	},
 );
+IconButton.displayName = 'IconButton';

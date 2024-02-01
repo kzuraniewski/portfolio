@@ -1,4 +1,4 @@
-import { HTMLAttributes, useRef, useState } from 'react';
+import React, { HTMLAttributes, useRef, useState } from 'react';
 
 import cn from '@/lib/cn';
 import useEventActivatedValue from '@/lib/useEventActivatedValue';

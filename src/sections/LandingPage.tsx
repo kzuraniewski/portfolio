@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaArrowTurnDown } from 'react-icons/fa6';
 
 import { Button } from '@/components/Button';
@@ -39,7 +40,7 @@ export default function LandingPage() {
 					]}
 				>
 					<p className="max-w-sm text-center">
-						I'm a fullstack web developer that specializes in
+						I&apos;m a fullstack web developer that specializes in
 						TypeScript, React and Java.
 					</p>
 				</PolygonBackground>

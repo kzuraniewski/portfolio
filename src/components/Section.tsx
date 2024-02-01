@@ -1,4 +1,4 @@
-import { forwardRef, HTMLAttributes } from 'react';
+import React, { forwardRef, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
 import { Divider } from '@/components/Divider';
@@ -28,6 +28,7 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
 		);
 	},
 );
+Section.displayName = 'Section';
 
 export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
@@ -46,3 +47,4 @@ export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
 		);
 	},
 );
+SubSection.displayName = 'SubSection';

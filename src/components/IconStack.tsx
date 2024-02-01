@@ -1,4 +1,4 @@
-import { forwardRef, HTMLAttributes } from 'react';
+import React, { forwardRef, HTMLAttributes } from 'react';
 
 import { Divider } from '@/components/Divider';
 import PolygonBackground from '@/components/PolygonBackground';
@@ -55,5 +55,6 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 		);
 	},
 );
+IconStack.displayName = 'IconStack';
 
 export default IconStack;

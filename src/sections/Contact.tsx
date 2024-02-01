@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { CornerBanner } from '@/components/CornerBanner';
 import { Divider } from '@/components/Divider';

@@ -43,6 +43,7 @@ export const Separated = forwardRef<HTMLElement, SeparatedProps>(
 		);
 	},
 );
+Separated.displayName = 'Separated';
 
 const joinChildren = (
 	children: React.ReactNode,

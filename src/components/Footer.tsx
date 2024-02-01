@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Container from '@/components/Container';
 
 const Footer = () => {
@@ -8,6 +10,7 @@ const Footer = () => {
 					href="https://github.com/kzuraniewski/portfolio"
 					className="text-light hover:text-accent"
 					target="_blank"
+					rel="noreferrer"
 				>
 					Designed and developed by Karol Żuraniewski
 				</a>

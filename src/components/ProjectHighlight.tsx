@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaGithub } from 'react-icons/fa6';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
@@ -111,6 +112,7 @@ const ProjectHighlight = ({
 					href={previewLink}
 					className="group relative block overflow-hidden rounded-sm"
 					target="_blank"
+					rel="noreferrer"
 				>
 					<div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-5/6 -translate-x-1/2 -translate-y-1/2 overflow-ellipsis px-5 text-center text-sm text-light opacity-0 transition-opacity group-hover:opacity-100">
 						{previewLink}
