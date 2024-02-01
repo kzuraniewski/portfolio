@@ -1,11 +1,10 @@
 import { CompanyHistory } from '@/components/CompanyHistory';
-import { Divider } from '@/components/Divider';
+import IconStack from '@/components/IconStack';
 import PolygonBackground, {
 	PolygonPointsFactory,
 } from '@/components/PolygonBackground';
 import { Section, SubSection } from '@/components/Section';
-import { Separated } from '@/components/Separated';
-import { mainTechIcons } from '@/lib/data';
+import { learningIcons, mainTechIcons } from '@/lib/data';
 
 const getParagraphPoints: PolygonPointsFactory = (width, height) => [
 	[20, 10],
@@ -31,20 +30,15 @@ export default function LandingPage() {
 			</PolygonBackground>
 
 			<div className="flex justify-around">
-				<SubSection title="Technologies I've worked with">
-					<Separated
-						as="ul"
-						separator={<Divider vertical className="h-8" />}
-						className="grid items-center grid-cols-5 mx-auto mb-20 w-fit justify-items-center gap-y-10 gap-x-1"
-						indexSelector={(index) => Boolean((index + 1) % 3)}
-					>
-						{mainTechIcons.map(({ src, alt }) => (
-							<li>
-								<img src={src} alt={alt} className="w-12" />
-							</li>
-						))}
-					</Separated>
-				</SubSection>
+				<div className="flex flex-col">
+					<SubSection title="Technologies I've worked with">
+						<IconStack icons={mainTechIcons} />
+					</SubSection>
+
+					<SubSection title="What I'm learning">
+						<IconStack icons={learningIcons} />
+					</SubSection>
+				</div>
 
 				<SubSection title="Companies I worked in" className="w-1/2">
 					<CompanyHistory />

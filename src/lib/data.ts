@@ -22,7 +22,12 @@ export const navigation = [
 	},
 ];
 
-export const mainTechIcons = [
+export type Icon = {
+	src: string;
+	alt: string;
+};
+
+export const mainTechIcons: Icon[] = [
 	{
 		src: '/icons/react-logo.png',
 		alt: 'React logo',
@@ -46,6 +51,17 @@ export const mainTechIcons = [
 	{
 		src: '/icons/wordpress-logo.png',
 		alt: 'Wordpress logo',
+	},
+];
+
+export const learningIcons: Icon[] = [
+	{
+		src: '/icons/java-logo.png',
+		alt: 'Java icon',
+	},
+	{
+		src: '/icons/docker-logo.png',
+		alt: 'Docker logo',
 	},
 ];
 
