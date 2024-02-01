@@ -10,7 +10,7 @@ export default function App() {
 				<Header />
 
 				<main>
-					<Container className="py-10">
+					<Container>
 						<LandingPage />
 						<About />
 						<Projects />

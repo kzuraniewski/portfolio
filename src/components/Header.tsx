@@ -41,7 +41,7 @@ export const Header = () => {
 		<header
 			// prettier-ignore
 			className={cn(
-				'fixed z-50 w-full transition-all duration-300 border-b-2 border-dashed border-b-secondary bg-primary',
+				'sticky top-0 z-50 w-full transition-all duration-300 border-b-2 border-dashed border-b-secondary bg-primary',
 				{ '-translate-y-full': mountState === 'collapsed' },
 				{ 'bg-opacity-80 backdrop-blur-sm shadow-xl': mountState === 'floating' }
 			)}

@@ -1,32 +1,47 @@
 import { Button } from '@/components/Button';
 import { Divider } from '@/components/Divider';
+import PolygonBackground from '@/components/PolygonBackground';
 import { FaArrowTurnDown } from 'react-icons/fa6';
 
 export default function LandingPage() {
 	return (
-		<section id="home" className="h-screen">
-			<div className="flex items-center justify-between h-full">
-				<div>
-					<span className="tracking-wide text-small text-accent">
-						My name is
-					</span>
-					<h1 className="font-display">Karol Żuraniewski</h1>
+		<section
+			id="home"
+			className="relative flex flex-col items-center justify-center h-[70vh]"
+		>
+			<span className="tracking-wide text-small text-accent">
+				My name is
+			</span>
+			<h1 className="mb-10 font-bold leading-tight font-display text-8xl">
+				Karol Żuraniewski
+			</h1>
 
-					<Divider className="w-48 my-5" />
+			<Divider className="w-48 mb-7" />
 
-					<p className="max-w-sm mb-10">
-						And I'm a fullstack web developer that specializes in
-						TypeScript, React and Java.
-					</p>
+			<PolygonBackground
+				padding={20}
+				getPoints={(width, height) => [
+					[5, 10],
+					[width, 0],
+					[width - 15, height],
+					[0, height - 10],
+				]}
+			>
+				<p className="max-w-sm text-center">
+					And I'm a fullstack web developer that specializes in
+					TypeScript, React and Java.
+				</p>
+			</PolygonBackground>
 
-					<Button variant="primary" size="big" href="#about">
-						See more
-						<FaArrowTurnDown className="inline-block w-2 ml-2" />
-					</Button>
-				</div>
-
-				<div className="border border-secondary w-[400px] 2xl:w-[500px] h-[400px] 2xl:h-[500px]" />
-			</div>
+			<Button
+				variant="primary"
+				size="big"
+				href="#about"
+				className="absolute -bottom-10"
+			>
+				See more
+				<FaArrowTurnDown className="inline-block w-2 ml-2" />
+			</Button>
 		</section>
 	);
 }
