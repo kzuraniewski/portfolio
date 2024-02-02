@@ -29,5 +29,5 @@ module.exports = {
 	rules: {
 		'@typescript-eslint/no-unused-vars': 1,
 	},
-	ignorePatterns: ['dist'],
+	ignorePatterns: ['dist', '*.po'],
 };
