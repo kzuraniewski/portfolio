@@ -1,9 +1,8 @@
-import React, { HTMLAttributes, useRef, useState } from 'react';
+import React, { HTMLAttributes, useEffect, useRef, useState } from 'react';
 
 import cn from '@/lib/cn';
 import { tailwindConfig } from '@/lib/util';
 import useEventActivatedValue from '@/hooks/useEventActivatedValue';
-import useWindowEvent from '@/hooks/useWindowEvent';
 
 const BORDER_RADIUS = 2;
 
@@ -95,10 +94,14 @@ const PolygonBackground = ({
 		setAttributes({ viewBox, points, width, height });
 	};
 
-	useWindowEvent('load', updatePolygonSize, [children]);
-	useWindowEvent('resize', () => !rotation && updatePolygonSize(), [
-		children,
-	]);
+	useEffect(() => {
+		if (!rootRef.current) return;
+
+		const resizeObserver = new ResizeObserver(updatePolygonSize);
+		resizeObserver.observe(rootRef.current);
+
+		return () => resizeObserver.disconnect();
+	}, []);
 
 	return (
 		<div
