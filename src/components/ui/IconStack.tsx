@@ -1,4 +1,5 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
+import { useLingui } from '@lingui/react';
 
 import { Divider } from '@/components/ui/Divider';
 import PolygonBackground from '@/components/ui/PolygonBackground';
@@ -19,6 +20,8 @@ export type IconStackProps = Omit<
 
 const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 	({ stack, className, ...props }, ref) => {
+		const { _ } = useLingui();
+
 		return (
 			<Separated
 				ref={ref}
@@ -34,7 +37,11 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 			>
 				{stack.map(({ icon, highlighted }) => (
 					<li key={icon.src} className="relative">
-						<img src={icon.src} alt={icon.alt} className="w-12" />
+						<img
+							src={icon.src}
+							alt={_(icon.alt)}
+							className="w-12"
+						/>
 
 						{highlighted && (
 							<PolygonBackground

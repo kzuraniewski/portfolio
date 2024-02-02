@@ -16,7 +16,7 @@ export default function Projects() {
 					.filter((project) => project.featured)
 					.map((project, index) => (
 						<ProjectHighlight
-							key={project.name}
+							key={project.name.id}
 							project={project}
 							className={
 								'relative ' +

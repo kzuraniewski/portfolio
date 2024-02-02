@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trans } from '@lingui/react';
 
 import PolygonBackground from '@/components/ui/PolygonBackground';
 import { companies } from '@/lib/data';
@@ -39,7 +40,7 @@ export const CompanyHistory = () => {
 							</PolygonBackground>
 
 							<div className="mr-3 mt-2 tracking-wide">
-								{company.timeSpan}
+								<Trans id={company.timeSpan.id} />
 							</div>
 						</div>
 
@@ -47,11 +48,11 @@ export const CompanyHistory = () => {
 							<ul>
 								{company.summary.map((summaryElement) => (
 									<li
-										key={summaryElement}
+										key={summaryElement.id}
 										className="relative -left-2 mb-1 marker:text-accent marker:content-['-']"
 									>
 										<span className="relative left-2">
-											{summaryElement}
+											<Trans id={summaryElement.id} />
 										</span>
 									</li>
 								))}

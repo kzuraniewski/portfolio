@@ -1,3 +1,5 @@
+import { msg } from '@lingui/macro';
+
 export const personalLinks = {
 	github: 'https://github.com/kzuraniewski',
 	linkedIn: 'https://www.linkedin.com/in/karol-zuraniewski',
@@ -5,62 +7,59 @@ export const personalLinks = {
 
 export const navigation = [
 	{
-		label: 'Home',
+		label: msg`Home`,
 		href: '#',
 	},
 	{
-		label: 'About',
+		label: msg`About`,
 		href: '#about',
 	},
 	{
-		label: 'Projects',
+		label: msg`Projects`,
 		href: '#projects',
 	},
 	{
-		label: 'Contact',
+		label: msg`Contact`,
 		href: '#contact',
 	},
 ];
 
-export type Icon = {
-	src: string;
-	alt: string;
-};
-
 export const techIcons = {
 	react: {
 		src: '/icons/react-logo.png',
-		alt: 'React logo',
+		alt: msg`React logo`,
 	},
 	typeScript: {
 		src: '/icons/typescript-logo.png',
-		alt: 'TypeScript logo',
+		alt: msg`TypeScript logo`,
 	},
 	mui: {
 		src: '/icons/mui-logo.png',
-		alt: 'MUI logo',
+		alt: msg`MUI logo`,
 	},
 	java: {
 		src: '/icons/java-logo.png',
-		alt: 'Java logo',
+		alt: msg`Java logo`,
 	},
 	nodeJs: {
 		src: '/icons/nodejs-logo.svg',
-		alt: 'Node.js logo',
+		alt: msg`Node.js logo`,
 	},
 	wordPress: {
 		src: '/icons/wordpress-logo.png',
-		alt: 'Wordpress logo',
+		alt: msg`Wordpress logo`,
 	},
 	docker: {
 		src: '/icons/docker-logo.png',
-		alt: 'Docker logo',
+		alt: msg`Docker logo`,
 	},
 	postgres: {
 		src: '/icons/postgres-logo.png',
-		alt: 'PostgreSQL logo',
+		alt: msg`PostgreSQL logo`,
 	},
-} satisfies Record<string, Icon>;
+};
+
+export type Icon = (typeof techIcons)[keyof typeof techIcons];
 
 export type TechStack = {
 	icon: Icon;
@@ -86,47 +85,36 @@ export const learningTechStack: TechStack = [
 
 export const companies = [
 	{
-		timeSpan: 'Sep. 2022 - Aug. 2023',
+		timeSpan: msg`Sep. 2022 - Aug. 2023`,
 		name: 'All for One Poland',
 		summary: [
-			'Web app UI and backend development using React, Spring and PostgreSQL',
-			'Improving and implementing new aspects related to user interfaces and SAP data processing',
-			'Development of UI and RPA processes with MUI and Node.js',
+			msg`Web app UI and backend development using React, Spring and PostgreSQL`,
+			msg`Improving and implementing new aspects related to user interfaces and SAP data processing`,
+			msg`Development of UI and RPA processes with MUI and Node.js`,
 		],
 		positions: ['Junior Fullstack Developer'],
 	},
 	{
-		timeSpan: 'Feb. 2022 - July 2022',
+		timeSpan: msg`Feb. 2022 - July 2022`,
 		name: 'Olimp Agency',
 		summary: [
-			'Portfolio website design and development using Wordpress and React',
-			'E-commerce service development and maintenance in Wordpress',
-			'Bypassing editor limitations with hand written custom JS and CSS to improve the UI in the existing projects',
-			'Backend maintenance for E-commerce serivces using PHP',
+			msg`Portfolio website design and development using Wordpress and React`,
+			msg`E-commerce service development and maintenance in Wordpress`,
+			msg`Bypassing editor limitations with hand written custom JS and CSS to improve the UI in the existing projects`,
+			msg`Backend maintenance for E-commerce serivces using PHP`,
 		],
 		positions: ['Frontend Developer', 'Wordpress Developer'],
 	},
 ];
 
-export type ProjectData = {
-	name: string;
-	description: string;
-	tech: string[];
-	links: {
-		github: string;
-		website?: string;
-	};
-	previewImage?: string;
-	featured?: boolean;
-	wip?: boolean;
-};
+export type CompanyData = (typeof companies)[number];
 
-export const projects: ProjectData[] = [
+export const projects = [
 	{
-		name: 'Photography Website',
+		name: msg`Photography Website`,
 		featured: true,
 		wip: true,
-		description: 'Photography portfolio website with image preview',
+		description: msg`Photography portfolio website with image preview`,
 		previewImage: '/preview/photo-website.png',
 		tech: ['Next.js', 'MUI', 'TypeScript'],
 		links: {
@@ -134,9 +122,9 @@ export const projects: ProjectData[] = [
 		},
 	},
 	{
-		name: 'PDF Catalog',
+		name: msg`PDF Catalog`,
 		featured: true,
-		description: 'PDF viewer with annotation edit tool',
+		description: msg`PDF viewer with annotation edit tool`,
 		previewImage: '/preview/catalog.png',
 		tech: ['Next.js', 'MUI', 'TypeScript'],
 		links: {
@@ -145,9 +133,9 @@ export const projects: ProjectData[] = [
 		},
 	},
 	{
-		name: 'Intel 8086 Simulator',
+		name: msg`Intel 8086 Simulator`,
 		featured: true,
-		description: 'A web app simulating the Intel 8086 processor',
+		description: msg`A web app simulating the Intel 8086 processor`,
 		previewImage: '/preview/8086.png',
 		tech: ['React', 'MUI', 'TypeScript'],
 		links: {
@@ -155,9 +143,9 @@ export const projects: ProjectData[] = [
 		},
 	},
 	{
-		name: 'Interactive Comments',
+		name: msg`Interactive Comments`,
 		featured: true,
-		description: 'Interactive social media comment thread system',
+		description: msg`Interactive social media comment thread system`,
 		previewImage: '/preview/interactive-comments.png',
 		tech: ['React', 'CSS', 'JavaScript'],
 		links: {
@@ -167,9 +155,8 @@ export const projects: ProjectData[] = [
 	},
 
 	{
-		name: 'Link Board',
-		description:
-			'A web app allowing the user to store links in grouped tiles',
+		name: msg`Link Board`,
+		description: msg`A web app allowing the user to store links in grouped tiles`,
 		previewImage: '#',
 		tech: ['React', 'SASS', 'Firebase', 'JavaScript'],
 		links: {
@@ -177,8 +164,8 @@ export const projects: ProjectData[] = [
 		},
 	},
 	{
-		name: 'Hand Over',
-		description: "Example charity company's website",
+		name: msg`Hand Over`,
+		description: msg`Example charity company's website`,
 		previewImage: '#',
 		tech: ['React', 'SASS', 'JavaScript'],
 		links: {
@@ -186,3 +173,5 @@ export const projects: ProjectData[] = [
 		},
 	},
 ];
+
+export type ProjectData = (typeof projects)[number];

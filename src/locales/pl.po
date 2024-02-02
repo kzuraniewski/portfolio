@@ -13,13 +13,37 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/lib/data.ts:159
+msgid "A web app allowing the user to store links in grouped tiles"
+msgstr "Aplikacja webowa pozwalająca na gromadzenie pogrupowanych linków"
+
+#: src/lib/data.ts:138
+msgid "A web app simulating the Intel 8086 processor"
+msgstr "Aplikacja webowa symulująca procesor Intel 8086"
+
+#: src/lib/data.ts:14
+msgid "About"
+msgstr "O mnie"
+
 #: src/components/sections/About.tsx:15
 msgid "About me"
 msgstr "O mnie"
 
+#: src/lib/data.ts:104
+msgid "Backend maintenance for E-commerce serivces using PHP"
+msgstr "Utrzymywanie backendu dla serwisu E-commerce przy użyciu PHP"
+
+#: src/lib/data.ts:103
+msgid "Bypassing editor limitations with hand written custom JS and CSS to improve the UI in the existing projects"
+msgstr "Sporządzanie własnych skryptów JS i styli w CSS omijając ograniczenia edytora w celu udoskonalania UI w istniejących projektach"
+
 #: src/components/sections/About.tsx:83
 msgid "Companies I worked in"
 msgstr "Firmy w których pracowałem"
+
+#: src/lib/data.ts:22
+msgid "Contact"
+msgstr "Kontakt"
 
 #: src/components/sections/Contact.tsx:23
 #: src/components/sections/Contact.tsx:93
@@ -34,9 +58,37 @@ msgstr "Skontaktuj się pod"
 msgid "Designed and developed by Karol Żuraniewski"
 msgstr "Projekt i wykonanie - Karol Żuraniewski"
 
+#: src/lib/data.ts:93
+msgid "Development of UI and RPA processes with MUI and Node.js"
+msgstr "Rozwój UI oraz procesów RPA przy użyciu MUI i Node.js"
+
+#: src/lib/data.ts:54
+msgid "Docker logo"
+msgstr "Logo Docker"
+
+#: src/lib/data.ts:102
+msgid "E-commerce service development and maintenance in Wordpress"
+msgstr "Rozwój i utrzymanie serwisów E-commerce przy użyciu narzędzia Wordpress"
+
+#: src/lib/data.ts:168
+msgid "Example charity company's website"
+msgstr "Przykładowa strona organizacji charytatywnej"
+
+#: src/lib/data.ts:98
+msgid "Feb. 2022 - July 2022"
+msgstr "Lut 2022 - Lip 2022"
+
+#: src/lib/data.ts:167
+msgid "Hand Over"
+msgstr "Hand Over"
+
 #: src/components/sections/About.tsx:30
 msgid "Hi, my name is Karol. I develop web stuff."
 msgstr "Cześć, jestem Karol. Jestem web developerem."
+
+#: src/lib/data.ts:10
+msgid "Home"
+msgstr "Strona główna"
 
 #: src/components/sections/Contact.tsx:41
 msgid "I also develop websites as a freelancer. If you are in need of one, reach out to me."
@@ -44,11 +96,39 @@ msgstr "Zajmuję się również tworzeniem stron internetowych jako freelancer. 
 
 #: src/components/sections/Contact.tsx:30
 msgid "I am currently open to work, so if you found my portfolio interesting, feel free to contact me."
-msgstr "Jestem obecnie otwarty na pracę, więc jeśli spodobało Ci się moje portfolio, skontaktuj się ze mną."
+msgstr "Jestem obecnie otwarty na propozycje współpracy, więc jeśli spodobało Ci się moje portfolio, skontaktuj się ze mną."
 
 #: src/components/sections/LandingPage.tsx:44
 msgid "I'm a fullstack web developer that specializes in TypeScript, React and Java."
 msgstr "Jestem fullstack web developerem specjalizującym się w TypeScript, React i Java."
+
+#: src/lib/data.ts:92
+msgid "Improving and implementing new aspects related to user interfaces and SAP data processing"
+msgstr "Udoskonalanie i implementowanie nowych aspektów związanych z interfejsami użytkownika i przetwarzaniem danych SAP"
+
+#: src/lib/data.ts:136
+msgid "Intel 8086 Simulator"
+msgstr "Symulator Intel 8086"
+
+#: src/lib/data.ts:146
+msgid "Interactive Comments"
+msgstr "System komentarzy"
+
+#: src/lib/data.ts:148
+msgid "Interactive social media comment thread system"
+msgstr "Interaktywny system komentarzy w stylu social media"
+
+#: src/lib/data.ts:42
+msgid "Java logo"
+msgstr "Logo Java"
+
+#: src/lib/data.ts:158
+msgid "Link Board"
+msgstr "Link Board"
+
+#: src/lib/data.ts:38
+msgid "MUI logo"
+msgstr "Logo MUI"
 
 #: src/components/sections/LandingPage.tsx:16
 msgid "My name is"
@@ -66,15 +146,51 @@ msgstr "Moja przygoda z web development zaczęła się w 2021 - gdy poznałem Re
 msgid "Need a website?"
 msgstr "Potrzebujesz strony?"
 
+#: src/lib/data.ts:46
+msgid "Node.js logo"
+msgstr "Logo Node.js"
+
 #: src/components/sections/Contact.tsx:79
 msgid "Or call me:"
 msgstr "Lub zadzwoń:"
 
-#: src/components/ui/Header.tsx:80
+#: src/lib/data.ts:125
+msgid "PDF Catalog"
+msgstr "Katalog PDF"
+
+#: src/lib/data.ts:127
+msgid "PDF viewer with annotation edit tool"
+msgstr "Wyświetlacz PDF z narzędziem do edycji adnotacji"
+
+#: src/lib/data.ts:117
+msgid "Photography portfolio website with image preview"
+msgstr "Strona portfolio z galerią zdjęć i podglądem"
+
+#: src/lib/data.ts:114
+msgid "Photography Website"
+msgstr "Galeria zdjęć"
+
+#: src/lib/data.ts:101
+msgid "Portfolio website design and development using Wordpress and React"
+msgstr "Projektowanie i rozwój stron portfolio przy użyciu Wordpress oraz React"
+
+#: src/lib/data.ts:58
+msgid "PostgreSQL logo"
+msgstr "Logo PostgreSQL"
+
+#: src/lib/data.ts:18
+msgid "Projects"
+msgstr "Projekty"
+
+#: src/lib/data.ts:30
+msgid "React logo"
+msgstr "Logo React"
+
+#: src/components/ui/Header.tsx:81
 msgid "Resume"
 msgstr "Pobierz CV"
 
-#: src/components/ui/ProjectHighlight.tsx:88
+#: src/components/ui/ProjectHighlight.tsx:91
 msgid "See live"
 msgstr "Otwórz"
 
@@ -86,14 +202,30 @@ msgstr "Zobacz więcej"
 msgid "See more projects on my <0>GitHub</0>"
 msgstr "Zobacz więcej projektów na moim <0>GitHubie</0>"
 
+#: src/lib/data.ts:88
+msgid "Sep. 2022 - Aug. 2023"
+msgstr "Wrz 2022 - Sie 2023"
+
 #: src/components/sections/About.tsx:73
 msgid "Technologies I've worked with"
 msgstr "Technologie które wykorzystywałem"
+
+#: src/lib/data.ts:34
+msgid "TypeScript logo"
+msgstr "Logo TypeScript"
+
+#: src/lib/data.ts:91
+msgid "Web app UI and backend development using React, Spring and PostgreSQL"
+msgstr "Rozwój UI oraz backendu aplikacji webowej przy użyciu React, Sprint oraz PostgreSQL"
 
 #: src/components/sections/About.tsx:77
 msgid "What I'm learning"
 msgstr "Czego się uczę"
 
-#: src/components/ui/ProjectHighlight.tsx:108
+#: src/lib/data.ts:50
+msgid "Wordpress logo"
+msgstr "Logo Wordpress"
+
+#: src/components/ui/ProjectHighlight.tsx:111
 msgid "Working on"
 msgstr "W toku"

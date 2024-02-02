@@ -13,12 +13,36 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/lib/data.ts:159
+msgid "A web app allowing the user to store links in grouped tiles"
+msgstr ""
+
+#: src/lib/data.ts:138
+msgid "A web app simulating the Intel 8086 processor"
+msgstr ""
+
+#: src/lib/data.ts:14
+msgid "About"
+msgstr ""
+
 #: src/components/sections/About.tsx:15
 msgid "About me"
 msgstr ""
 
+#: src/lib/data.ts:104
+msgid "Backend maintenance for E-commerce serivces using PHP"
+msgstr ""
+
+#: src/lib/data.ts:103
+msgid "Bypassing editor limitations with hand written custom JS and CSS to improve the UI in the existing projects"
+msgstr ""
+
 #: src/components/sections/About.tsx:83
 msgid "Companies I worked in"
+msgstr ""
+
+#: src/lib/data.ts:22
+msgid "Contact"
 msgstr ""
 
 #: src/components/sections/Contact.tsx:23
@@ -34,8 +58,36 @@ msgstr ""
 msgid "Designed and developed by Karol Żuraniewski"
 msgstr ""
 
+#: src/lib/data.ts:93
+msgid "Development of UI and RPA processes with MUI and Node.js"
+msgstr ""
+
+#: src/lib/data.ts:54
+msgid "Docker logo"
+msgstr ""
+
+#: src/lib/data.ts:102
+msgid "E-commerce service development and maintenance in Wordpress"
+msgstr ""
+
+#: src/lib/data.ts:168
+msgid "Example charity company's website"
+msgstr ""
+
+#: src/lib/data.ts:98
+msgid "Feb. 2022 - July 2022"
+msgstr ""
+
+#: src/lib/data.ts:167
+msgid "Hand Over"
+msgstr ""
+
 #: src/components/sections/About.tsx:30
 msgid "Hi, my name is Karol. I develop web stuff."
+msgstr ""
+
+#: src/lib/data.ts:10
+msgid "Home"
 msgstr ""
 
 #: src/components/sections/Contact.tsx:41
@@ -48,6 +100,34 @@ msgstr ""
 
 #: src/components/sections/LandingPage.tsx:44
 msgid "I'm a fullstack web developer that specializes in TypeScript, React and Java."
+msgstr ""
+
+#: src/lib/data.ts:92
+msgid "Improving and implementing new aspects related to user interfaces and SAP data processing"
+msgstr ""
+
+#: src/lib/data.ts:136
+msgid "Intel 8086 Simulator"
+msgstr ""
+
+#: src/lib/data.ts:146
+msgid "Interactive Comments"
+msgstr ""
+
+#: src/lib/data.ts:148
+msgid "Interactive social media comment thread system"
+msgstr ""
+
+#: src/lib/data.ts:42
+msgid "Java logo"
+msgstr ""
+
+#: src/lib/data.ts:158
+msgid "Link Board"
+msgstr ""
+
+#: src/lib/data.ts:38
+msgid "MUI logo"
 msgstr ""
 
 #: src/components/sections/LandingPage.tsx:16
@@ -66,15 +146,51 @@ msgstr ""
 msgid "Need a website?"
 msgstr ""
 
+#: src/lib/data.ts:46
+msgid "Node.js logo"
+msgstr ""
+
 #: src/components/sections/Contact.tsx:79
 msgid "Or call me:"
 msgstr ""
 
-#: src/components/ui/Header.tsx:80
+#: src/lib/data.ts:125
+msgid "PDF Catalog"
+msgstr ""
+
+#: src/lib/data.ts:127
+msgid "PDF viewer with annotation edit tool"
+msgstr ""
+
+#: src/lib/data.ts:117
+msgid "Photography portfolio website with image preview"
+msgstr ""
+
+#: src/lib/data.ts:114
+msgid "Photography Website"
+msgstr ""
+
+#: src/lib/data.ts:101
+msgid "Portfolio website design and development using Wordpress and React"
+msgstr ""
+
+#: src/lib/data.ts:58
+msgid "PostgreSQL logo"
+msgstr ""
+
+#: src/lib/data.ts:18
+msgid "Projects"
+msgstr ""
+
+#: src/lib/data.ts:30
+msgid "React logo"
+msgstr ""
+
+#: src/components/ui/Header.tsx:81
 msgid "Resume"
 msgstr ""
 
-#: src/components/ui/ProjectHighlight.tsx:88
+#: src/components/ui/ProjectHighlight.tsx:91
 msgid "See live"
 msgstr ""
 
@@ -86,14 +202,30 @@ msgstr ""
 msgid "See more projects on my <0>GitHub</0>"
 msgstr ""
 
+#: src/lib/data.ts:88
+msgid "Sep. 2022 - Aug. 2023"
+msgstr ""
+
 #: src/components/sections/About.tsx:73
 msgid "Technologies I've worked with"
+msgstr ""
+
+#: src/lib/data.ts:34
+msgid "TypeScript logo"
+msgstr ""
+
+#: src/lib/data.ts:91
+msgid "Web app UI and backend development using React, Spring and PostgreSQL"
 msgstr ""
 
 #: src/components/sections/About.tsx:77
 msgid "What I'm learning"
 msgstr ""
 
-#: src/components/ui/ProjectHighlight.tsx:108
+#: src/lib/data.ts:50
+msgid "Wordpress logo"
+msgstr ""
+
+#: src/components/ui/ProjectHighlight.tsx:111
 msgid "Working on"
 msgstr ""

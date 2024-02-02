@@ -1,5 +1,6 @@
 import React from 'react';
-import { Trans } from '@lingui/macro';
+import { Trans as TransMacro } from '@lingui/macro';
+import { Trans } from '@lingui/react';
 import { FaGithub } from 'react-icons/fa6';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
@@ -31,7 +32,7 @@ const ProjectHighlight = ({
 			<div className="flex w-80 shrink-0 flex-col">
 				<div className="mb-5 flex w-full items-end justify-between">
 					<h3 className="font-display text-2xl font-bold uppercase">
-						{project.name}
+						<Trans id={project.name.id} />
 					</h3>
 
 					<Separated
@@ -64,7 +65,9 @@ const ProjectHighlight = ({
 							[5, height - 3],
 						]}
 					>
-						<p>{project.description}</p>
+						<p>
+							<Trans id={project.description.id} />
+						</p>
 					</PolygonBackground>
 				</PolygonBackground>
 
@@ -85,7 +88,7 @@ const ProjectHighlight = ({
 							href={project.links.website}
 							target="_blank"
 						>
-							<Trans>See live</Trans>
+							<TransMacro>See live</TransMacro>
 						</Button>
 					)}
 				</div>
@@ -105,7 +108,7 @@ const ProjectHighlight = ({
 							[0, height - 5],
 						]}
 					>
-						<Trans>Working on</Trans>
+						<TransMacro>Working on</TransMacro>
 					</PolygonBackground>
 				)}
 

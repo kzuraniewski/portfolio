@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Trans } from '@lingui/macro';
+import { Trans as TransMacro } from '@lingui/macro';
+import { Trans } from '@lingui/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
@@ -59,7 +60,7 @@ export const Header = () => {
 									href={href}
 									className="font-display uppercase tracking-wider text-light before:mr-0.5 before:text-accent before:content-['#'] hover:text-accent hover:no-underline"
 								>
-									{label}
+									<Trans id={label.id} />
 								</a>
 							</li>
 						))}
@@ -77,7 +78,7 @@ export const Header = () => {
 				</References>
 
 				<Button variant="primary">
-					<Trans>Resume</Trans>
+					<TransMacro>Resume</TransMacro>
 				</Button>
 			</Container>
 		</header>
