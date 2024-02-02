@@ -30,7 +30,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		return React.createElement(href ? 'a' : 'button', {
 			// prettier-ignore
 			className: cn(
-				'px-4 py-2 w-fit leading-none transition-colors border rounded-sm text-light hover:text-primary hover:no-underline uppercase tracking-wide',
+				'px-4 py-2 w-fit leading-none transition-colors border rounded-sm text-accent hover:text-primary hover:no-underline uppercase tracking-wide',
 				{ 'border-light hover:bg-light': variant === 'default' },
 				{ 'text-accent border-accent hover:bg-accent': variant === 'primary' },
 				{ 'px-6 py-3': size === 'big' },
