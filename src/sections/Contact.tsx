@@ -6,7 +6,7 @@ import PolygonBackground from '@/components/PolygonBackground';
 import { Section, SubSection } from '@/components/Section';
 import { Separated } from '@/components/Separated';
 import cn from '@/lib/cn';
-import useIntersectionObserver from '@/lib/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const Contact = () => {
 	const rootRef = useRef<HTMLDivElement>(null!);

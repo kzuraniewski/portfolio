@@ -1,9 +1,9 @@
 import React, { HTMLAttributes, useRef, useState } from 'react';
 
 import cn from '@/lib/cn';
-import useEventActivatedValue from '@/lib/useEventActivatedValue';
-import useWindowEvent from '@/lib/useWindowEvent';
 import { tailwindConfig } from '@/lib/util';
+import useEventActivatedValue from '@/hooks/useEventActivatedValue';
+import useWindowEvent from '@/hooks/useWindowEvent';
 
 const BORDER_RADIUS = 2;
 

@@ -6,7 +6,7 @@ import Container from '@/components/Container';
 import { Reference, References } from '@/components/References';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
-import useScroll from '@/lib/useScroll';
+import useScroll from '@/hooks/useScroll';
 
 const NO_COLLAPSE_AREA_HEIGHT = 100;
 
