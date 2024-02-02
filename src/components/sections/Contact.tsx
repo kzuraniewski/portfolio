@@ -26,7 +26,7 @@ const Contact = () => {
 				className="mx-auto flex w-4/5 items-start justify-between gap-10"
 			>
 				<div className="w-2/5 [&>p]:mb-5">
-					<p>
+					<p className="text-center">
 						<Trans>
 							I am currently open to work, so if you found my
 							portfolio interesting, feel free to contact me.
@@ -37,7 +37,7 @@ const Contact = () => {
 						title={_(msg`Need a website?`)}
 						className="mb-0"
 					>
-						<p>
+						<p className="text-center">
 							<Trans>
 								I also develop websites as a freelancer. If you
 								are in need of one, reach out to me.
