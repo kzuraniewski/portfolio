@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trans } from '@lingui/macro';
 import { FaGithub } from 'react-icons/fa6';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
@@ -84,7 +85,7 @@ const ProjectHighlight = ({
 							href={project.links.website}
 							target="_blank"
 						>
-							See live
+							<Trans>See live</Trans>
 						</Button>
 					)}
 				</div>
@@ -104,7 +105,7 @@ const ProjectHighlight = ({
 							[0, height - 5],
 						]}
 					>
-						Working on
+						<Trans>Working on</Trans>
 					</PolygonBackground>
 				)}
 

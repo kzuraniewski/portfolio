@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trans } from '@lingui/macro';
 
 import Container from '@/components/ui/Container';
 
@@ -12,7 +13,7 @@ const Footer = () => {
 					target="_blank"
 					rel="noreferrer"
 				>
-					Designed and developed by Karol Żuraniewski
+					<Trans>Designed and developed by Karol Żuraniewski</Trans>
 				</a>
 			</Container>
 		</footer>

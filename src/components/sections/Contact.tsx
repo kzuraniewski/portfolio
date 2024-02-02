@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Trans } from '@lingui/macro';
 
 import { CornerBanner } from '@/components/ui/CornerBanner';
 import { Divider } from '@/components/ui/Divider';
@@ -24,14 +25,18 @@ const Contact = () => {
 			>
 				<div className="w-2/5 [&>p]:mb-5">
 					<p>
-						I am currently open to work, so if you found my
-						portfolio interesting, feel free to contact me.
+						<Trans>
+							I am currently open to work, so if you found my
+							portfolio interesting, feel free to contact me.
+						</Trans>
 					</p>
 
 					<SubSection title="Need a website?" className="mb-0">
 						<p>
-							I also develop websites as a freelancer. If you are
-							in need of one, reach out to me.
+							<Trans>
+								I also develop websites as a freelancer. If you
+								are in need of one, reach out to me.
+							</Trans>
 						</p>
 					</SubSection>
 				</div>
@@ -58,7 +63,7 @@ const Contact = () => {
 							]}
 							className="w-max"
 						>
-							Contact me at{' '}
+							<Trans>Contact me at</Trans>{' '}
 							<a href="mailto:zuraniewski.karol@gmail.com">
 								zuraniewski.karol@gmail.com
 							</a>
@@ -66,7 +71,8 @@ const Contact = () => {
 					</PolygonBackground>
 
 					<div className="text-sm">
-						Or call me: <a href="tel:+48503129246">503 129 246</a>
+						<Trans>Or call me:</Trans>{' '}
+						<a href="tel:+48503129246">503 129 246</a>
 					</div>
 				</div>
 			</Separated>
@@ -79,7 +85,7 @@ const Contact = () => {
 					{ 'opacity-100 pointer-events-auto': showBanner }
 				)}
 			>
-				Contact me
+				<Trans>Contact me</Trans>
 			</CornerBanner>
 		</Section>
 	);

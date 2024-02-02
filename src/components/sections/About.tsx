@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trans } from '@lingui/macro';
 
 import { CompanyHistory } from '@/components/ui/CompanyHistory';
 import IconStack from '@/components/ui/IconStack';
@@ -23,16 +24,20 @@ export default function LandingPage() {
 						]}
 					>
 						<p className="w-max text-center">
-							Hi, my name is Karol. I develop web stuff.
+							<Trans>
+								Hi, my name is Karol. I develop web stuff.
+							</Trans>
 						</p>
 					</PolygonBackground>
 
 					<p className="mx-auto mt-8 w-fit text-center">
-						My web development journey started in 2021 - when I got
-						to know React. Since then I&apos;ve had the opportunity
-						to design, develop and maintain websites, E-commerce
-						services and fullstack web applications at different
-						companies.
+						<Trans>
+							My web development journey started in 2021 - when I
+							got to know React. Since then I&apos;ve had the
+							opportunity to design, develop and maintain
+							websites, E-commerce services and fullstack web
+							applications at different companies.
+						</Trans>
 					</p>
 				</div>
 

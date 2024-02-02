@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trans } from '@lingui/macro';
 
 import ProjectHighlight from '@/components/ui/ProjectHighlight';
 import { Section } from '@/components/ui/Section';
@@ -22,14 +23,16 @@ export default function Projects() {
 					))}
 
 				<div className="w-fit">
-					See more projects on my{' '}
-					<a
-						href={personalLinks.github}
-						target="_blank"
-						rel="noreferrer"
-					>
-						GitHub
-					</a>
+					<Trans>
+						See more projects on my{' '}
+						<a
+							href={personalLinks.github}
+							target="_blank"
+							rel="noreferrer"
+						>
+							GitHub
+						</a>
+					</Trans>
 				</div>
 			</div>
 		</Section>

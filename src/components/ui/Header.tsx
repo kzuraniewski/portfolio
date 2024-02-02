@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Trans } from '@lingui/macro';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
@@ -75,7 +76,9 @@ export const Header = () => {
 					</Reference>
 				</References>
 
-				<Button variant="primary">Resume</Button>
+				<Button variant="primary">
+					<Trans>Resume</Trans>
+				</Button>
 			</Container>
 		</header>
 	);

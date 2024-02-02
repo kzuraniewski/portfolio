@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trans } from '@lingui/macro';
 import { FaArrowTurnDown } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
@@ -12,7 +13,7 @@ export default function LandingPage() {
 			className="relative flex h-[70vh] flex-col items-center justify-center"
 		>
 			<span className="text-small tracking-wide text-accent">
-				My name is
+				<Trans>My name is</Trans>
 			</span>
 			<h1 className="mb-10 font-display text-8xl font-bold leading-tight">
 				Karol Żuraniewski
@@ -40,8 +41,10 @@ export default function LandingPage() {
 					]}
 				>
 					<p className="max-w-sm text-center">
-						I&apos;m a fullstack web developer that specializes in
-						TypeScript, React and Java.
+						<Trans>
+							I&apos;m a fullstack web developer that specializes
+							in TypeScript, React and Java.
+						</Trans>
 					</p>
 				</PolygonBackground>
 			</PolygonBackground>
@@ -52,7 +55,7 @@ export default function LandingPage() {
 				href="#about"
 				className="absolute -bottom-10"
 			>
-				See more
+				<Trans>See more</Trans>
 				<FaArrowTurnDown className="ml-2 inline-block w-2" />
 			</Button>
 		</section>
