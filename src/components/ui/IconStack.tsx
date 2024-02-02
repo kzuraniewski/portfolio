@@ -1,8 +1,8 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 
-import { Divider } from '@/components/Divider';
-import PolygonBackground from '@/components/PolygonBackground';
-import { IndexSelector, Separated } from '@/components/Separated';
+import { Divider } from '@/components/ui/Divider';
+import PolygonBackground from '@/components/ui/PolygonBackground';
+import { IndexSelector, Separated } from '@/components/ui/Separated';
 import cn from '@/lib/cn';
 import { TechStack } from '@/lib/data';
 

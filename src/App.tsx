@@ -1,9 +1,9 @@
 import React from 'react';
-import { About, Contact, LandingPage, Projects } from '@/sections';
+import { About, Contact, LandingPage, Projects } from '@/components/sections';
 
-import Container from '@/components/Container';
-import Footer from '@/components/Footer';
-import { Header } from '@/components/Header';
+import Container from '@/components/ui/Container';
+import Footer from '@/components/ui/Footer';
+import { Header } from '@/components/ui/Header';
 
 export default function App() {
 	return (

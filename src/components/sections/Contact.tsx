@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
 
-import { CornerBanner } from '@/components/CornerBanner';
-import { Divider } from '@/components/Divider';
-import PolygonBackground from '@/components/PolygonBackground';
-import { Section, SubSection } from '@/components/Section';
-import { Separated } from '@/components/Separated';
+import { CornerBanner } from '@/components/ui/CornerBanner';
+import { Divider } from '@/components/ui/Divider';
+import PolygonBackground from '@/components/ui/PolygonBackground';
+import { Section, SubSection } from '@/components/ui/Section';
+import { Separated } from '@/components/ui/Separated';
 import cn from '@/lib/cn';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 

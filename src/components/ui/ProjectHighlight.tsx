@@ -3,9 +3,9 @@ import { FaGithub } from 'react-icons/fa6';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
 
-import { Button, IconButton } from '@/components/Button';
-import PolygonBackground from '@/components/PolygonBackground';
-import { Separated } from '@/components/Separated';
+import { Button, IconButton } from '@/components/ui/Button';
+import PolygonBackground from '@/components/ui/PolygonBackground';
+import { Separated } from '@/components/ui/Separated';
 import cn from '@/lib/cn';
 import { ProjectData } from '@/lib/data';
 

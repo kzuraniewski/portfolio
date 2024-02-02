@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { CompanyHistory } from '@/components/CompanyHistory';
-import IconStack from '@/components/IconStack';
-import PolygonBackground from '@/components/PolygonBackground';
-import { Section, SubSection } from '@/components/Section';
+import { CompanyHistory } from '@/components/ui/CompanyHistory';
+import IconStack from '@/components/ui/IconStack';
+import PolygonBackground from '@/components/ui/PolygonBackground';
+import { Section, SubSection } from '@/components/ui/Section';
 import { learningTechStack, mainTechStack } from '@/lib/data';
 
 export default function LandingPage() {

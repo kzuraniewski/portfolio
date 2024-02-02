@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PolygonBackground from '@/components/PolygonBackground';
+import PolygonBackground from '@/components/ui/PolygonBackground';
 import { companies } from '@/lib/data';
 
 export const CompanyHistory = () => {

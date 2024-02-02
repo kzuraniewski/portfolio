@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
-import { Button } from '@/components/Button';
-import Container from '@/components/Container';
-import { Reference, References } from '@/components/References';
+import { Button } from '@/components/ui/Button';
+import Container from '@/components/ui/Container';
+import { Reference, References } from '@/components/ui/References';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
 import useScroll from '@/hooks/useScroll';

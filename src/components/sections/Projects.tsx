@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ProjectHighlight from '@/components/ProjectHighlight';
-import { Section } from '@/components/Section';
+import ProjectHighlight from '@/components/ui/ProjectHighlight';
+import { Section } from '@/components/ui/Section';
 import { personalLinks, projects } from '@/lib/data';
 
 export default function Projects() {
