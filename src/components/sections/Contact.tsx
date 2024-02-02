@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { Trans } from '@lingui/macro';
+import { msg, Trans } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 
 import { CornerBanner } from '@/components/ui/CornerBanner';
 import { Divider } from '@/components/ui/Divider';
@@ -10,6 +11,7 @@ import cn from '@/lib/cn';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const Contact = () => {
+	const { _ } = useLingui();
 	const rootRef = useRef<HTMLDivElement>(null!);
 	const [showBanner, setShowBanner] = useState(false);
 
@@ -18,7 +20,7 @@ const Contact = () => {
 	});
 
 	return (
-		<Section title="Contact me" id="contact" ref={rootRef}>
+		<Section title={_(msg`Contact me`)} id="contact" ref={rootRef}>
 			<Separated
 				separator={<Divider vertical className="h-52 self-center" />}
 				className="mx-auto flex w-4/5 items-start justify-between gap-10"
@@ -31,7 +33,10 @@ const Contact = () => {
 						</Trans>
 					</p>
 
-					<SubSection title="Need a website?" className="mb-0">
+					<SubSection
+						title={_(msg`Need a website?`)}
+						className="mb-0"
+					>
 						<p>
 							<Trans>
 								I also develop websites as a freelancer. If you

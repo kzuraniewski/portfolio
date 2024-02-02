@@ -13,11 +13,20 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/sections/Contact.tsx:88
+#: src/components/sections/About.tsx:15
+msgid "About me"
+msgstr ""
+
+#: src/components/sections/About.tsx:83
+msgid "Companies I worked in"
+msgstr ""
+
+#: src/components/sections/Contact.tsx:23
+#: src/components/sections/Contact.tsx:93
 msgid "Contact me"
 msgstr ""
 
-#: src/components/sections/Contact.tsx:66
+#: src/components/sections/Contact.tsx:71
 msgid "Contact me at"
 msgstr ""
 
@@ -25,15 +34,15 @@ msgstr ""
 msgid "Designed and developed by Karol Żuraniewski"
 msgstr ""
 
-#: src/components/sections/About.tsx:27
+#: src/components/sections/About.tsx:30
 msgid "Hi, my name is Karol. I develop web stuff."
 msgstr ""
 
-#: src/components/sections/Contact.tsx:36
+#: src/components/sections/Contact.tsx:41
 msgid "I also develop websites as a freelancer. If you are in need of one, reach out to me."
 msgstr ""
 
-#: src/components/sections/Contact.tsx:28
+#: src/components/sections/Contact.tsx:30
 msgid "I am currently open to work, so if you found my portfolio interesting, feel free to contact me."
 msgstr ""
 
@@ -45,11 +54,19 @@ msgstr ""
 msgid "My name is"
 msgstr ""
 
-#: src/components/sections/About.tsx:34
+#: src/components/sections/Projects.tsx:13
+msgid "My Projects"
+msgstr ""
+
+#: src/components/sections/About.tsx:37
 msgid "My web development journey started in 2021 - when I got to know React. Since then I've had the opportunity to design, develop and maintain websites, E-commerce services and fullstack web applications at different companies."
 msgstr ""
 
-#: src/components/sections/Contact.tsx:74
+#: src/components/sections/Contact.tsx:37
+msgid "Need a website?"
+msgstr ""
+
+#: src/components/sections/Contact.tsx:79
 msgid "Or call me:"
 msgstr ""
 
@@ -65,8 +82,16 @@ msgstr ""
 msgid "See more"
 msgstr ""
 
-#: src/components/sections/Projects.tsx:26
+#: src/components/sections/Projects.tsx:29
 msgid "See more projects on my <0>GitHub</0>"
+msgstr ""
+
+#: src/components/sections/About.tsx:73
+msgid "Technologies I've worked with"
+msgstr ""
+
+#: src/components/sections/About.tsx:77
+msgid "What I'm learning"
 msgstr ""
 
 #: src/components/ui/ProjectHighlight.tsx:108

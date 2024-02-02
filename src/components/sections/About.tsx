@@ -1,5 +1,6 @@
 import React from 'react';
-import { Trans } from '@lingui/macro';
+import { msg, Trans } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 
 import { CompanyHistory } from '@/components/ui/CompanyHistory';
 import IconStack from '@/components/ui/IconStack';
@@ -8,8 +9,10 @@ import { Section, SubSection } from '@/components/ui/Section';
 import { learningTechStack, mainTechStack } from '@/lib/data';
 
 export default function LandingPage() {
+	const { _ } = useLingui();
+
 	return (
-		<Section title="About me" id="about">
+		<Section title={_(msg`About me`)} id="about">
 			<div className="mx-auto flex w-3/5 justify-between gap-20">
 				<div className="">
 					<PolygonBackground
@@ -67,16 +70,19 @@ export default function LandingPage() {
 
 			<div className="flex justify-around">
 				<div className="flex flex-col">
-					<SubSection title="Technologies I've worked with">
+					<SubSection title={_(msg`Technologies I've worked with`)}>
 						<IconStack stack={mainTechStack} />
 					</SubSection>
 
-					<SubSection title="What I'm learning">
+					<SubSection title={_(msg`What I'm learning`)}>
 						<IconStack stack={learningTechStack} />
 					</SubSection>
 				</div>
 
-				<SubSection title="Companies I worked in" className="w-1/2">
+				<SubSection
+					title={_(msg`Companies I worked in`)}
+					className="w-1/2"
+				>
 					<CompanyHistory />
 				</SubSection>
 			</div>

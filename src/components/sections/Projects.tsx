@@ -1,13 +1,16 @@
 import React from 'react';
-import { Trans } from '@lingui/macro';
+import { msg, Trans } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 
 import ProjectHighlight from '@/components/ui/ProjectHighlight';
 import { Section } from '@/components/ui/Section';
 import { personalLinks, projects } from '@/lib/data';
 
 export default function Projects() {
+	const { _ } = useLingui();
+
 	return (
-		<Section title="My Projects" id="projects">
+		<Section title={_(msg`My Projects`)} id="projects">
 			<div className="flex flex-col items-center">
 				{projects
 					.filter((project) => project.featured)
