@@ -5,6 +5,8 @@
 @layer components {
 	html {
 		@apply scroll-smooth;
+
+		font-size: 18px;
 	}
 
 	a {
