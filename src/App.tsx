@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { i18n } from '@lingui/core';
-import { detect, fromNavigator, fromStorage } from '@lingui/detect-locale';
 import { I18nProvider } from '@lingui/react';
 
 import { About, Contact, LandingPage, Projects } from '@/components/sections';
@@ -9,12 +8,12 @@ import Footer from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
 
 import { loadCatalog } from './i18n';
+import { getLanguage } from './lib/util';
 
 export default function App() {
 	useEffect(() => {
-		const detectedLanguage = detect(fromStorage('lang'), fromNavigator());
-
-		loadCatalog(detectedLanguage || 'en-US');
+		const language = getLanguage();
+		loadCatalog(language || 'en-US');
 	}, []);
 
 	return (
