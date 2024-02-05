@@ -25,7 +25,7 @@ msgstr "Aplikacja webowa symulująca procesor Intel 8086"
 msgid "About"
 msgstr "O mnie"
 
-#: src/components/sections/About.tsx:15
+#: src/components/sections/AboutSection.tsx:15
 msgid "About me"
 msgstr "O mnie"
 
@@ -37,7 +37,7 @@ msgstr "Utrzymywanie backendu dla serwisu E-commerce przy użyciu PHP"
 msgid "Bypassing editor limitations with hand written custom JS and CSS to improve the UI in the existing projects"
 msgstr "Sporządzanie własnych skryptów JS i styli w CSS omijając ograniczenia edytora w celu udoskonalania UI w istniejących projektach"
 
-#: src/components/sections/About.tsx:83
+#: src/components/sections/AboutSection.tsx:87
 msgid "Companies I worked in"
 msgstr "Firmy w których pracowałem"
 
@@ -45,12 +45,12 @@ msgstr "Firmy w których pracowałem"
 msgid "Contact"
 msgstr "Kontakt"
 
-#: src/components/sections/Contact.tsx:23
-#: src/components/sections/Contact.tsx:94
+#: src/components/sections/ContactSection.tsx:22
+#: src/components/sections/ContactSection.tsx:87
 msgid "Contact me"
 msgstr "Kontakt"
 
-#: src/components/sections/Contact.tsx:72
+#: src/components/sections/ContactSection.tsx:71
 msgid "Contact me at"
 msgstr "Skontaktuj się pod"
 
@@ -86,7 +86,7 @@ msgstr "Poznaj mnie"
 msgid "Hand Over"
 msgstr "Hand Over"
 
-#: src/components/sections/About.tsx:31
+#: src/components/sections/AboutSection.tsx:31
 msgid "Hi, my name is Karol. I develop web stuff."
 msgstr "Cześć, jestem Karol. Jestem web developerem."
 
@@ -94,11 +94,11 @@ msgstr "Cześć, jestem Karol. Jestem web developerem."
 msgid "Home"
 msgstr "Strona główna"
 
-#: src/components/sections/Contact.tsx:41
+#: src/components/sections/ContactSection.tsx:40
 msgid "I also develop websites as a freelancer. If you are in need of one, reach out to me."
 msgstr "Zajmuję się również tworzeniem stron internetowych jako freelancer. Jeśli jesteś zainteresowany/a, skontaktuj się ze mną."
 
-#: src/components/sections/Contact.tsx:30
+#: src/components/sections/ContactSection.tsx:29
 msgid "I am currently open to work, so if you found my portfolio interesting, feel free to contact me."
 msgstr "Jestem obecnie otwarty na propozycje współpracy, więc jeśli spodobało Ci się moje portfolio, skontaktuj się ze mną."
 
@@ -138,15 +138,15 @@ msgstr "Logo MUI"
 msgid "My name is"
 msgstr "Nazywam się"
 
-#: src/components/sections/Projects.tsx:13
+#: src/components/sections/ProjectsSection.tsx:13
 msgid "My Projects"
 msgstr "Moje projekty"
 
-#: src/components/sections/About.tsx:38
+#: src/components/sections/AboutSection.tsx:38
 msgid "My web development journey started in 2021 - when I got to know React. Since then I've had the opportunity to design, develop and maintain websites, E-commerce services and fullstack web applications at different companies."
 msgstr "Moja przygoda z web development zaczęła się w 2021 - gdy poznałem React. Od tego czasu miałem możliwośc projektować, rozwijać oraz utrzymywać strony, serwisy E-commerce oraz fullstackowe aplikacje webowe w różnych firmach."
 
-#: src/components/sections/Contact.tsx:37
+#: src/components/sections/ContactSection.tsx:36
 msgid "Need a website?"
 msgstr "Potrzebujesz strony?"
 
@@ -154,7 +154,7 @@ msgstr "Potrzebujesz strony?"
 msgid "Node.js logo"
 msgstr "Logo Node.js"
 
-#: src/components/sections/Contact.tsx:80
+#: src/components/sections/ContactSection.tsx:79
 msgid "Or call me:"
 msgstr "Lub zadzwoń:"
 
@@ -190,7 +190,7 @@ msgstr "Projekty"
 msgid "React logo"
 msgstr "Logo React"
 
-#: src/components/ui/Header.tsx:81
+#: src/components/ui/Header.tsx:82
 msgid "Resume"
 msgstr "Pobierz CV"
 
@@ -198,7 +198,7 @@ msgstr "Pobierz CV"
 msgid "See live"
 msgstr "Otwórz"
 
-#: src/components/sections/Projects.tsx:29
+#: src/components/sections/ProjectsSection.tsx:29
 msgid "See more projects on my <0>GitHub</0>"
 msgstr "Zobacz więcej projektów na moim <0>GitHubie</0>"
 
@@ -206,7 +206,7 @@ msgstr "Zobacz więcej projektów na moim <0>GitHubie</0>"
 msgid "Sep. 2022 - Aug. 2023"
 msgstr "Wrz 2022 - Sie 2023"
 
-#: src/components/sections/About.tsx:74
+#: src/components/sections/AboutSection.tsx:74
 msgid "Technologies I've worked with"
 msgstr "Technologie które wykorzystywałem"
 
@@ -218,7 +218,7 @@ msgstr "Logo TypeScript"
 msgid "Web app UI and backend development using React, Spring and PostgreSQL"
 msgstr "Rozwój UI oraz backendu aplikacji webowej przy użyciu React, Sprint oraz PostgreSQL"
 
-#: src/components/sections/About.tsx:78
+#: src/components/sections/AboutSection.tsx:79
 msgid "What I'm learning"
 msgstr "Czego się uczę"
 
@@ -226,6 +226,6 @@ msgstr "Czego się uczę"
 msgid "Wordpress logo"
 msgstr "Logo Wordpress"
 
-#: src/components/ui/ProjectHighlight.tsx:112
+#: src/components/ui/ProjectHighlight.tsx:111
 msgid "Working on"
 msgstr "W toku"
