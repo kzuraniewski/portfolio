@@ -10,6 +10,7 @@ const colors = {
 	limedSpruce: '#3A4750',
 	forcefulOrange: '#EA9215',
 	prestigeBlue: '#303841',
+	eerieBlack: '#1c1c1c',
 };
 
 export default {
@@ -33,11 +34,11 @@ export default {
 			// dark: colors.charcoal,
 
 			accent: colors.forcefulOrange,
-			'on-primary': colors.prestigeBlue,
+			'on-primary': colors.eerieBlack,
 			'on-secondary': colors.superSilver,
 			'on-accent': colors.superSilver,
 			light: colors.superSilver,
-			dark: colors.prestigeBlue,
+			dark: colors.eerieBlack,
 		},
 		container: {
 			center: true,
