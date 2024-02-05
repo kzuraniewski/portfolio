@@ -6,7 +6,7 @@ import { MdOutlineArrowOutward } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
 
 import { Button, IconButton } from '@/components/ui/Button';
-import PolygonBackground from '@/components/ui/PolygonBackground';
+import Polygon from '@/components/ui/Polygon';
 import { Separated } from '@/components/ui/Separated';
 import cn from '@/lib/cn';
 import { ProjectData } from '@/lib/data';
@@ -46,7 +46,7 @@ const ProjectHighlight = ({
 					</Separated>
 				</div>
 
-				<PolygonBackground
+				<Polygon
 					variant="dashed"
 					color="accent"
 					padding={[10, 20]}
@@ -57,7 +57,7 @@ const ProjectHighlight = ({
 						[15, height - 25],
 					]}
 				>
-					<PolygonBackground
+					<Polygon
 						padding={[10, 20]}
 						getPoints={(width, height) => [
 							[0, 5],
@@ -69,8 +69,8 @@ const ProjectHighlight = ({
 						<p>
 							<Trans id={project.description.id} />
 						</p>
-					</PolygonBackground>
-				</PolygonBackground>
+					</Polygon>
+				</Polygon>
 
 				<div className="grow" />
 
@@ -97,7 +97,7 @@ const ProjectHighlight = ({
 
 			<div className="relative shrink-0">
 				{project.wip && (
-					<PolygonBackground
+					<Polygon
 						padding={[7, 25]}
 						rotation={30}
 						color="accent"
@@ -110,7 +110,7 @@ const ProjectHighlight = ({
 						]}
 					>
 						<TransMacro>Working on</TransMacro>
-					</PolygonBackground>
+					</Polygon>
 				)}
 
 				<a
