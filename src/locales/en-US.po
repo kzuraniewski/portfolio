@@ -46,11 +46,11 @@ msgid "Contact"
 msgstr ""
 
 #: src/components/sections/Contact.tsx:23
-#: src/components/sections/Contact.tsx:93
+#: src/components/sections/Contact.tsx:94
 msgid "Contact me"
 msgstr ""
 
-#: src/components/sections/Contact.tsx:71
+#: src/components/sections/Contact.tsx:72
 msgid "Contact me at"
 msgstr ""
 
@@ -78,11 +78,15 @@ msgstr ""
 msgid "Feb. 2022 - July 2022"
 msgstr ""
 
+#: src/components/sections/LandingPage.tsx:59
+msgid "Get to know me"
+msgstr ""
+
 #: src/lib/data.ts:167
 msgid "Hand Over"
 msgstr ""
 
-#: src/components/sections/About.tsx:30
+#: src/components/sections/About.tsx:31
 msgid "Hi, my name is Karol. I develop web stuff."
 msgstr ""
 
@@ -98,7 +102,7 @@ msgstr ""
 msgid "I am currently open to work, so if you found my portfolio interesting, feel free to contact me."
 msgstr ""
 
-#: src/components/sections/LandingPage.tsx:44
+#: src/components/sections/LandingPage.tsx:45
 msgid "I'm a fullstack web developer that specializes in TypeScript, React and Java."
 msgstr ""
 
@@ -138,7 +142,7 @@ msgstr ""
 msgid "My Projects"
 msgstr ""
 
-#: src/components/sections/About.tsx:37
+#: src/components/sections/About.tsx:38
 msgid "My web development journey started in 2021 - when I got to know React. Since then I've had the opportunity to design, develop and maintain websites, E-commerce services and fullstack web applications at different companies."
 msgstr ""
 
@@ -150,7 +154,7 @@ msgstr ""
 msgid "Node.js logo"
 msgstr ""
 
-#: src/components/sections/Contact.tsx:79
+#: src/components/sections/Contact.tsx:80
 msgid "Or call me:"
 msgstr ""
 
@@ -190,12 +194,8 @@ msgstr ""
 msgid "Resume"
 msgstr ""
 
-#: src/components/ui/ProjectHighlight.tsx:91
+#: src/components/ui/ProjectHighlight.tsx:92
 msgid "See live"
-msgstr ""
-
-#: src/components/sections/LandingPage.tsx:58
-msgid "See more"
 msgstr ""
 
 #: src/components/sections/Projects.tsx:29
@@ -206,7 +206,7 @@ msgstr ""
 msgid "Sep. 2022 - Aug. 2023"
 msgstr ""
 
-#: src/components/sections/About.tsx:73
+#: src/components/sections/About.tsx:74
 msgid "Technologies I've worked with"
 msgstr ""
 
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Web app UI and backend development using React, Spring and PostgreSQL"
 msgstr ""
 
-#: src/components/sections/About.tsx:77
+#: src/components/sections/About.tsx:78
 msgid "What I'm learning"
 msgstr ""
 
@@ -226,6 +226,6 @@ msgstr ""
 msgid "Wordpress logo"
 msgstr ""
 
-#: src/components/ui/ProjectHighlight.tsx:111
+#: src/components/ui/ProjectHighlight.tsx:112
 msgid "Working on"
 msgstr ""
