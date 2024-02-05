@@ -64,7 +64,7 @@ export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
 					]}
 					className="w-auto"
 				>
-					<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase leading-none">
+					<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase">
 						<span className="text-accent">{'>'}</span> {title}
 					</h3>
 
