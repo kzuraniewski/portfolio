@@ -14,7 +14,7 @@ export default function LandingPage() {
 	return (
 		<Section title={_(msg`About me`)} id="about">
 			<div className="mx-auto flex w-3/5 justify-between gap-20">
-				<div className="">
+				<div>
 					<Polygon
 						variant="outline"
 						color="accent"
@@ -69,8 +69,8 @@ export default function LandingPage() {
 				</div>
 			</div>
 
-			<div className="flex justify-around">
-				<div className="flex flex-col">
+			<div className="mt-16 flex justify-around gap-14">
+				<div className="flex w-2/5 flex-col">
 					<SubSection title={_(msg`Technologies I've worked with`)}>
 						<IconStack stack={mainTechStack} />
 					</SubSection>
@@ -80,10 +80,7 @@ export default function LandingPage() {
 					</SubSection>
 				</div>
 
-				<SubSection
-					title={_(msg`Companies I worked in`)}
-					className="w-1/2"
-				>
+				<SubSection title={_(msg`Companies I worked in`)} flat>
 					<CompanyHistory />
 				</SubSection>
 			</div>

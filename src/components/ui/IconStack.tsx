@@ -31,7 +31,7 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 					{ 'grid-cols-5': stack.length >= 3 },
 					className,
 				)}
-				separator={<Divider vertical className="h-8" />}
+				separator={<Divider vertical color="accent" className="h-8" />}
 				indexSelector={gridIndexSelector}
 				{...props}
 			>

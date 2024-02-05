@@ -3,6 +3,8 @@ import cn from 'classnames';
 
 import { Divider } from '@/components/ui/Divider';
 
+import Polygon from './Polygon';
+
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
 };
@@ -23,7 +25,7 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
 					<Divider className="mr-10 flex-grow" />
 				</div>
 
-				{children}
+				<div className="px-10">{children}</div>
 			</section>
 		);
 	},
@@ -32,17 +34,39 @@ Section.displayName = 'Section';
 
 export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
+
+	/**
+	 * Whether this section should not contain a background
+	 * @default false
+	 */
+	flat?: boolean;
 };
 
 export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
-	({ title, className, children, ...props }, ref) => {
+	({ title, flat = false, className, children, ...props }, ref) => {
 		return (
-			<div ref={ref} className={cn('mt-28', className)} {...props}>
-				<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase">
-					<span className="text-accent">{'>'}</span> {title}
-				</h3>
+			<div
+				ref={ref}
+				className={cn('mt-14', { 'text-primary': !flat }, className)}
+				{...props}
+			>
+				<Polygon
+					variant={flat ? 'dashed' : 'filled'}
+					padding={40}
+					getPoints={(width, height) => [
+						[0, 7],
+						[width, 0],
+						[width - 5, height],
+						[0, height - 5],
+					]}
+					className="w-auto"
+				>
+					<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase leading-none">
+						<span className="text-accent">{'>'}</span> {title}
+					</h3>
 
-				{children}
+					{children}
+				</Polygon>
 			</div>
 		);
 	},
