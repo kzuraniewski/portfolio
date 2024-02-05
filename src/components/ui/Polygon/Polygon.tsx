@@ -13,6 +13,8 @@ import {
 	strokeWidth,
 } from './Polygon.utils';
 
+// TODO: verify if padding prop necessary
+
 const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 	(
 		{
