@@ -7,16 +7,15 @@ import { Divider } from '@/components/ui/Divider';
 import Polygon from '@/components/ui/Polygon';
 import { Section, SubSection } from '@/components/ui/Section';
 import { Separated } from '@/components/ui/Separated';
-import cn from '@/lib/cn';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const ContactSection = () => {
 	const { _ } = useLingui();
 	const rootRef = useRef<HTMLDivElement>(null!);
-	const [showBanner, setShowBanner] = useState(false);
+	const [hideBanner, setHideBanner] = useState(false);
 
 	useIntersectionObserver(rootRef, (isIntersecting) => {
-		setShowBanner(!isIntersecting);
+		setHideBanner(isIntersecting);
 	});
 
 	return (
@@ -67,7 +66,7 @@ const ContactSection = () => {
 								[width - 20, height],
 								[10, height - 5],
 							]}
-							className="w-max text-on-secondary"
+							className="text-on-secondary w-max"
 						>
 							<Trans>Contact me at</Trans>{' '}
 							<a href="mailto:zuraniewski.karol@gmail.com">
@@ -84,15 +83,10 @@ const ContactSection = () => {
 			</Separated>
 
 			<CornerBanner
+				hidden={hideBanner}
+				label={_(msg`Contact me`)}
 				href="#contact"
-				// prettier-ignore
-				className={cn(
-					'transition-opacity duration-500 opacity-0 pointer-events-none',
-					{ 'opacity-100 pointer-events-auto': showBanner }
-				)}
-			>
-				<Trans>Contact me</Trans>
-			</CornerBanner>
+			/>
 		</Section>
 	);
 };
