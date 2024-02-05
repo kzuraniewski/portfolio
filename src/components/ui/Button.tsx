@@ -32,7 +32,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			className: cn(
 				'px-4 py-2 w-fit leading-none transition-colors border-2 rounded-sm text-accent hover:text-primary hover:no-underline uppercase tracking-wide',
 				{ 'border-light hover:bg-light': variant === 'default' },
-				{ 'text-accent border-accent hover:bg-accent': variant === 'primary' },
+				{ 'text-accent border-accent hover:bg-accent hover:text-on-accent': variant === 'primary' },
 				{ 'px-6 py-3': size === 'big' },
 				className
 			),
@@ -50,7 +50,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 	({ size = 'normal', href, className, ...props }, ref) => {
 		return React.createElement(href ? 'a' : 'button', {
 			className: cn(
-				'block text-light hover:text-accent w-6 h-6 [&>svg]:w-full [&>svg]:h-full [&>svg]:transition-colors',
+				'block text-inherit hover:text-accent w-6 h-6 [&>svg]:w-full [&>svg]:h-full [&>svg]:transition-colors',
 				{ 'w-8 h-8': size === 'big' },
 				className,
 			),

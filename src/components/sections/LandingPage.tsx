@@ -41,7 +41,7 @@ export default function LandingPage() {
 						[0, height - 10],
 					]}
 				>
-					<p className="max-w-sm text-center">
+					<p className="max-w-sm text-center text-on-secondary">
 						<Trans>
 							I&apos;m a fullstack web developer that specializes
 							in TypeScript, React and Java.

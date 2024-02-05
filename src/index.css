@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
 	html {
 		@apply scroll-smooth;
 
@@ -11,5 +11,9 @@
 
 	a {
 		@apply text-accent hover:underline;
+	}
+
+	.text-inherit {
+		color: inherit;
 	}
 }

@@ -46,7 +46,8 @@ export const Header = () => {
 			className={cn(
 				'sticky top-0 z-50 w-full transition-all duration-300 border-b-2 border-dashed border-b-secondary bg-primary',
 				{ '-translate-y-full': mountState === 'collapsed' },
-				{ 'bg-opacity-80 backdrop-blur-sm shadow-xl': mountState === 'floating' }
+				{ 'bg-opacity-80 backdrop-blur-sm shadow-xl': mountState === 'floating' },
+				{ 'bg-secondary text-on-secondary': mountState === 'mounted' },
 			)}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
@@ -58,7 +59,7 @@ export const Header = () => {
 							<li key={`nav-${index}`}>
 								<a
 									href={href}
-									className="font-display uppercase tracking-wider text-light before:mr-0.5 before:text-accent before:content-['#'] hover:text-accent hover:no-underline"
+									className="text-inherit font-display uppercase tracking-wider before:mr-0.5 before:text-accent before:content-['#'] hover:text-accent hover:no-underline"
 								>
 									<Trans id={label.id} />
 								</a>

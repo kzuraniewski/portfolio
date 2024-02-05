@@ -9,7 +9,7 @@ const Footer = () => {
 			<Container className="py-8">
 				<a
 					href="https://github.com/kzuraniewski/portfolio"
-					className="text-light hover:text-accent"
+					className="text-on-primary hover:text-accent"
 					target="_blank"
 					rel="noreferrer"
 				>

@@ -67,7 +67,7 @@ const Contact = () => {
 								[width - 20, height],
 								[10, height - 5],
 							]}
-							className="w-max"
+							className="w-max text-on-secondary"
 						>
 							<Trans>Contact me at</Trans>{' '}
 							<a href="mailto:zuraniewski.karol@gmail.com">

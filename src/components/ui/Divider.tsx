@@ -1,9 +1,8 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 
 import cn from '@/lib/cn';
-import { tailwindConfig } from '@/lib/util';
 
-export type DividerColor = keyof typeof tailwindConfig.theme.colors;
+export type DividerColor = 'secondary' | 'accent';
 
 export type DividerProps = HTMLAttributes<HTMLDivElement> & {
 	vertical?: boolean;
@@ -34,8 +33,6 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
 Divider.displayName = 'Divider';
 
 const borderColorMap = {
-	primary: 'border-primary',
 	secondary: 'border-secondary',
 	accent: 'border-accent',
-	light: 'border-light',
 } satisfies Record<DividerColor, string>;

@@ -47,7 +47,7 @@ export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
 		return (
 			<div
 				ref={ref}
-				className={cn('mt-14', { 'text-primary': !flat }, className)}
+				className={cn('mt-14', { 'text-on-secondary': !flat }, className)}
 				{...props}
 			>
 				<Polygon

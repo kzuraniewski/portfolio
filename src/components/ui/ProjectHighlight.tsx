@@ -66,7 +66,7 @@ const ProjectHighlight = ({
 							[5, height - 3],
 						]}
 					>
-						<p>
+						<p className="text-on-secondary">
 							<Trans id={project.description.id} />
 						</p>
 					</Polygon>
@@ -101,7 +101,7 @@ const ProjectHighlight = ({
 						padding={[7, 25]}
 						rotation={30}
 						color="accent"
-						className="pointer-events-none absolute -right-6 top-2 z-10 px-6 py-1 text-sm font-bold uppercase text-primary"
+						className="pointer-events-none absolute -right-6 top-2 z-10 px-6 py-1 text-sm font-bold uppercase text-on-accent"
 						getPoints={(width, height) => [
 							[30, 0],
 							[width - 13, 5],
@@ -119,7 +119,7 @@ const ProjectHighlight = ({
 					target="_blank"
 					rel="noreferrer"
 				>
-					<div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-5/6 -translate-x-1/2 -translate-y-1/2 overflow-ellipsis px-5 text-center text-sm text-light opacity-0 transition-opacity group-hover:opacity-100">
+					<div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-5/6 -translate-x-1/2 -translate-y-1/2 overflow-ellipsis px-5 text-center text-sm text-font-light opacity-0 transition-opacity group-hover:opacity-100">
 						{previewLink}
 						<MdOutlineArrowOutward className="ml-2 inline-block h-4 w-4" />
 					</div>

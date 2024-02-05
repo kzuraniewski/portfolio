@@ -18,7 +18,7 @@ export default function App() {
 
 	return (
 		<I18nProvider i18n={i18n}>
-			<body className="min-h-screen bg-primary text-light">
+			<body className="min-h-screen bg-primary text-on-primary">
 				<Header />
 
 				<main>
