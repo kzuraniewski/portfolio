@@ -1,8 +1,9 @@
-import React, { HTMLAttributes, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, HTMLAttributes, useEffect, useState } from 'react';
 
 import cn from '@/lib/cn';
 import { tailwindConfig } from '@/lib/util';
 import useEventActivatedValue from '@/hooks/useEventActivatedValue';
+import useForwardedRef from '@/hooks/useForwardedRef';
 
 const BORDER_RADIUS = 1;
 
@@ -62,93 +63,101 @@ export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 	getPoints?: PolygonPointsFactory;
 };
 
-const PolygonBackground = ({
-	variant = 'filled',
-	color: colorName = 'secondary',
-	padding,
-	rotation,
-	getPoints = getDefaultPoints,
-	className,
-	style,
-	children,
-	...props
-}: PolygonBackgroundProps) => {
-	const rootRef = useRef<HTMLDivElement>(null!);
-	const [attributes, setAttributes] = useState<BackgroundAttributes>();
+const PolygonBackground = forwardRef<HTMLDivElement, PolygonBackgroundProps>(
+	(
+		{
+			variant = 'filled',
+			color: colorName = 'secondary',
+			padding,
+			rotation,
+			getPoints = getDefaultPoints,
+			className,
+			style,
+			children,
+			...props
+		},
+		ref,
+	) => {
+		const rootRef = useForwardedRef(ref);
+		const [attributes, setAttributes] = useState<BackgroundAttributes>();
 
-	const appliedRotation = useEventActivatedValue(() => {
-		if (!rotation) return null;
+		const appliedRotation = useEventActivatedValue(() => {
+			if (!rotation) return null;
 
-		if (typeof rotation === 'string') return rotation;
-		return rotation + 'deg';
-	}, 'load');
+			if (typeof rotation === 'string') return rotation;
+			return rotation + 'deg';
+		}, 'load');
 
-	const strokeWidth = 2 * BORDER_RADIUS;
-	const color = colors[colorName];
+		const strokeWidth = 2 * BORDER_RADIUS;
+		const color = colors[colorName];
 
-	const updatePolygonSize = () => {
-		const { width, height } = rootRef.current.getBoundingClientRect();
+		const updatePolygonSize = () => {
+			const { width, height } = rootRef.current.getBoundingClientRect();
 
-		// project smaller point map over viewBox expanded by strokeWidth
-		// to prevent clipping due to stroke overflowing
-		const points = getPoints(width - strokeWidth, height - strokeWidth)
-			.map(([x, y]) => {
-				return `${x + BORDER_RADIUS}, ${y + BORDER_RADIUS}`;
-			})
-			.join(' ');
+			// project smaller point map over viewBox expanded by strokeWidth
+			// to prevent clipping due to stroke overflowing
+			const points = getPoints(width - strokeWidth, height - strokeWidth)
+				.map(([x, y]) => {
+					return `${x + BORDER_RADIUS}, ${y + BORDER_RADIUS}`;
+				})
+				.join(' ');
 
-		const viewBox = [0, 0, width, height].join(' ');
+			const viewBox = [0, 0, width, height].join(' ');
 
-		setAttributes({ viewBox, points, width, height });
-	};
+			setAttributes({ viewBox, points, width, height });
+		};
 
-	useEffect(() => {
-		if (!rootRef.current) return;
+		useEffect(() => {
+			if (!rootRef.current) return;
 
-		const resizeObserver = new ResizeObserver(updatePolygonSize);
-		resizeObserver.observe(rootRef.current);
+			const resizeObserver = new ResizeObserver(updatePolygonSize);
+			resizeObserver.observe(rootRef.current);
 
-		return () => resizeObserver.disconnect();
-	}, []);
+			return () => resizeObserver.disconnect();
+		}, []);
 
-	const noFill = variant === 'dashed' || variant === 'outline';
+		const noFill = variant === 'dashed' || variant === 'outline';
 
-	return (
-		<div
-			ref={rootRef}
-			className={cn('relative w-fit', className)}
-			style={{
-				padding: padding && parsePolygonPadding(padding),
-				rotate: appliedRotation ?? undefined,
-				...style,
-			}}
-			{...props}
-		>
-			{attributes && (
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox={attributes.viewBox}
-					preserveAspectRatio="none"
-					width={attributes.width}
-					height={attributes.height}
-					className="absolute left-0 top-0"
-				>
-					<polygon
-						points={attributes.points}
-						strokeLinejoin="round"
-						strokeWidth={`${strokeWidth}px`}
-						stroke={color}
-						fill={color}
-						fillOpacity={noFill ? 0 : 100}
-						strokeDasharray={variant === 'dashed' ? 5 : undefined}
-					/>
-				</svg>
-			)}
+		return (
+			<div
+				ref={rootRef}
+				className={cn('relative w-fit', className)}
+				style={{
+					padding: padding && parsePolygonPadding(padding),
+					rotate: appliedRotation ?? undefined,
+					...style,
+				}}
+				{...props}
+			>
+				{attributes && (
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox={attributes.viewBox}
+						preserveAspectRatio="none"
+						width={attributes.width}
+						height={attributes.height}
+						className="absolute left-0 top-0"
+					>
+						<polygon
+							points={attributes.points}
+							strokeLinejoin="round"
+							strokeWidth={`${strokeWidth}px`}
+							stroke={color}
+							fill={color}
+							fillOpacity={noFill ? 0 : 100}
+							strokeDasharray={
+								variant === 'dashed' ? 5 : undefined
+							}
+						/>
+					</svg>
+				)}
 
-			<div className="relative z-10">{children}</div>
-		</div>
-	);
-};
+				<div className="relative z-10">{children}</div>
+			</div>
+		);
+	},
+);
+PolygonBackground.displayName = 'PolygonBackground';
 
 const parsePolygonPadding = (padding: PolygonPadding) => {
 	return Array.isArray(padding)
