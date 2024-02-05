@@ -1,4 +1,4 @@
 export { default as LandingPage } from './LandingPage';
-export { default as About } from './About';
-export { default as Projects } from './Projects';
-export { default as Contact } from './Contact';
+export { default as AboutSection } from './AboutSection';
+export { default as ProjectsSection } from './ProjectsSection';
+export { default as ContactSection } from './ContactSection';

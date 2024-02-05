@@ -8,7 +8,7 @@ import Polygon from '@/components/ui/Polygon';
 import { Section, SubSection } from '@/components/ui/Section';
 import { learningTechStack, mainTechStack } from '@/lib/data';
 
-export default function LandingPage() {
+const AboutSection = () => {
 	const { _ } = useLingui();
 
 	return (
@@ -86,4 +86,6 @@ export default function LandingPage() {
 			</div>
 		</Section>
 	);
-}
+};
+
+export default AboutSection;

@@ -10,7 +10,7 @@ import { Separated } from '@/components/ui/Separated';
 import cn from '@/lib/cn';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
-const Contact = () => {
+const ContactSection = () => {
 	const { _ } = useLingui();
 	const rootRef = useRef<HTMLDivElement>(null!);
 	const [showBanner, setShowBanner] = useState(false);
@@ -97,4 +97,4 @@ const Contact = () => {
 	);
 };
 
-export default Contact;
+export default ContactSection;

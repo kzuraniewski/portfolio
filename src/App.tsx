@@ -2,7 +2,12 @@ import React, { useEffect } from 'react';
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 
-import { About, Contact, LandingPage, Projects } from '@/components/sections';
+import {
+	AboutSection,
+	ContactSection,
+	LandingPage,
+	ProjectsSection,
+} from '@/components/sections';
 import Container from '@/components/ui/Container';
 import Footer from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
@@ -18,15 +23,15 @@ export default function App() {
 
 	return (
 		<I18nProvider i18n={i18n}>
-			<body className="min-h-screen bg-primary text-on-primary">
+			<body className="text-on-primary min-h-screen bg-primary">
 				<Header />
 
 				<main>
 					<Container>
 						<LandingPage />
-						<About />
-						<Projects />
-						<Contact />
+						<AboutSection />
+						<ProjectsSection />
+						<ContactSection />
 					</Container>
 				</main>
 

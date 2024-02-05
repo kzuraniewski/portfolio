@@ -6,7 +6,7 @@ import ProjectHighlight from '@/components/ui/ProjectHighlight';
 import { Section } from '@/components/ui/Section';
 import { personalLinks, projects } from '@/lib/data';
 
-export default function Projects() {
+const ProjectsSection = () => {
 	const { _ } = useLingui();
 
 	return (
@@ -40,4 +40,6 @@ export default function Projects() {
 			</div>
 		</Section>
 	);
-}
+};
+
+export default ProjectsSection;
