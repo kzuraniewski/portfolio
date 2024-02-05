@@ -1,7 +1,6 @@
 import React, { forwardRef, useEffect, useState } from 'react';
 
 import cn from '@/lib/cn';
-import useEventActivatedValue from '@/hooks/useEventActivatedValue';
 import useForwardedRef from '@/hooks/useForwardedRef';
 
 import { PolygonProps } from './Polygon.types';
@@ -10,7 +9,6 @@ import {
 	getDefaultPoints,
 	parsePoints,
 	parsePolygonPadding,
-	parseRotation,
 	polygonColors,
 	strokeWidth,
 } from './Polygon.utils';
@@ -21,7 +19,6 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 			variant = 'filled',
 			color: colorName = 'secondary',
 			padding,
-			rotation,
 			getPoints = getDefaultPoints,
 			className,
 			style,
@@ -38,27 +35,22 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 			height: number;
 		}>();
 
-		const appliedRotation = useEventActivatedValue(() => {
-			if (!rotation) return null;
-			return parseRotation(rotation);
-		}, 'load');
-
 		const color = polygonColors[colorName];
 
 		const updatePolygonSize = () => {
-			const { width, height } = rootRef.current.getBoundingClientRect();
+			const { offsetWidth, offsetHeight } = rootRef.current;
 
 			const getProjectedPoints = createProjectedPointsFactory(getPoints);
-			const points = getProjectedPoints(width, height);
+			const points = getProjectedPoints(offsetWidth, offsetHeight);
 			const parsedPoints = parsePoints(points);
 
-			const viewBox = [0, 0, width, height].join(' ');
+			const viewBox = [0, 0, offsetWidth, offsetHeight].join(' ');
 
 			setAttributes({
 				viewBox,
 				points: parsedPoints,
-				width,
-				height,
+				width: offsetWidth,
+				height: offsetHeight,
 			});
 		};
 
@@ -79,7 +71,6 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 				className={cn('relative w-fit', className)}
 				style={{
 					padding: padding && parsePolygonPadding(padding),
-					rotate: appliedRotation ?? undefined,
 					...style,
 				}}
 				{...props}

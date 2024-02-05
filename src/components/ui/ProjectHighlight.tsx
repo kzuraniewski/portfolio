@@ -99,9 +99,8 @@ const ProjectHighlight = ({
 				{project.wip && (
 					<Polygon
 						padding={[7, 25]}
-						rotation={30}
 						color="accent"
-						className="pointer-events-none absolute -right-6 top-2 z-10 px-6 py-1 text-sm font-bold uppercase text-on-accent"
+						className="pointer-events-none absolute -right-6 top-2 z-10 px-6 py-1 text-sm font-bold uppercase text-on-accent rotate-30"
 						getPoints={(width, height) => [
 							[30, 0],
 							[width - 13, 5],

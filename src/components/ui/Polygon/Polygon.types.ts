@@ -19,16 +19,12 @@ export type PolygonProps = HTMLAttributes<HTMLDivElement> & {
 	 */
 	padding?: PolygonPadding;
 
-	rotation?: PolygonRotation;
-
 	getPoints?: PolygonPointsFactory;
 };
 
 export type PolygonVariant = 'filled' | 'outline' | 'dashed';
 
 export type PolygonColor = keyof typeof polygonColors;
-
-export type PolygonRotation = number | string;
 
 export type PolygonPadding =
 	| number

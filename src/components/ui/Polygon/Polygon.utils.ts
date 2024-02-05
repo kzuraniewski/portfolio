@@ -4,7 +4,6 @@ import {
 	PolygonPadding,
 	PolygonPoints,
 	PolygonPointsFactory,
-	PolygonRotation,
 } from './Polygon.types';
 
 export const borderRadius = 1;
@@ -44,9 +43,4 @@ export const createProjectedPointsFactory =
  */
 export const parsePoints = (points: PolygonPoints) => {
 	return points.map(([x, y]) => x + ',' + y).join(' ');
-};
-
-export const parseRotation = (rotation: PolygonRotation) => {
-	if (typeof rotation === 'string') return rotation;
-	return rotation + 'deg';
 };

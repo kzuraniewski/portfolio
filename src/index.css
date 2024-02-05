@@ -16,4 +16,8 @@
 	.text-inherit {
 		color: inherit;
 	}
+
+	.rotate-30 {
+		rotate: 30deg;
+	}
 }
