@@ -48,7 +48,8 @@ const Contact = () => {
 
 				<div className="flex flex-col items-center gap-10">
 					<PolygonBackground
-						background="accent"
+						variant="dashed"
+						color="accent"
 						padding={10}
 						className="mt-5"
 						getPoints={(width, height) => [

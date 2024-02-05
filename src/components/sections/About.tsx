@@ -16,7 +16,8 @@ export default function LandingPage() {
 			<div className="mx-auto flex w-3/5 justify-between gap-20">
 				<div className="">
 					<PolygonBackground
-						noFill
+						variant="outline"
+						color="accent"
 						padding={[15, 25]}
 						className="mx-auto"
 						getPoints={(width, height) => [

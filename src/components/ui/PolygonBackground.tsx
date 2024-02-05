@@ -4,7 +4,7 @@ import cn from '@/lib/cn';
 import { tailwindConfig } from '@/lib/util';
 import useEventActivatedValue from '@/hooks/useEventActivatedValue';
 
-const BORDER_RADIUS = 2;
+const BORDER_RADIUS = 1;
 
 export type PolygonPoints = [number, number][];
 
@@ -19,6 +19,8 @@ export type PolygonPadding =
 	| [number, number]
 	| [number, number, number]
 	| [number, number, number, number];
+
+export type PolygonVariant = 'filled' | 'outline' | 'dashed';
 
 type BackgroundAttributes = {
 	viewBox: string;
@@ -36,22 +38,28 @@ const getDefaultPoints: PolygonPointsFactory = (width, height) => [
 
 const colors = tailwindConfig.theme.colors;
 
+export type PolygonColor = keyof typeof colors;
+
 // TODO: support `as` prop
 export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
-	getPoints?: PolygonPointsFactory;
+	/**
+	 * @default 'filled'
+	 */
+	variant?: PolygonVariant;
+
+	/**
+	 * @default 'secondary'
+	 */
+	color?: PolygonColor;
+
 	/**
 	 * Order as in CSS `padding` shorthand property
 	 */
 	padding?: PolygonPadding;
-	/**
-	 * @default 'secondary'
-	 */
-	background?: keyof typeof colors;
+
 	rotation?: number | string;
-	/**
-	 * @default false
-	 */
-	noFill?: boolean;
+
+	getPoints?: PolygonPointsFactory;
 };
 
 const PolygonBackground = ({
@@ -59,9 +67,9 @@ const PolygonBackground = ({
 	children,
 	getPoints = getDefaultPoints,
 	padding,
-	background = 'secondary',
+	color: colorName = 'secondary',
 	rotation,
-	noFill = false,
+	variant = 'filled',
 	style,
 	...props
 }: PolygonBackgroundProps) => {
@@ -76,7 +84,7 @@ const PolygonBackground = ({
 	}, 'load');
 
 	const strokeWidth = 2 * BORDER_RADIUS;
-	const backgroundColor = colors[background];
+	const color = colors[colorName];
 
 	const updatePolygonSize = () => {
 		const { width, height } = rootRef.current.getBoundingClientRect();
@@ -103,6 +111,8 @@ const PolygonBackground = ({
 		return () => resizeObserver.disconnect();
 	}, []);
 
+	const noFill = variant === 'dashed' || variant === 'outline';
+
 	return (
 		<div
 			ref={rootRef}
@@ -127,9 +137,10 @@ const PolygonBackground = ({
 						points={attributes.points}
 						strokeLinejoin="round"
 						strokeWidth={`${strokeWidth}px`}
-						stroke={backgroundColor}
-						fill={backgroundColor}
+						stroke={color}
+						fill={color}
 						fillOpacity={noFill ? 0 : 100}
+						strokeDasharray={variant === 'dashed' ? 5 : undefined}
 					/>
 				</svg>
 			)}

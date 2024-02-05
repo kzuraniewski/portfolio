@@ -22,8 +22,9 @@ export default function LandingPage() {
 			<Divider className="mb-7 w-48" />
 
 			<PolygonBackground
+				variant="dashed"
 				padding={[10, 20]}
-				background="accent"
+				color="accent"
 				getPoints={(width, height) => [
 					[45, 10],
 					[width - 10, 20],

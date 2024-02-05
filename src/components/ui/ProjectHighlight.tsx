@@ -47,7 +47,8 @@ const ProjectHighlight = ({
 				</div>
 
 				<PolygonBackground
-					background="accent"
+					variant="dashed"
+					color="accent"
 					padding={[10, 20]}
 					getPoints={(width, height) => [
 						[40, 5],
@@ -99,7 +100,7 @@ const ProjectHighlight = ({
 					<PolygonBackground
 						padding={[7, 25]}
 						rotation={30}
-						background="accent"
+						color="accent"
 						className="pointer-events-none absolute -right-6 top-2 z-10 px-6 py-1 text-sm font-bold uppercase text-primary"
 						getPoints={(width, height) => [
 							[30, 0],

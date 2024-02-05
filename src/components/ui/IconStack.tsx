@@ -45,7 +45,7 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 
 						{highlighted && (
 							<PolygonBackground
-								background="accent"
+								color="accent"
 								className="absolute -right-1 -top-1 h-6 w-6"
 								// TODO: improve shape
 								getPoints={(width, height) => [
