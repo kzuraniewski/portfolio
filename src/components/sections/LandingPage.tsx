@@ -56,7 +56,7 @@ export default function LandingPage() {
 				href="#about"
 				className="absolute -bottom-10"
 			>
-				<Trans>See more</Trans>
+				<Trans>Get to know me</Trans>
 				<FaArrowTurnDown className="ml-2 inline-block w-2" />
 			</Button>
 		</section>
