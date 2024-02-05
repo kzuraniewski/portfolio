@@ -10,6 +10,7 @@ import {
 	getDefaultPoints,
 	parsePoints,
 	parsePolygonPadding,
+	parseRotation,
 	polygonColors,
 	strokeWidth,
 } from './Polygon.utils';
@@ -39,9 +40,7 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 
 		const appliedRotation = useEventActivatedValue(() => {
 			if (!rotation) return null;
-
-			if (typeof rotation === 'string') return rotation;
-			return rotation + 'deg';
+			return parseRotation(rotation);
 		}, 'load');
 
 		const color = polygonColors[colorName];
