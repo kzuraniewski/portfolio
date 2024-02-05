@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { Divider } from '@/components/ui/Divider';
 
-import Polygon from './Polygon';
+import Polygon, { PolygonVariant } from './Polygon';
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
@@ -36,22 +36,25 @@ export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
 
 	/**
-	 * Whether this section should not contain a background
-	 * @default false
+	 * @default 'filled'
 	 */
-	flat?: boolean;
+	variant?: PolygonVariant;
 };
 
 export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
-	({ title, flat = false, className, children, ...props }, ref) => {
+	({ title, variant = 'filled', className, children, ...props }, ref) => {
 		return (
 			<div
 				ref={ref}
-				className={cn('mt-14', { 'text-on-secondary': !flat }, className)}
+				className={cn(
+					'mt-14',
+					{ 'text-on-secondary': variant === 'filled' },
+					className,
+				)}
 				{...props}
 			>
 				<Polygon
-					variant={flat ? 'dashed' : 'filled'}
+					variant={variant}
 					padding={40}
 					getPoints={(width, height) => [
 						[0, 7],
@@ -72,3 +75,5 @@ export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
 	},
 );
 SubSection.displayName = 'SubSection';
+
+// FEATURE: wider stroke on outlined section, api adjust in Polygon needed

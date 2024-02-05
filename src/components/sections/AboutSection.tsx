@@ -75,12 +75,18 @@ const AboutSection = () => {
 						<IconStack stack={mainTechStack} />
 					</SubSection>
 
-					<SubSection title={_(msg`What I'm learning`)}>
+					<SubSection
+						title={_(msg`What I'm learning`)}
+						variant="outline"
+					>
 						<IconStack stack={learningTechStack} />
 					</SubSection>
 				</div>
 
-				<SubSection title={_(msg`Companies I worked in`)} flat>
+				<SubSection
+					title={_(msg`Companies I worked in`)}
+					variant="dashed"
+				>
 					<CompanyHistory />
 				</SubSection>
 			</div>
