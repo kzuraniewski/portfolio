@@ -23,8 +23,8 @@ export default function LandingPage() {
 
 			<PolygonBackground
 				variant="dashed"
-				padding={[10, 20]}
 				color="accent"
+				padding={[10, 20]}
 				getPoints={(width, height) => [
 					[45, 10],
 					[width - 10, 20],

@@ -51,13 +51,13 @@ const Contact = () => {
 						variant="dashed"
 						color="accent"
 						padding={10}
-						className="mt-5"
 						getPoints={(width, height) => [
 							[5, 35],
 							[width - 50, 0],
 							[width - 10, height - 20],
 							[55, height - 5],
 						]}
+						className="mt-5"
 					>
 						<PolygonBackground
 							padding={[20, 30]}

@@ -19,13 +19,13 @@ export default function LandingPage() {
 						variant="outline"
 						color="accent"
 						padding={[15, 25]}
-						className="mx-auto"
 						getPoints={(width, height) => [
 							[5, 10],
 							[width, 0],
 							[width - 15, height],
 							[0, height - 10],
 						]}
+						className="mx-auto"
 					>
 						<p className="w-max text-center">
 							<Trans>

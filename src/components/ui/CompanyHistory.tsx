@@ -19,13 +19,13 @@ export const CompanyHistory = () => {
 						<div className="flex justify-between">
 							<PolygonBackground
 								padding={[10.2]}
-								className="mb-3 h-fit w-fit"
 								getPoints={(width, height) => [
 									[0, 5],
 									[width, 0],
 									[width - 5, height - 1],
 									[3, height],
 								]}
+								className="mb-3 h-fit w-fit"
 							>
 								<ul>
 									{company.positions.map((position) => (

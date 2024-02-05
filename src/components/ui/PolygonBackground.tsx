@@ -63,14 +63,14 @@ export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 const PolygonBackground = ({
-	className,
-	children,
-	getPoints = getDefaultPoints,
-	padding,
-	color: colorName = 'secondary',
-	rotation,
 	variant = 'filled',
+	color: colorName = 'secondary',
+	padding,
+	rotation,
+	getPoints = getDefaultPoints,
+	className,
 	style,
+	children,
 	...props
 }: PolygonBackgroundProps) => {
 	const rootRef = useRef<HTMLDivElement>(null!);
