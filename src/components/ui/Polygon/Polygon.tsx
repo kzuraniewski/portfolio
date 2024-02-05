@@ -1,67 +1,18 @@
-import React, { forwardRef, HTMLAttributes, useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 
 import cn from '@/lib/cn';
-import { tailwindConfig } from '@/lib/util';
 import useEventActivatedValue from '@/hooks/useEventActivatedValue';
 import useForwardedRef from '@/hooks/useForwardedRef';
 
-const BORDER_RADIUS = 1;
-
-export type PolygonPoints = [number, number][];
-
-export type PolygonPointsFactory = (
-	width: number,
-	height: number,
-) => PolygonPoints;
-
-export type PolygonPadding =
-	| number
-	| [number]
-	| [number, number]
-	| [number, number, number]
-	| [number, number, number, number];
-
-export type PolygonVariant = 'filled' | 'outline' | 'dashed';
-
-type BackgroundAttributes = {
-	viewBox: string;
-	points: string;
-	width: number;
-	height: number;
-};
-
-const getDefaultPoints: PolygonPointsFactory = (width, height) => [
-	[0, 0],
-	[width, 0],
-	[width, height],
-	[0, height],
-];
-
-const colors = tailwindConfig.theme.colors;
-
-export type PolygonColor = keyof typeof colors;
-
-// TODO: support `as` prop
-export type PolygonProps = HTMLAttributes<HTMLDivElement> & {
-	/**
-	 * @default 'filled'
-	 */
-	variant?: PolygonVariant;
-
-	/**
-	 * @default 'secondary'
-	 */
-	color?: PolygonColor;
-
-	/**
-	 * Order as in CSS `padding` shorthand property
-	 */
-	padding?: PolygonPadding;
-
-	rotation?: number | string;
-
-	getPoints?: PolygonPointsFactory;
-};
+import { PolygonProps } from './Polygon.types';
+import {
+	createProjectedPointsFactory,
+	getDefaultPoints,
+	parsePoints,
+	parsePolygonPadding,
+	polygonColors,
+	strokeWidth,
+} from './Polygon.utils';
 
 const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 	(
@@ -79,7 +30,12 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 		ref,
 	) => {
 		const rootRef = useForwardedRef(ref);
-		const [attributes, setAttributes] = useState<BackgroundAttributes>();
+		const [attributes, setAttributes] = useState<{
+			viewBox: string;
+			points: string;
+			width: number;
+			height: number;
+		}>();
 
 		const appliedRotation = useEventActivatedValue(() => {
 			if (!rotation) return null;
@@ -88,23 +44,23 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 			return rotation + 'deg';
 		}, 'load');
 
-		const strokeWidth = 2 * BORDER_RADIUS;
-		const color = colors[colorName];
+		const color = polygonColors[colorName];
 
 		const updatePolygonSize = () => {
 			const { width, height } = rootRef.current.getBoundingClientRect();
 
-			// project smaller point map over viewBox expanded by strokeWidth
-			// to prevent clipping due to stroke overflowing
-			const points = getPoints(width - strokeWidth, height - strokeWidth)
-				.map(([x, y]) => {
-					return `${x + BORDER_RADIUS}, ${y + BORDER_RADIUS}`;
-				})
-				.join(' ');
+			const getProjectedPoints = createProjectedPointsFactory(getPoints);
+			const points = getProjectedPoints(width, height);
+			const parsedPoints = parsePoints(points);
 
 			const viewBox = [0, 0, width, height].join(' ');
 
-			setAttributes({ viewBox, points, width, height });
+			setAttributes({
+				viewBox,
+				points: parsedPoints,
+				width,
+				height,
+			});
 		};
 
 		useEffect(() => {
@@ -158,11 +114,5 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 	},
 );
 Polygon.displayName = 'Polygon';
-
-const parsePolygonPadding = (padding: PolygonPadding) => {
-	return Array.isArray(padding)
-		? padding.map((value) => value + 'px').join(' ')
-		: padding + 'px';
-};
 
 export default Polygon;
