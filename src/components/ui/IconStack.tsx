@@ -2,7 +2,7 @@ import React, { forwardRef, HTMLAttributes } from 'react';
 import { useLingui } from '@lingui/react';
 
 import { Divider } from '@/components/ui/Divider';
-import PolygonBackground from '@/components/ui/PolygonBackground';
+import Polygon from '@/components/ui/Polygon';
 import { IndexSelector, Separated } from '@/components/ui/Separated';
 import cn from '@/lib/cn';
 import { TechStack } from '@/lib/data';
@@ -44,7 +44,7 @@ const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
 						/>
 
 						{highlighted && (
-							<PolygonBackground
+							<Polygon
 								color="accent"
 								// TODO: improve shape
 								getPoints={(width, height) => [

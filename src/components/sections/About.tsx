@@ -4,7 +4,7 @@ import { useLingui } from '@lingui/react';
 
 import { CompanyHistory } from '@/components/ui/CompanyHistory';
 import IconStack from '@/components/ui/IconStack';
-import PolygonBackground from '@/components/ui/PolygonBackground';
+import Polygon from '@/components/ui/Polygon';
 import { Section, SubSection } from '@/components/ui/Section';
 import { learningTechStack, mainTechStack } from '@/lib/data';
 
@@ -15,7 +15,7 @@ export default function LandingPage() {
 		<Section title={_(msg`About me`)} id="about">
 			<div className="mx-auto flex w-3/5 justify-between gap-20">
 				<div className="">
-					<PolygonBackground
+					<Polygon
 						variant="outline"
 						color="accent"
 						padding={[15, 25]}
@@ -32,7 +32,7 @@ export default function LandingPage() {
 								Hi, my name is Karol. I develop web stuff.
 							</Trans>
 						</p>
-					</PolygonBackground>
+					</Polygon>
 
 					<p className="mx-auto mt-8 w-fit text-center">
 						<Trans>

@@ -4,7 +4,7 @@ import { FaArrowTurnDown } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
 import { Divider } from '@/components/ui/Divider';
-import PolygonBackground from '@/components/ui/PolygonBackground';
+import Polygon from '@/components/ui/Polygon';
 
 export default function LandingPage() {
 	return (
@@ -21,7 +21,7 @@ export default function LandingPage() {
 
 			<Divider className="mb-7 w-48" />
 
-			<PolygonBackground
+			<Polygon
 				variant="dashed"
 				color="accent"
 				padding={[10, 20]}
@@ -32,7 +32,7 @@ export default function LandingPage() {
 					[10, height - 30],
 				]}
 			>
-				<PolygonBackground
+				<Polygon
 					padding={20}
 					getPoints={(width, height) => [
 						[5, 10],
@@ -47,8 +47,8 @@ export default function LandingPage() {
 							in TypeScript, React and Java.
 						</Trans>
 					</p>
-				</PolygonBackground>
-			</PolygonBackground>
+				</Polygon>
+			</Polygon>
 
 			<Button
 				variant="primary"

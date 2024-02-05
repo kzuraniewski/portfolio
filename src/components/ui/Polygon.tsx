@@ -42,7 +42,7 @@ const colors = tailwindConfig.theme.colors;
 export type PolygonColor = keyof typeof colors;
 
 // TODO: support `as` prop
-export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
+export type PolygonProps = HTMLAttributes<HTMLDivElement> & {
 	/**
 	 * @default 'filled'
 	 */
@@ -63,7 +63,7 @@ export type PolygonBackgroundProps = HTMLAttributes<HTMLDivElement> & {
 	getPoints?: PolygonPointsFactory;
 };
 
-const PolygonBackground = forwardRef<HTMLDivElement, PolygonBackgroundProps>(
+const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 	(
 		{
 			variant = 'filled',
@@ -157,7 +157,7 @@ const PolygonBackground = forwardRef<HTMLDivElement, PolygonBackgroundProps>(
 		);
 	},
 );
-PolygonBackground.displayName = 'PolygonBackground';
+Polygon.displayName = 'Polygon';
 
 const parsePolygonPadding = (padding: PolygonPadding) => {
 	return Array.isArray(padding)
@@ -165,4 +165,4 @@ const parsePolygonPadding = (padding: PolygonPadding) => {
 		: padding + 'px';
 };
 
-export default PolygonBackground;
+export default Polygon;

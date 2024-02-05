@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans } from '@lingui/react';
 
-import PolygonBackground from '@/components/ui/PolygonBackground';
+import Polygon from '@/components/ui/Polygon';
 import { companies } from '@/lib/data';
 
 export const CompanyHistory = () => {
@@ -17,7 +17,7 @@ export const CompanyHistory = () => {
 
 					<div className="text-sm">
 						<div className="flex justify-between">
-							<PolygonBackground
+							<Polygon
 								padding={[10.2]}
 								getPoints={(width, height) => [
 									[0, 5],
@@ -37,7 +37,7 @@ export const CompanyHistory = () => {
 										</li>
 									))}
 								</ul>
-							</PolygonBackground>
+							</Polygon>
 
 							<div className="mr-3 mt-2 tracking-wide">
 								<Trans id={company.timeSpan.id} />

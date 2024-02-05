@@ -4,7 +4,7 @@ import { useLingui } from '@lingui/react';
 
 import { CornerBanner } from '@/components/ui/CornerBanner';
 import { Divider } from '@/components/ui/Divider';
-import PolygonBackground from '@/components/ui/PolygonBackground';
+import Polygon from '@/components/ui/Polygon';
 import { Section, SubSection } from '@/components/ui/Section';
 import { Separated } from '@/components/ui/Separated';
 import cn from '@/lib/cn';
@@ -47,7 +47,7 @@ const Contact = () => {
 				</div>
 
 				<div className="flex flex-col items-center gap-10">
-					<PolygonBackground
+					<Polygon
 						variant="dashed"
 						color="accent"
 						padding={10}
@@ -59,7 +59,7 @@ const Contact = () => {
 						]}
 						className="mt-5"
 					>
-						<PolygonBackground
+						<Polygon
 							padding={[20, 30]}
 							getPoints={(width, height) => [
 								[0, 10],
@@ -73,8 +73,8 @@ const Contact = () => {
 							<a href="mailto:zuraniewski.karol@gmail.com">
 								zuraniewski.karol@gmail.com
 							</a>
-						</PolygonBackground>
-					</PolygonBackground>
+						</Polygon>
+					</Polygon>
 
 					<div className="text-sm">
 						<Trans>Or call me:</Trans>{' '}
