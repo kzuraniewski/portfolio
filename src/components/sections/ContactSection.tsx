@@ -66,7 +66,7 @@ const ContactSection = () => {
 								[width - 20, height],
 								[10, height - 5],
 							]}
-							className="text-on-secondary w-max"
+							className="w-max text-on-secondary"
 						>
 							<Trans>Contact me at</Trans>{' '}
 							<a href="mailto:zuraniewski.karol@gmail.com">
@@ -82,11 +82,9 @@ const ContactSection = () => {
 				</div>
 			</Separated>
 
-			<CornerBanner
-				hidden={hideBanner}
-				label={_(msg`Contact me`)}
-				href="#contact"
-			/>
+			<CornerBanner hidden={hideBanner} href="#contact">
+				<Trans>Contact me</Trans>
+			</CornerBanner>
 		</Section>
 	);
 };
