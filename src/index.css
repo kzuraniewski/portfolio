@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+	:root {
+		--color-super-silver: 238 238 238;
+		--color-limed-spruce: 58 71 80;
+		--color-forceful-orange: 234 146 21;
+		--color-prestige-blue: 48 56 65;
+		--color-eerie-black: 28 28 28;
+
+		--color-charcoal: 34 40 49;
+		--color-gunmetal: 57 62 70;
+		--color-mustard: 255 211 105;
+
+		/* Light mode */
+		--color-primary: var(--color-super-silver);
+		--color-secondary: var(--color-limed-spruce);
+		--color-accent: var(--color-forceful-orange);
+		--color-text-on-primary: var(--color-eerie-black);
+		--color-text-on-secondary: var(--color-super-silver);
+		--color-text-on-accent: var(--color-super-silver);
+		--color-text-light: var(--color-super-silver);
+		--color-text-dark: var(--color-eerie-black);
+	}
+
 	html {
 		@apply scroll-smooth;
 

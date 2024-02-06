@@ -1,6 +1,5 @@
-import { tailwindConfig } from '@/lib/util';
-
 import {
+	PolygonColor,
 	PolygonPadding,
 	PolygonPoints,
 	PolygonPointsFactory,
@@ -15,8 +14,6 @@ export const getDefaultPoints: PolygonPointsFactory = (width, height) => [
 	[width, height],
 	[0, height],
 ];
-
-export const polygonColors = tailwindConfig.theme.colors;
 
 export const parsePolygonPadding = (padding: PolygonPadding) => {
 	return Array.isArray(padding)
@@ -44,3 +41,9 @@ export const createProjectedPointsFactory =
 export const parsePoints = (points: PolygonPoints) => {
 	return points.map(([x, y]) => x + ',' + y).join(' ');
 };
+
+export const colorClassNameMap = {
+	primary: 'fill-primary stroke-primary',
+	secondary: 'fill-secondary stroke-secondary',
+	accent: 'fill-accent stroke-accent',
+} satisfies Record<PolygonColor, string>;

@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-import { polygonColors } from './Polygon.utils';
+import { tailwindConfig } from '@/lib/util';
 
 // TODO: support `as` prop
 export type PolygonProps = HTMLAttributes<HTMLDivElement> & {
@@ -24,7 +24,7 @@ export type PolygonProps = HTMLAttributes<HTMLDivElement> & {
 
 export type PolygonVariant = 'filled' | 'outline' | 'dashed';
 
-export type PolygonColor = keyof typeof polygonColors;
+export type PolygonColor = keyof typeof tailwindConfig.theme.colors;
 
 export type PolygonPadding =
 	| number

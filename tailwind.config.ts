@@ -1,44 +1,22 @@
 import type { Config } from 'tailwindcss';
 
-const colors = {
-	// charcoal: '#222831',
-	// gunmetal: '#393E46',
-	// mustard: '#FFD369',
-	// silver: '#EEEEEE',
-
-	superSilver: '#EEEEEE',
-	limedSpruce: '#3A4750',
-	forcefulOrange: '#EA9215',
-	prestigeBlue: '#303841',
-	eerieBlack: '#1c1c1c',
-};
+const color = (name: string) => `rgb(var(--color-${name}) / <alpha-value>)`;
 
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		colors: {
-			// primary: colors.charcoal,
-			// secondary: colors.gunmetal,
-			// accent: colors.mustard,
-
-			primary: colors.superSilver,
-			secondary: colors.limedSpruce,
-			accent: colors.forcefulOrange,
+			primary: color('primary'),
+			secondary: color('secondary'),
+			accent: color('accent'),
 		},
 		textColor: {
-			// accent: colors.mustard,
-			// 'on-primary': colors.silver,
-			// 'on-secondary': colors.silver,
-			// 'on-accent': colors.charcoal,
-			// light: colors.silver,
-			// dark: colors.charcoal,
-
-			accent: colors.forcefulOrange,
-			'on-primary': colors.eerieBlack,
-			'on-secondary': colors.superSilver,
-			'on-accent': colors.superSilver,
-			light: colors.superSilver,
-			dark: colors.eerieBlack,
+			accent: color('accent'),
+			'on-primary': color('text-on-primary'),
+			'on-secondary': color('text-on-secondary'),
+			'on-accent': color('text-on-accent'),
+			light: color('text-light'),
+			dark: color('text-dark'),
 		},
 		container: {
 			center: true,

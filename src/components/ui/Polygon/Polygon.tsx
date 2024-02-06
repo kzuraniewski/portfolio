@@ -5,11 +5,11 @@ import useForwardedRef from '@/hooks/useForwardedRef';
 
 import { PolygonProps } from './Polygon.types';
 import {
+	colorClassNameMap,
 	createProjectedPointsFactory,
 	getDefaultPoints,
 	parsePoints,
 	parsePolygonPadding,
-	polygonColors,
 	strokeWidth,
 } from './Polygon.utils';
 
@@ -19,7 +19,7 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 	(
 		{
 			variant = 'filled',
-			color: colorName = 'secondary',
+			color = 'secondary',
 			padding,
 			getPoints = getDefaultPoints,
 			className,
@@ -36,8 +36,6 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 			width: number;
 			height: number;
 		}>();
-
-		const color = polygonColors[colorName];
 
 		const updatePolygonSize = () => {
 			const { offsetWidth, offsetHeight } = rootRef.current;
@@ -90,12 +88,11 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>(
 							points={attributes.points}
 							strokeLinejoin="round"
 							strokeWidth={`${strokeWidth}px`}
-							stroke={color}
-							fill={color}
 							fillOpacity={noFill ? 0 : 100}
 							strokeDasharray={
 								variant === 'dashed' ? 5 : undefined
 							}
+							className={colorClassNameMap[color]}
 						/>
 					</svg>
 				)}
