@@ -47,7 +47,6 @@ export const Header = () => {
 				'sticky top-0 z-50 w-full transition-all duration-300 border-b-2 border-dashed border-b-secondary bg-primary',
 				{ '-translate-y-full': mountState === 'collapsed' },
 				{ 'bg-opacity-80 backdrop-blur-sm shadow-xl': mountState === 'floating' },
-				{ 'bg-secondary text-on-secondary': mountState === 'mounted' },
 			)}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
