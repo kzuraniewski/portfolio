@@ -25,7 +25,7 @@ export default function App() {
 
 	return (
 		<I18nProvider i18n={i18n}>
-			<body className="min-h-screen bg-primary text-on-primary">
+			<div className="min-h-screen bg-primary text-on-primary">
 				<Header />
 
 				<main>
@@ -38,7 +38,7 @@ export default function App() {
 				</main>
 
 				<Footer />
-			</body>
+			</div>
 		</I18nProvider>
 	);
 }
