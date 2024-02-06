@@ -10,6 +10,8 @@ import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
 import useScroll from '@/hooks/useScroll';
 
+import ThemeToggle from './ThemeToggle';
+
 const NO_COLLAPSE_AREA_HEIGHT = 100;
 
 type MountState = 'mounted' | 'floating' | 'collapsed';
@@ -67,7 +69,11 @@ export const Header = () => {
 					</ul>
 				</nav>
 
-				<LanguageToggle />
+				<div className="flex gap-6">
+					<ThemeToggle />
+
+					<LanguageToggle />
+				</div>
 
 				<ul className="flex justify-center gap-8">
 					<li>

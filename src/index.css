@@ -14,7 +14,7 @@
 		--color-gunmetal: 57 62 70;
 		--color-mustard: 255 211 105;
 
-		/* Light mode */
+		/* Light mode theme */
 		--color-primary: var(--color-super-silver);
 		--color-secondary: var(--color-limed-spruce);
 		--color-accent: var(--color-forceful-orange);
@@ -23,6 +23,18 @@
 		--color-text-on-accent: var(--color-super-silver);
 		--color-text-light: var(--color-super-silver);
 		--color-text-dark: var(--color-eerie-black);
+	}
+
+	:root[class~="dark"] {
+		/* Dark mode theme */
+		--color-primary: var(--color-charcoal);
+		--color-secondary: var(--color-gunmetal);
+		--color-accent: var(--color-mustard);
+		--color-text-on-primary: var(--color-super-silver);
+		--color-text-on-secondary: var(--color-super-silver);
+		--color-text-on-accent: var(--color-charcoal);
+		--color-text-light: var(--color-super-silver);
+		--color-text-dark: var(--color-charcoal);
 	}
 
 	html {
