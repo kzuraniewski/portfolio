@@ -8,8 +8,6 @@ export const DEFAULT_LOCALE: Locale = 'en-US';
 
 /**
  * Load messages for requested locale and activate it.
- * This function isn't part of the LinguiJS library because there are
- * many ways how to load messages — from REST API, from file, from cache, etc.
  */
 export const loadCatalog = async (locale: Locale) => {
 	const catalog = await import(`./locales/${locale}.po`);
