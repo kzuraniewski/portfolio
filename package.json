@@ -51,6 +51,6 @@
 		"vite": "^5.0.12"
 	},
 	"lint-staged": {
-		"*": "eslint --fix --cache"
+		"*": "eslint --fix"
 	}
 }
