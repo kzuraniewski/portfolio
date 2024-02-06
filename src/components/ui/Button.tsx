@@ -3,7 +3,8 @@ import React, {
 	ButtonHTMLAttributes,
 	forwardRef,
 } from 'react';
-import cn from 'classnames';
+
+import cn from '@/lib/cn';
 
 export type ButtonSize = 'normal' | 'big';
 
