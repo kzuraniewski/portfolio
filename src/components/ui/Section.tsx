@@ -1,9 +1,9 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
+import Container from '@/components/ui/Container';
 import { Divider } from '@/components/ui/Divider';
-
-import Polygon, { PolygonVariant } from './Polygon';
+import Polygon, { PolygonVariant } from '@/components/ui/Polygon';
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
@@ -17,15 +17,17 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
 				className={cn('my-24 scroll-mt-32', className)}
 				{...props}
 			>
-				<div className="mb-16 flex items-center gap-8">
-					<h2 className="relative w-max font-display text-3xl font-bold uppercase">
-						<span className="text-accent">#</span> {title}
-					</h2>
+				<Container>
+					<div className="mb-16 flex items-center gap-8">
+						<h2 className="relative w-max font-display text-3xl font-bold uppercase">
+							<span className="text-accent">#</span> {title}
+						</h2>
 
-					<Divider className="mr-10 flex-grow" />
-				</div>
+						<Divider className="mr-10 flex-grow" />
+					</div>
 
-				<div className="px-10">{children}</div>
+					<div className="px-10">{children}</div>
+				</Container>
 			</section>
 		);
 	},

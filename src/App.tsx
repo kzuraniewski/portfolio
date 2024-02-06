@@ -8,7 +8,6 @@ import {
 	LandingPage,
 	ProjectsSection,
 } from '@/components/sections';
-import Container from '@/components/ui/Container';
 import Footer from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
 import { setupTheme } from '@/lib/theme';
@@ -29,12 +28,10 @@ export default function App() {
 				<Header />
 
 				<main>
-					<Container>
-						<LandingPage />
-						<AboutSection />
-						<ProjectsSection />
-						<ContactSection />
-					</Container>
+					<LandingPage />
+					<AboutSection />
+					<ProjectsSection />
+					<ContactSection />
 				</main>
 
 				<Footer />
