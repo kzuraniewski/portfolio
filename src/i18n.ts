@@ -20,6 +20,10 @@ export const isValidLocale = (locale: string): locale is Locale => {
 	return (linguiConfig.locales as string[]).indexOf(locale) !== -1;
 };
 
+/**
+ * Returns current locale. Fallbacks to default locale when
+ * current is invalid or not found
+ */
 export const getActiveLocale = (): Locale => {
 	const detectedLocale = detect(fromStorage('lang'), fromNavigator());
 
