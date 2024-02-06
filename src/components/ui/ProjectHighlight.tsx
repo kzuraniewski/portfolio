@@ -118,7 +118,7 @@ const ProjectHighlight = ({
 					target="_blank"
 					rel="noreferrer"
 				>
-					<div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-5/6 -translate-x-1/2 -translate-y-1/2 overflow-ellipsis px-5 text-center text-sm text-font-light opacity-0 transition-opacity group-hover:opacity-100">
+					<div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-5/6 -translate-x-1/2 -translate-y-1/2 overflow-ellipsis px-5 text-center text-sm text-light opacity-0 transition-opacity group-hover:opacity-100">
 						{previewLink}
 						<MdOutlineArrowOutward className="ml-2 inline-block h-4 w-4" />
 					</div>
