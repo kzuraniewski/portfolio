@@ -12,18 +12,18 @@ import Container from '@/components/ui/Container';
 import Footer from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
 
-import { loadCatalog } from './i18n';
-import { getLanguage } from './lib/util';
+import useLocale from './hooks/useLocale';
 
 export default function App() {
+	const { activeLocale, setLocale } = useLocale();
+
 	useEffect(() => {
-		const language = getLanguage();
-		loadCatalog(language || 'en-US');
+		setLocale(activeLocale);
 	}, []);
 
 	return (
 		<I18nProvider i18n={i18n}>
-			<body className="text-on-primary min-h-screen bg-primary">
+			<body className="min-h-screen bg-primary text-on-primary">
 				<Header />
 
 				<main>

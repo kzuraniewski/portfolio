@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
+import LanguageToggle from '@/components/ui/LanguageToggle';
 import { Reference, References } from '@/components/ui/References';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
@@ -66,6 +67,8 @@ export const Header = () => {
 						))}
 					</ul>
 				</nav>
+
+				<LanguageToggle />
 
 				<References>
 					<Reference href={personalLinks.github}>
