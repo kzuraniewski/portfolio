@@ -17,8 +17,7 @@ export const loadCatalog = async (locale: Locale) => {
 };
 
 export const isValidLocale = (locale: string): locale is Locale => {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	return linguiConfig.locales.indexOf(locale as any) !== -1;
+	return (linguiConfig.locales as string[]).indexOf(locale) !== -1;
 };
 
 export const getActiveLocale = (): Locale => {
