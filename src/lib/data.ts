@@ -79,8 +79,8 @@ export const mainTechStack: TechStack = [
 
 // prettier-ignore
 export const learningTechStack: TechStack = [
-	{ icon: techIcons.java, highlighted: true },
-	{ icon: techIcons.docker },
+	{ icon: techIcons.docker, highlighted: true },
+	{ icon: techIcons.java },
 ];
 
 export const companies = [
