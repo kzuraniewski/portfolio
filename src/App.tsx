@@ -11,14 +11,16 @@ import {
 import Container from '@/components/ui/Container';
 import Footer from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
-
-import useLocale from './hooks/useLocale';
+import { setupTheme } from '@/lib/theme';
+import useLocale from '@/hooks/useLocale';
 
 export default function App() {
 	const { activeLocale, setLocale } = useLocale();
 
 	useEffect(() => {
 		setLocale(activeLocale);
+
+		setupTheme();
 	}, []);
 
 	return (

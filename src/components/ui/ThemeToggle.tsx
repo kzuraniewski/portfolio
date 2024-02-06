@@ -2,6 +2,7 @@ import React, { forwardRef, HTMLAttributes, useState } from 'react';
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
 import cn from '@/lib/cn';
+import { getTheme, setTheme } from '@/lib/theme';
 
 import { IconButton } from './Button';
 
@@ -9,12 +10,11 @@ export type ThemeToggleProps = HTMLAttributes<HTMLDivElement>;
 
 const ThemeToggle = forwardRef<HTMLDivElement, ThemeToggleProps>(
 	({ className, ...props }, ref) => {
-		const [isDarkMode, setIsDarkMode] = useState(false);
+		const [isDarkMode, setIsDarkMode] = useState(getTheme() === 'dark');
 
 		const changeTheme = () => {
-			const root = document.documentElement;
-			root.classList.toggle('dark');
-			setIsDarkMode(root.classList.contains('dark'));
+			setTheme(isDarkMode ? 'light' : 'dark');
+			setIsDarkMode(!isDarkMode); // purposefully omitted callback
 		};
 
 		return (
