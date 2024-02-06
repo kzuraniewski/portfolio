@@ -3,10 +3,9 @@ import { Trans as TransMacro } from '@lingui/macro';
 import { Trans } from '@lingui/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
-import { Button } from '@/components/ui/Button';
+import { Button, IconButton } from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import LanguageToggle from '@/components/ui/LanguageToggle';
-import { Reference, References } from '@/components/ui/References';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
 import useScroll from '@/hooks/useScroll';
@@ -70,15 +69,22 @@ export const Header = () => {
 
 				<LanguageToggle />
 
-				<References>
-					<Reference href={personalLinks.github}>
-						<FaGithub />
-					</Reference>
+				<ul className="flex justify-center gap-8">
+					<li>
+						<IconButton href={personalLinks.github} target="_blank">
+							<FaGithub />
+						</IconButton>
+					</li>
 
-					<Reference href={personalLinks.linkedIn}>
-						<FaLinkedin />
-					</Reference>
-				</References>
+					<li>
+						<IconButton
+							href={personalLinks.linkedIn}
+							target="_blank"
+						>
+							<FaLinkedin />
+						</IconButton>
+					</li>
+				</ul>
 
 				<Button variant="primary">
 					<TransMacro>Resume</TransMacro>

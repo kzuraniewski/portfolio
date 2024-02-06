@@ -21,6 +21,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 // FIXME: Props type needs to be conditional whether it is a button or an anchor
+// TODO: Create a ButtonBase that renders a or button and appends target="_blank" with rel="noreferrer" when external link
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	(
