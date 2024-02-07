@@ -1,6 +1,5 @@
 import React, { forwardRef, HTMLAttributes, useState } from 'react';
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
-import { twMerge } from 'tailwind-merge';
 
 import { IconButton } from '@/components/ui/Button';
 import { getTheme, setTheme } from '@/lib/theme';
