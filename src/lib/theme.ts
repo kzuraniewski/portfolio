@@ -26,8 +26,6 @@ export const setupTheme = () => {
 	const storedTheme = localStorage.getItem('theme');
 
 	if (!storedTheme || !isTheme(storedTheme)) {
-		console.log('invalid theme');
-
 		setTheme(defaultTheme);
 		return;
 	}
