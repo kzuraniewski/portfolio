@@ -25,7 +25,7 @@
 		--color-text-dark: var(--color-eerie-black);
 	}
 
-	:root[class~="dark"] {
+	:root[class~='dark'] {
 		/* Dark mode theme */
 		--color-primary: var(--color-charcoal);
 		--color-secondary: var(--color-gunmetal);
