@@ -1,11 +1,12 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useId, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import cn from '@/lib/cn';
 import useForwardedRef from '@/hooks/useForwardedRef';
 
 import { PolygonProps } from './Polygon.types';
 import {
-	colorClassNameMap,
+	colorStrokeStyleMap,
 	createProjectedPointsFactory,
 	getDefaultPoints,
 	parsePoints,
@@ -28,40 +29,44 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>((props, ref) => {
 	} = props;
 
 	const rootRef = useForwardedRef(ref);
-	const [attributes, setAttributes] = useState<{
-		viewBox: string;
-		points: string;
-		width: number;
-		height: number;
-	}>();
+	const [viewObserverRef, inView] = useInView({
+		triggerOnce: true,
+		rootMargin: '-100px',
+	});
+	const maskRef = useRef<SVGPolygonElement>(null);
+	const maskId = useId();
+	const [points, setPoints] = useState<string>();
 
-	const updatePolygonSize = () => {
+	const updatePoints = () => {
+		if (!rootRef.current) return;
 		const { offsetWidth, offsetHeight } = rootRef.current;
 
 		const getProjectedPoints = createProjectedPointsFactory(getPoints);
 		const points = getProjectedPoints(offsetWidth, offsetHeight);
 		const parsedPoints = parsePoints(points);
 
-		const viewBox = [0, 0, offsetWidth, offsetHeight].join(' ');
-
-		setAttributes({
-			viewBox,
-			points: parsedPoints,
-			width: offsetWidth,
-			height: offsetHeight,
-		});
+		setPoints(parsedPoints);
 	};
 
 	useEffect(() => {
 		if (!rootRef.current) return;
 
-		const resizeObserver = new ResizeObserver(updatePolygonSize);
+		const resizeObserver = new ResizeObserver(updatePoints);
 		resizeObserver.observe(rootRef.current);
 
 		return () => resizeObserver.disconnect();
 	}, []);
 
 	const noFill = variant === 'dashed' || variant === 'outline';
+	const shouldAnimate = noFill && inView;
+
+	const strokeLength = maskRef.current?.getTotalLength();
+	const rootWidth = rootRef.current?.offsetWidth;
+	const rootHeight = rootRef.current?.offsetHeight;
+	const viewBox =
+		rootWidth && rootHeight
+			? [0, 0, rootWidth, rootHeight].join(' ')
+			: undefined;
 
 	return (
 		<div
@@ -73,25 +78,45 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>((props, ref) => {
 			}}
 			{...other}
 		>
-			{attributes && (
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox={attributes.viewBox}
-					preserveAspectRatio="none"
-					width={attributes.width}
-					height={attributes.height}
-					className="absolute left-0 top-0"
-				>
+			<svg
+				ref={viewObserverRef}
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox={viewBox}
+				preserveAspectRatio="none"
+				width={rootWidth}
+				height={rootHeight}
+				className="absolute left-0 top-0"
+			>
+				<defs>
+					<mask id={maskId} maskUnits="userSpaceOnUse">
+						<polygon
+							ref={maskRef}
+							points={points}
+							strokeWidth={`${strokeWidth}px`}
+							stroke="#fff"
+							strokeDasharray={strokeLength}
+							strokeDashoffset={strokeLength}
+							className="transition-dashoffset duration-400 ease-steppy"
+							style={{
+								strokeDashoffset: shouldAnimate
+									? 0
+									: strokeLength,
+							}}
+						/>
+					</mask>
+				</defs>
+
+				<g mask={noFill ? `url(#${maskId})` : undefined}>
 					<polygon
-						points={attributes.points}
+						points={points}
 						strokeLinejoin="round"
 						strokeWidth={`${strokeWidth}px`}
 						fillOpacity={noFill ? 0 : 100}
 						strokeDasharray={variant === 'dashed' ? 5 : undefined}
-						className={colorClassNameMap[color]}
+						className={colorStrokeStyleMap[color]}
 					/>
-				</svg>
-			)}
+				</g>
+			</svg>
 
 			<div className="relative z-10">{children}</div>
 		</div>

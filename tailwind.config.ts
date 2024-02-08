@@ -32,6 +32,17 @@ export default {
 			xl: '1280px',
 			'2xl': '1536px',
 		},
+		extend: {
+			transitionProperty: {
+				dashoffset: 'stroke-dashoffset',
+			},
+			transitionDuration: {
+				400: '400ms',
+			},
+			transitionTimingFunction: {
+				steppy: 'steps(10, end)',
+			},
+		},
 	},
 	plugins: [],
 } satisfies Config;

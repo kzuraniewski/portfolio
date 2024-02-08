@@ -42,7 +42,7 @@ export const parsePoints = (points: PolygonPoints) => {
 	return points.map(([x, y]) => x + ',' + y).join(' ');
 };
 
-export const colorClassNameMap = {
+export const colorStrokeStyleMap = {
 	primary: 'fill-primary stroke-primary',
 	secondary: 'fill-secondary stroke-secondary',
 	accent: 'fill-accent stroke-accent',
