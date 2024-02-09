@@ -77,7 +77,7 @@ const AboutSection = () => {
 
 					<SubSection
 						title={_(msg`What I'm learning`)}
-						variant="outline"
+						variant="flat"
 					>
 						<IconStack stack={learningTechStack} />
 					</SubSection>

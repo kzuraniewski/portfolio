@@ -40,11 +40,21 @@ export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 	/**
 	 * @default 'filled'
 	 */
-	variant?: PolygonVariant;
+	variant?: PolygonVariant | 'flat';
 };
 
 export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
 	({ title, variant = 'filled', className, children, ...props }, ref) => {
+		const content = (
+			<>
+				<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase">
+					<span className="text-accent">{'>'}</span> {title}
+				</h3>
+
+				{children}
+			</>
+		);
+
 		return (
 			<div
 				ref={ref}
@@ -55,23 +65,23 @@ export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
 				)}
 				{...props}
 			>
-				<Polygon
-					variant={variant}
-					padding={40}
-					getPoints={(width, height) => [
-						[0, 7],
-						[width, 0],
-						[width - 5, height],
-						[0, height - 5],
-					]}
-					className="w-auto"
-				>
-					<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase">
-						<span className="text-accent">{'>'}</span> {title}
-					</h3>
-
-					{children}
-				</Polygon>
+				{variant === 'flat' ? (
+					content
+				) : (
+					<Polygon
+						variant={variant}
+						padding={40}
+						getPoints={(width, height) => [
+							[0, 7],
+							[width, 0],
+							[width - 5, height],
+							[0, height - 5],
+						]}
+						className="w-auto"
+					>
+						{content}
+					</Polygon>
+				)}
 			</div>
 		);
 	},
