@@ -96,7 +96,7 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>((props, ref) => {
 							stroke="#fff"
 							strokeDasharray={strokeLength}
 							strokeDashoffset={strokeLength}
-							className="transition-dashoffset duration-400 ease-steppy"
+							className="transition-dashoffset duration-300 ease-steppy"
 							style={{
 								strokeDashoffset: shouldAnimate
 									? 0
