@@ -1,4 +1,5 @@
 import React from 'react';
+import { PolymorphicProps } from '@/types';
 
 import cn from '@/lib/cn';
 
@@ -6,23 +7,18 @@ export type ButtonSize = 'normal' | 'big';
 
 export type ButtonVariant = 'default' | 'primary';
 
-type ButtonBaseProps<RootElement extends React.ElementType> = {
-	/** @default 'button' */
-	as?: RootElement;
-	/** @default 'default' */
-	variant?: ButtonVariant;
-	/** @default 'normal' */
-	size?: ButtonSize;
-	/** @default false */
-	icon?: boolean;
-};
-
 export type ButtonProps<RootElement extends React.ElementType> =
-	ButtonBaseProps<RootElement> &
-		Omit<
-			React.ComponentProps<RootElement>,
-			keyof ButtonBaseProps<RootElement>
-		>;
+	PolymorphicProps<
+		{
+			/** @default 'default' */
+			variant?: ButtonVariant;
+			/** @default 'normal' */
+			size?: ButtonSize;
+			/** @default false */
+			icon?: boolean;
+		},
+		RootElement
+	>;
 
 export const Button = <RootElement extends React.ElementType = 'button'>({
 	as,
