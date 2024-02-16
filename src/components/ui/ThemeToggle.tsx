@@ -1,12 +1,10 @@
-import React, { HTMLAttributes, useState } from 'react';
+import React, { useState } from 'react';
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
 import { Button } from '@/components/ui/Button';
 import { getTheme, setTheme } from '@/lib/theme';
 
-export type ThemeToggleProps = HTMLAttributes<HTMLButtonElement>;
-
-const ThemeToggle = (props: ThemeToggleProps) => {
+const ThemeToggle = () => {
 	const [isDarkMode, setIsDarkMode] = useState(getTheme() === 'dark');
 
 	const changeTheme = () => {
@@ -15,7 +13,7 @@ const ThemeToggle = (props: ThemeToggleProps) => {
 	};
 
 	return (
-		<Button icon onClick={changeTheme} {...props}>
+		<Button icon onClick={changeTheme}>
 			{isDarkMode ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
 		</Button>
 	);
