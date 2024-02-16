@@ -13,9 +13,7 @@ export type DividerProps = HTMLAttributes<HTMLDivElement> & {
 	color?: DividerColor;
 };
 
-// TODO: change to default export
-
-export const Divider = ({
+const Divider = ({
 	vertical = false,
 	color = 'secondary',
 	className,
@@ -39,3 +37,5 @@ const borderColorMap = {
 	secondary: 'border-secondary',
 	accent: 'border-accent',
 } satisfies Record<DividerColor, string>;
+
+export default Divider;

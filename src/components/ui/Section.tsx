@@ -2,7 +2,7 @@ import React, { forwardRef, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
 import Container from '@/components/ui/Container';
-import { Divider } from '@/components/ui/Divider';
+import Divider from '@/components/ui/Divider';
 import Polygon, { PolygonVariant } from '@/components/ui/Polygon';
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {

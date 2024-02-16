@@ -3,7 +3,7 @@ import { Trans } from '@lingui/macro';
 import { FaArrowTurnDown } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
-import { Divider } from '@/components/ui/Divider';
+import Divider from '@/components/ui/Divider';
 import Polygon from '@/components/ui/Polygon';
 
 export default function LandingPage() {
