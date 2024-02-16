@@ -1,4 +1,4 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 import { useLingui } from '@lingui/react';
 
 import { Divider } from '@/components/ui/Divider';
@@ -18,50 +18,42 @@ export type IconStackProps = Omit<
 	stack: TechStack;
 };
 
-const IconStack = forwardRef<HTMLDivElement, IconStackProps>(
-	({ stack, className, ...props }, ref) => {
-		const { _ } = useLingui();
+const IconStack = ({ stack, className, ...props }: IconStackProps) => {
+	const { _ } = useLingui();
 
-		return (
-			<Separated
-				ref={ref}
-				className={cn(
-					'mx-auto grid w-fit list-none grid-cols-1 items-center justify-items-center gap-x-1 gap-y-10',
-					{ 'grid-cols-3': stack.length === 2 },
-					{ 'grid-cols-5': stack.length >= 3 },
-					className,
-				)}
-				separator={<Divider vertical color="accent" className="h-8" />}
-				indexSelector={gridIndexSelector}
-				{...props}
-			>
-				{stack.map(({ icon, highlighted }) => (
-					<li key={icon.src} className="relative">
-						<img
-							src={icon.src}
-							alt={_(icon.alt)}
-							className="w-12"
+	return (
+		<Separated
+			className={cn(
+				'mx-auto grid w-fit list-none grid-cols-1 items-center justify-items-center gap-x-1 gap-y-10',
+				{ 'grid-cols-3': stack.length === 2 },
+				{ 'grid-cols-5': stack.length >= 3 },
+				className,
+			)}
+			separator={<Divider vertical color="accent" className="h-8" />}
+			indexSelector={gridIndexSelector}
+			{...props}
+		>
+			{stack.map(({ icon, highlighted }) => (
+				<li key={icon.src} className="relative">
+					<img src={icon.src} alt={_(icon.alt)} className="w-12" />
+
+					{highlighted && (
+						<Polygon
+							color="accent"
+							// TODO: improve shape
+							getPoints={(width, height) => [
+								[0, 1],
+								[7, 0],
+								[width, height - 8],
+								[width - 1, height],
+							]}
+							className="absolute -right-1 -top-1 h-6 w-6"
 						/>
-
-						{highlighted && (
-							<Polygon
-								color="accent"
-								// TODO: improve shape
-								getPoints={(width, height) => [
-									[0, 1],
-									[7, 0],
-									[width, height - 8],
-									[width - 1, height],
-								]}
-								className="absolute -right-1 -top-1 h-6 w-6"
-							/>
-						)}
-					</li>
-				))}
-			</Separated>
-		);
-	},
-);
-IconStack.displayName = 'IconStack';
+					)}
+				</li>
+			))}
+		</Separated>
+	);
+};
 
 export default IconStack;

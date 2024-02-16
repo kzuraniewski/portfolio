@@ -43,49 +43,51 @@ export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 	variant?: PolygonVariant | 'flat';
 };
 
-export const SubSection = forwardRef<HTMLDivElement, SubSectionProps>(
-	({ title, variant = 'filled', className, children, ...props }, ref) => {
-		const content = (
-			<>
-				<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase">
-					<span className="text-accent">{'>'}</span> {title}
-				</h3>
+export const SubSection = ({
+	title,
+	variant = 'filled',
+	className,
+	children,
+	...props
+}: SubSectionProps) => {
+	const content = (
+		<>
+			<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase">
+				<span className="text-accent">{'>'}</span> {title}
+			</h3>
 
-				{children}
-			</>
-		);
+			{children}
+		</>
+	);
 
-		return (
-			<div
-				ref={ref}
-				className={cn(
-					'mt-14',
-					{ 'text-on-secondary': variant === 'filled' },
-					className,
-				)}
-				{...props}
-			>
-				{variant === 'flat' ? (
-					content
-				) : (
-					<Polygon
-						variant={variant}
-						padding={40}
-						getPoints={(width, height) => [
-							[0, 7],
-							[width, 0],
-							[width - 5, height],
-							[0, height - 5],
-						]}
-						className="w-auto"
-					>
-						{content}
-					</Polygon>
-				)}
-			</div>
-		);
-	},
-);
-SubSection.displayName = 'SubSection';
+	return (
+		<div
+			className={cn(
+				'mt-14',
+				{ 'text-on-secondary': variant === 'filled' },
+				className,
+			)}
+			{...props}
+		>
+			{variant === 'flat' ? (
+				content
+			) : (
+				<Polygon
+					variant={variant}
+					padding={40}
+					getPoints={(width, height) => [
+						[0, 7],
+						[width, 0],
+						[width - 5, height],
+						[0, height - 5],
+					]}
+					className="w-auto"
+				>
+					{content}
+				</Polygon>
+			)}
+		</div>
+	);
+};
 
 // FEATURE: wider stroke on outlined section, api adjust in Polygon needed

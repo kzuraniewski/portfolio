@@ -1,8 +1,7 @@
-import React, { forwardRef, useEffect, useId, useRef, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import cn from '@/lib/cn';
-import useForwardedRef from '@/hooks/useForwardedRef';
 
 import { PolygonProps } from './Polygon.types';
 import {
@@ -16,19 +15,17 @@ import {
 
 // TODO: verify if padding prop necessary
 
-const Polygon = forwardRef<HTMLDivElement, PolygonProps>((props, ref) => {
-	const {
-		variant = 'filled',
-		color = 'secondary',
-		padding,
-		getPoints = getDefaultPoints,
-		className,
-		style,
-		children,
-		...other
-	} = props;
-
-	const rootRef = useForwardedRef(ref);
+const Polygon = ({
+	variant = 'filled',
+	color = 'secondary',
+	padding,
+	getPoints = getDefaultPoints,
+	className,
+	style,
+	children,
+	...other
+}: PolygonProps) => {
+	const rootRef = useRef<HTMLDivElement>(null);
 	const [viewObserverRef, inView] = useInView({
 		triggerOnce: true,
 		rootMargin: '-100px',
@@ -121,7 +118,6 @@ const Polygon = forwardRef<HTMLDivElement, PolygonProps>((props, ref) => {
 			<div className="relative z-10">{children}</div>
 		</div>
 	);
-});
-Polygon.displayName = 'Polygon';
+};
 
 export default Polygon;

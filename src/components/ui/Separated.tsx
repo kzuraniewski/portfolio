@@ -1,4 +1,4 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 
 export type ListDirection = 'row' | 'column';
 
@@ -20,30 +20,21 @@ export type SeparatedProps = HTMLAttributes<HTMLElement> & {
 const defaultIndexSelector: IndexSelector = (index, childrenArray) =>
 	index < childrenArray.length - 1;
 
-// TODO: Generic ref type
-
-export const Separated = forwardRef<HTMLElement, SeparatedProps>(
-	(
-		{
-			separator,
-			as = 'div',
-			indexSelector = defaultIndexSelector,
-			className,
-			children,
-			...props
-		},
-		ref,
-	) => {
-		return React.createElement(
-			as,
-			{ ref, className, ...props },
-			separator
-				? joinChildren(children, separator, indexSelector)
-				: children,
-		);
-	},
-);
-Separated.displayName = 'Separated';
+export const Separated = ({
+	separator,
+	as = 'div',
+	indexSelector = defaultIndexSelector,
+	className,
+	children,
+	...props
+}: SeparatedProps) => {
+	// TODO: change to JSX
+	return React.createElement(
+		as,
+		{ className, ...props },
+		separator ? joinChildren(children, separator, indexSelector) : children,
+	);
+};
 
 const joinChildren = (
 	children: React.ReactNode,
