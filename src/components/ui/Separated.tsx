@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 
 export type ListDirection = 'row' | 'column';
 
@@ -7,9 +7,9 @@ export type IndexSelector = (
 	childrenArray: ReturnType<typeof React.Children.toArray>,
 ) => boolean;
 
-export type SeparatedProps = HTMLAttributes<HTMLElement> & {
+type SeparatedBaseProps<RootElement extends React.ElementType> = {
 	separator: React.ReactElement;
-	as?: keyof JSX.IntrinsicElements;
+	as?: RootElement;
 	/**
 	 * Decides whether to put a separator after a child of given index.
 	 * Useful for grids. By default, omits the last index
@@ -17,22 +17,31 @@ export type SeparatedProps = HTMLAttributes<HTMLElement> & {
 	indexSelector?: IndexSelector;
 };
 
+export type SeparatedProps<RootElement extends React.ElementType> =
+	SeparatedBaseProps<RootElement> &
+		Omit<
+			React.ComponentProps<RootElement>,
+			keyof SeparatedBaseProps<RootElement>
+		>;
+
 const defaultIndexSelector: IndexSelector = (index, childrenArray) =>
 	index < childrenArray.length - 1;
 
-export const Separated = ({
+export const Separated = <RootElement extends React.ElementType = 'div'>({
 	separator,
-	as = 'div',
+	as,
 	indexSelector = defaultIndexSelector,
-	className,
 	children,
 	...props
-}: SeparatedProps) => {
-	// TODO: change to JSX
-	return React.createElement(
-		as,
-		{ className, ...props },
-		separator ? joinChildren(children, separator, indexSelector) : children,
+}: SeparatedProps<RootElement>) => {
+	const RootElement = as ?? 'div';
+
+	return (
+		<RootElement {...props}>
+			{separator
+				? joinChildren(children, separator, indexSelector)
+				: children}
+		</RootElement>
 	);
 };
 
