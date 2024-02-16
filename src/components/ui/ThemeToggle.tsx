@@ -1,7 +1,7 @@
 import React, { forwardRef, HTMLAttributes, useState } from 'react';
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
-import { IconButton } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 import { getTheme, setTheme } from '@/lib/theme';
 
 export type ThemeToggleProps = HTMLAttributes<HTMLButtonElement>;
@@ -16,9 +16,9 @@ const ThemeToggle = forwardRef<HTMLButtonElement, ThemeToggleProps>(
 		};
 
 		return (
-			<IconButton ref={ref} onClick={changeTheme} {...props}>
+			<Button icon ref={ref} onClick={changeTheme} {...props}>
 				{isDarkMode ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
-			</IconButton>
+			</Button>
 		);
 	},
 );

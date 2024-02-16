@@ -51,6 +51,7 @@ export default function LandingPage() {
 			</Polygon>
 
 			<Button
+				as="a"
 				variant="primary"
 				size="big"
 				href="#about"

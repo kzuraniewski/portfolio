@@ -5,7 +5,7 @@ import { FaGithub } from 'react-icons/fa6';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
 
-import { Button, IconButton } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 import Polygon from '@/components/ui/Polygon';
 import { Separated } from '@/components/ui/Separated';
 import cn from '@/lib/cn';
@@ -75,16 +75,19 @@ const ProjectHighlight = ({
 				<div className="grow" />
 
 				<div className="ml-auto mt-10 flex items-center justify-end gap-5">
-					<IconButton
+					<Button
+						icon
+						as="a"
 						size="big"
 						href={project.links.github}
 						target="_blank"
 					>
 						<FaGithub />
-					</IconButton>
+					</Button>
 
 					{project.links.website && (
 						<Button
+							as="a"
 							variant="primary"
 							href={project.links.website}
 							target="_blank"

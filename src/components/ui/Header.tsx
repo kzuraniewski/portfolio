@@ -3,7 +3,7 @@ import { Trans as TransMacro } from '@lingui/macro';
 import { Trans } from '@lingui/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
-import { Button, IconButton } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import LanguageToggle from '@/components/ui/LanguageToggle';
 import cn from '@/lib/cn';
@@ -78,18 +78,25 @@ export const Header = () => {
 
 				<ul className="flex justify-center gap-8">
 					<li>
-						<IconButton href={personalLinks.github} target="_blank">
+						<Button
+							icon
+							as="a"
+							href={personalLinks.github}
+							target="_blank"
+						>
 							<FaGithub />
-						</IconButton>
+						</Button>
 					</li>
 
 					<li>
-						<IconButton
+						<Button
+							icon
+							as="a"
 							href={personalLinks.linkedIn}
 							target="_blank"
 						>
 							<FaLinkedin />
-						</IconButton>
+						</Button>
 					</li>
 				</ul>
 
