@@ -40,14 +40,12 @@ const IconStack = ({ stack, className, ...props }: IconStackProps) => {
 					{highlighted && (
 						<Polygon
 							color="accent"
-							// TODO: improve shape
 							getPoints={(width, height) => [
-								[0, 1],
-								[7, 0],
-								[width, height - 8],
-								[width - 1, height],
+								[height - 3, 0],
+								[0, 6],
+								[height, width],
 							]}
-							className="absolute -right-1 -top-1 h-6 w-6"
+							className="absolute -right-1 -top-1 h-3 w-3"
 						/>
 					)}
 				</li>
