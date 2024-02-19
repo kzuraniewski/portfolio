@@ -62,7 +62,7 @@ const AboutSection = () => {
 						<img
 							src="/photo.jpg"
 							alt="My photo"
-							className="h-full w-full"
+							className="h-full w-full object-cover"
 						/>
 					</div>
 					{/* </PolygonBackground> */}
