@@ -38,8 +38,8 @@ export const Button = <RootElement extends React.ElementType = 'button'>({
 				{ 'border-light hover:bg-light': variant === 'default' },
 				{ 'border-accent text-accent hover:bg-accent hover:text-on-accent': variant === 'primary' },
 				{ 'px-6 py-3': !icon && size === 'big' },
-				{ 'block text-inherit hover:text-accent w-6 h-6 [&>svg]:w-full [&>svg]:h-full [&>svg]:transition-colors': icon },
-				{ 'w-8 h-8': icon && size == 'big' },
+				{ 'text-inherit block h-6 w-6 hover:text-accent [&>svg]:h-full [&>svg]:w-full [&>svg]:transition-colors': icon },
+				{ 'h-8 w-8': icon && size == 'big' },
 				className,
 			)}
 			{...props}
