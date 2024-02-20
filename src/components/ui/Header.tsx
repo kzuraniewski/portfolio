@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Trans as TransMacro } from '@lingui/macro';
 import { Trans } from '@lingui/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
@@ -99,10 +98,6 @@ export const Header = () => {
 						</Button>
 					</li>
 				</ul>
-
-				<Button variant="primary">
-					<TransMacro>Resume</TransMacro>
-				</Button>
 			</Container>
 		</header>
 	);
