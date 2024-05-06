@@ -76,6 +76,7 @@ export const Header = () => {
 								<a
 									href={href}
 									className="font-display uppercase tracking-wider text-light before:mr-0.5 before:text-accent before:content-['#'] hover:text-accent hover:no-underline"
+									onClick={() => setIsNavOpen(false)}
 								>
 									<Trans id={label.id} />
 								</a>
