@@ -14,7 +14,7 @@ export default function LandingPage() {
 				<span className="text-small tracking-wide text-accent">
 					<Trans>My name is</Trans>
 				</span>
-				<h1 className="mb-10 font-display text-8xl font-bold leading-tight">
+				<h1 className="mb-10 text-center font-display text-7xl font-bold leading-tight md:text-8xl">
 					Karol Żuraniewski
 				</h1>
 
