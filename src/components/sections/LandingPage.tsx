@@ -9,7 +9,7 @@ import Polygon from '@/components/ui/Polygon';
 
 export default function LandingPage() {
 	return (
-		<section id="home" className="relative flex h-[70vh] items-center">
+		<section id="home" className="relative flex h-[80vh] items-center pt-header">
 			<Container className="flex flex-col items-center">
 				<span className="text-small tracking-wide text-accent">
 					<Trans>My name is</Trans>

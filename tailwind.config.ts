@@ -42,6 +42,9 @@ export default {
 			transitionTimingFunction: {
 				steppy: 'steps(10, end)',
 			},
+			spacing: {
+				header: '4.5rem',
+			},
 		},
 	},
 	plugins: [],
