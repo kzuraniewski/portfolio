@@ -5,11 +5,12 @@ import { FaBars, FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { Button } from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import LanguageToggle from '@/components/ui/LanguageToggle';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
+import { tailwindConfig } from '@/lib/util';
+import useMediaQuery from '@/hooks/useMediaQuery';
 import useScroll from '@/hooks/useScroll';
-
-import ThemeToggle from './ThemeToggle';
 
 const NO_COLLAPSE_AREA_HEIGHT = 100;
 
@@ -21,6 +22,10 @@ export const Header = () => {
 	const [mountState, setMountState] = useState<MountState>('mounted');
 	const [isHovered, setIsHovered] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
+
+	const isCollapsible = useMediaQuery(
+		`(min-width: ${tailwindConfig.theme.screens.md})`,
+	);
 
 	const toggleNav = () => {
 		setIsNavOpen((isOpen) => !isOpen);
@@ -36,7 +41,8 @@ export const Header = () => {
 			if (
 				direction === 'up' ||
 				window.scrollY <= NO_COLLAPSE_AREA_HEIGHT ||
-				isHovered
+				isHovered ||
+				!isCollapsible
 			) {
 				setMountState('floating');
 			} else {
@@ -44,7 +50,7 @@ export const Header = () => {
 				setIsNavOpen(false);
 			}
 		},
-		[isHovered],
+		[isHovered, isCollapsible],
 	);
 
 	return (
@@ -59,7 +65,7 @@ export const Header = () => {
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<Container className="min-h-header flex flex-wrap items-center gap-12 py-5">
+			<Container className="flex min-h-header flex-wrap items-center gap-12 py-5">
 				<Button icon className="mr-auto md:hidden" onClick={toggleNav}>
 					<FaBars />
 				</Button>
