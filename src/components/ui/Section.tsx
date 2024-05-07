@@ -74,14 +74,13 @@ export const SubSection = ({
 			) : (
 				<Polygon
 					variant={variant}
-					padding={40}
 					getPoints={(width, height) => [
 						[0, 7],
 						[width, 0],
 						[width - 5, height],
 						[0, height - 5],
 					]}
-					className="w-auto"
+					className="w-auto p-10"
 				>
 					{content}
 				</Polygon>

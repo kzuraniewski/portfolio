@@ -23,7 +23,7 @@ export default function LandingPage() {
 				<Polygon
 					variant="dashed"
 					color="accent"
-					padding={[10, 20]}
+					className="px-5 py-3"
 					getPoints={(width, height) => [
 						[45, 10],
 						[width - 10, 20],
@@ -32,7 +32,7 @@ export default function LandingPage() {
 					]}
 				>
 					<Polygon
-						padding={20}
+						className="p-5"
 						getPoints={(width, height) => [
 							[5, 10],
 							[width, 0],

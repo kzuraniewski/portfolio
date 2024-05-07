@@ -18,14 +18,13 @@ const AboutSection = () => {
 					<Polygon
 						variant="outline"
 						color="accent"
-						padding={[15, 25]}
 						getPoints={(width, height) => [
 							[5, 10],
 							[width, 0],
 							[width - 15, height],
 							[0, height - 10],
 						]}
-						className="mx-auto"
+						className="mx-auto px-6 py-4"
 					>
 						<p className="text-center">
 							<Trans>

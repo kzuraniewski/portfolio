@@ -9,19 +9,14 @@ import {
 	createProjectedPointsFactory,
 	getDefaultPoints,
 	parsePoints,
-	parsePolygonPadding,
 	strokeWidth,
 } from './Polygon.utils';
-
-// TODO: verify if padding prop necessary
 
 const Polygon = ({
 	variant = 'filled',
 	color = 'secondary',
-	padding,
 	getPoints = getDefaultPoints,
 	className,
-	style,
 	children,
 	...other
 }: PolygonProps) => {
@@ -69,10 +64,6 @@ const Polygon = ({
 		<div
 			ref={rootRef}
 			className={cn('relative w-fit', className)}
-			style={{
-				padding: padding && parsePolygonPadding(padding),
-				...style,
-			}}
 			{...other}
 		>
 			<svg

@@ -49,24 +49,22 @@ const ContactSection = () => {
 					<Polygon
 						variant="dashed"
 						color="accent"
-						padding={10}
 						getPoints={(width, height) => [
 							[5, 35],
 							[width - 50, 0],
 							[width - 10, height - 20],
 							[55, height - 5],
 						]}
-						className="mt-5"
+						className="mt-5 p-3"
 					>
 						<Polygon
-							padding={[20, 30]}
 							getPoints={(width, height) => [
 								[0, 10],
 								[width, 0],
 								[width - 20, height],
 								[10, height - 5],
 							]}
-							className="w-max text-on-secondary"
+							className="w-max px-8 py-5 text-on-secondary"
 						>
 							<Trans>Contact me at</Trans>{' '}
 							<a href="mailto:zuraniewski.karol@gmail.com">

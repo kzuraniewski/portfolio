@@ -27,14 +27,13 @@ export const CornerBanner = ({
 		>
 			<Polygon
 				color="accent"
-				padding={[12, 0]}
 				getPoints={(width, height) => [
 					[0, 7],
 					[width, 0],
 					[width, height],
 					[0, height - 7],
 				]}
-				className="w-full"
+				className="w-full px-0 py-3"
 			>
 				<div className="inline-block w-full text-center font-bold uppercase text-on-accent hover:no-underline">
 					{children}

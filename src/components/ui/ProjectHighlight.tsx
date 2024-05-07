@@ -49,22 +49,22 @@ const ProjectHighlight = ({
 				<Polygon
 					variant="dashed"
 					color="accent"
-					padding={[10, 20]}
 					getPoints={(width, height) => [
 						[40, 5],
 						[width - 10, 25],
 						[width - 75, height],
 						[15, height - 25],
 					]}
+					className="px-5 py-3"
 				>
 					<Polygon
-						padding={[10, 20]}
 						getPoints={(width, height) => [
 							[0, 5],
 							[width, 0],
 							[width - 25, height],
 							[5, height - 3],
 						]}
+						className="px-5 py-3"
 					>
 						<p className="text-on-secondary">
 							<Trans id={project.description.id} />
@@ -101,9 +101,8 @@ const ProjectHighlight = ({
 			<div className="relative shrink-0">
 				{project.wip && (
 					<Polygon
-						padding={[7, 25]}
 						color="accent"
-						className="rotate-30 pointer-events-none absolute -right-6 top-2 z-10 px-6 py-1 text-sm font-bold uppercase text-on-accent"
+						className="rotate-30 pointer-events-none absolute -right-6 top-2 z-10 px-[25px] py-[7px] text-sm font-bold uppercase text-on-accent"
 						getPoints={(width, height) => [
 							[30, 0],
 							[width - 13, 5],
