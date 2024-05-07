@@ -13,8 +13,8 @@ const AboutSection = () => {
 
 	return (
 		<Section title={_(msg`About me`)} id="about">
-			<div className="mx-auto flex w-3/5 justify-between gap-20">
-				<div>
+			<div className="mx-auto flex  flex-wrap-reverse justify-center gap-10 xl:gap-20">
+				<div className="max-w-md">
 					<Polygon
 						variant="outline"
 						color="accent"
@@ -27,7 +27,7 @@ const AboutSection = () => {
 						]}
 						className="mx-auto"
 					>
-						<p className="w-max text-center">
+						<p className="text-center">
 							<Trans>
 								Hi, my name is Karol. I develop web stuff.
 							</Trans>
@@ -45,7 +45,7 @@ const AboutSection = () => {
 					</p>
 				</div>
 
-				<div className="flex w-1/4 shrink-0 items-center justify-center">
+				<div className="flex w-44 shrink-0 items-center justify-center">
 					{/* <PolygonBackground
 						background="accent"
 						padding={10}
@@ -69,25 +69,21 @@ const AboutSection = () => {
 				</div>
 			</div>
 
-			<div className="mt-16 flex justify-around gap-14">
-				<div className="flex w-2/5 flex-col">
-					<SubSection title={_(msg`Technologies I've worked with`)}>
-						<IconStack stack={mainTechStack} />
-					</SubSection>
-
-					<SubSection
-						title={_(msg`What I'm learning`)}
-						variant="flat"
-					>
-						<IconStack stack={learningTechStack} />
-					</SubSection>
-				</div>
+			<div className="mx-auto mt-16 grid w-fit grid-cols-1 sm:grid-cols-2 lg:grid-cols-[300px_1fr] lg:gap-x-12 xl:grid-cols-[400px_1fr] xl:gap-x-16">
+				<SubSection title={_(msg`Technologies I've worked with`)}>
+					<IconStack stack={mainTechStack} />
+				</SubSection>
 
 				<SubSection
 					title={_(msg`Companies I worked in`)}
 					variant="dashed"
+					className="sm:order-2 sm:col-span-2 lg:order-none lg:col-span-1 lg:row-span-2"
 				>
 					<CompanyHistory />
+				</SubSection>
+
+				<SubSection title={_(msg`What I'm learning`)} variant="flat">
+					<IconStack stack={learningTechStack} />
 				</SubSection>
 			</div>
 		</Section>
