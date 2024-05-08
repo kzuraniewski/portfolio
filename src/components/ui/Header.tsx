@@ -3,7 +3,6 @@ import { Trans } from '@lingui/react';
 import { FaBars, FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
-import Container from '@/components/ui/Container';
 import LanguageToggle from '@/components/ui/LanguageToggle';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import cn from '@/lib/cn';
@@ -65,7 +64,7 @@ export const Header = () => {
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<Container className="flex min-h-header flex-wrap items-center gap-12 py-5">
+			<div className="container flex min-h-header flex-wrap items-center gap-12 py-5">
 				<Button icon className="mr-auto md:hidden" onClick={toggleNav}>
 					<FaBars />
 				</Button>
@@ -120,7 +119,7 @@ export const Header = () => {
 						</Button>
 					</li>
 				</ul>
-			</Container>
+			</div>
 		</header>
 	);
 };

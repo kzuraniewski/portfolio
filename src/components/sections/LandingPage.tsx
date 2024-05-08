@@ -3,14 +3,16 @@ import { Trans } from '@lingui/macro';
 import { FaArrowTurnDown } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
-import Container from '@/components/ui/Container';
 import Divider from '@/components/ui/Divider';
 import Polygon from '@/components/ui/Polygon';
 
 export default function LandingPage() {
 	return (
-		<section id="home" className="relative flex h-[80vh] items-center pt-header">
-			<Container className="flex flex-col items-center">
+		<section
+			id="home"
+			className="relative flex h-[80vh] items-center pt-header"
+		>
+			<div className="container flex flex-col items-center">
 				<span className="text-small tracking-wide text-accent">
 					<Trans>My name is</Trans>
 				</span>
@@ -59,7 +61,7 @@ export default function LandingPage() {
 					<Trans>Get to know me</Trans>
 					<FaArrowTurnDown className="ml-2 inline-block w-2" />
 				</Button>
-			</Container>
+			</div>
 		</section>
 	);
 }
