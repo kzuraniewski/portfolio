@@ -1,6 +1,5 @@
 import {
 	PolygonColor,
-	PolygonPadding,
 	PolygonPoints,
 	PolygonPointsFactory,
 } from './Polygon.types';
@@ -14,12 +13,6 @@ export const getDefaultPoints: PolygonPointsFactory = (width, height) => [
 	[width, height],
 	[0, height],
 ];
-
-export const parsePolygonPadding = (padding: PolygonPadding) => {
-	return Array.isArray(padding)
-		? padding.map((value) => value + 'px').join(' ')
-		: padding + 'px';
-};
 
 /**
  * Project smaller point map over viewBox expanded by stroke width
