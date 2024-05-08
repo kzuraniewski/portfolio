@@ -19,8 +19,8 @@ export const CornerBanner = ({
 	return (
 		<a
 			className={cn(
-				'fixed bottom-0 left-0 w-56 origin-[center_100px] -translate-x-1/2 -translate-y-[50px] rotate-45 opacity-100 transition-opacity duration-500',
-				{ 'pointer-events-none opacity-0': hidden },
+				'pointer-events-none fixed bottom-0 left-0 w-56 origin-[center_100px] -translate-x-1/2 -translate-y-[50px] rotate-45 opacity-0 transition-opacity duration-500',
+				{ 'lg:pointer-events-auto lg:opacity-100': !hidden },
 				className,
 			)}
 			{...props}
