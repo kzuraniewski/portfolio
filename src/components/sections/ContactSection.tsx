@@ -81,7 +81,7 @@ const ContactSection = () => {
 			</Separated>
 
 			<CornerBanner hidden={hideBanner} href="#contact">
-				<Trans>Contact me</Trans>
+				<Trans>Need a website?</Trans>
 			</CornerBanner>
 		</Section>
 	);

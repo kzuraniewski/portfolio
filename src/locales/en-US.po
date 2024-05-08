@@ -37,7 +37,7 @@ msgstr ""
 msgid "Bypassing editor limitations with hand written custom JS and CSS to improve the UI in the existing projects"
 msgstr ""
 
-#: src/components/sections/AboutSection.tsx:87
+#: src/components/sections/AboutSection.tsx:77
 msgid "Companies I worked in"
 msgstr ""
 
@@ -46,15 +46,14 @@ msgid "Contact"
 msgstr ""
 
 #: src/components/sections/ContactSection.tsx:22
-#: src/components/sections/ContactSection.tsx:87
 msgid "Contact me"
 msgstr ""
 
-#: src/components/sections/ContactSection.tsx:71
+#: src/components/sections/ContactSection.tsx:69
 msgid "Contact me at"
 msgstr ""
 
-#: src/components/ui/Footer.tsx:16
+#: src/components/ui/Footer.tsx:14
 msgid "Designed and developed by Karol Żuraniewski"
 msgstr ""
 
@@ -78,7 +77,7 @@ msgstr ""
 msgid "Feb. 2022 - July 2022"
 msgstr ""
 
-#: src/components/sections/LandingPage.tsx:59
+#: src/components/sections/LandingPage.tsx:61
 msgid "Get to know me"
 msgstr ""
 
@@ -86,7 +85,7 @@ msgstr ""
 msgid "Hand Over"
 msgstr ""
 
-#: src/components/sections/AboutSection.tsx:31
+#: src/components/sections/AboutSection.tsx:30
 msgid "Hi, my name is Karol. I develop web stuff."
 msgstr ""
 
@@ -102,7 +101,7 @@ msgstr ""
 msgid "I am currently open to work, so if you found my portfolio interesting, feel free to contact me."
 msgstr ""
 
-#: src/components/sections/LandingPage.tsx:45
+#: src/components/sections/LandingPage.tsx:46
 msgid "I'm a fullstack web developer that specializes in TypeScript, React and Java."
 msgstr ""
 
@@ -134,7 +133,7 @@ msgstr ""
 msgid "MUI logo"
 msgstr ""
 
-#: src/components/sections/LandingPage.tsx:16
+#: src/components/sections/LandingPage.tsx:17
 msgid "My name is"
 msgstr ""
 
@@ -142,11 +141,12 @@ msgstr ""
 msgid "My Projects"
 msgstr ""
 
-#: src/components/sections/AboutSection.tsx:38
+#: src/components/sections/AboutSection.tsx:37
 msgid "My web development journey started in 2021 - when I got to know React. Since then I've had the opportunity to design, develop and maintain websites, E-commerce services and fullstack web applications at different companies."
 msgstr ""
 
 #: src/components/sections/ContactSection.tsx:36
+#: src/components/sections/ContactSection.tsx:84
 msgid "Need a website?"
 msgstr ""
 
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Node.js logo"
 msgstr ""
 
-#: src/components/sections/ContactSection.tsx:79
+#: src/components/sections/ContactSection.tsx:77
 msgid "Or call me:"
 msgstr ""
 
@@ -191,10 +191,10 @@ msgid "React logo"
 msgstr ""
 
 #: src/components/ui/Header.tsx:82
-msgid "Resume"
-msgstr ""
+#~ msgid "Resume"
+#~ msgstr ""
 
-#: src/components/ui/ProjectHighlight.tsx:92
+#: src/components/ui/ProjectHighlight/ProjectHighlight.tsx:76
 msgid "See live"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "Sep. 2022 - Aug. 2023"
 msgstr ""
 
-#: src/components/sections/AboutSection.tsx:74
+#: src/components/sections/AboutSection.tsx:72
 msgid "Technologies I've worked with"
 msgstr ""
 
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Web app UI and backend development using React, Spring and PostgreSQL"
 msgstr ""
 
-#: src/components/sections/AboutSection.tsx:79
+#: src/components/sections/AboutSection.tsx:84
 msgid "What I'm learning"
 msgstr ""
 
@@ -226,6 +226,6 @@ msgstr ""
 msgid "Wordpress logo"
 msgstr ""
 
-#: src/components/ui/ProjectHighlight.tsx:111
+#: src/components/ui/ProjectHighlight/ProjectHighlight.tsx:86
 msgid "Working on"
 msgstr ""
