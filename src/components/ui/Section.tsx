@@ -14,7 +14,7 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
 		return (
 			<section
 				ref={ref}
-				className={cn('my-16 xl:my-24 scroll-mt-32', className)}
+				className={cn('my-16 scroll-mt-32 xl:my-24', className)}
 				{...props}
 			>
 				<Container>
@@ -52,7 +52,7 @@ export const SubSection = ({
 }: SubSectionProps) => {
 	const content = (
 		<>
-			<h3 className="mb-14 px-3 text-center font-display text-xl font-bold uppercase">
+			<h3 className="mb-14 text-center font-display text-xl font-bold uppercase">
 				<span className="text-accent">{'>'}</span> {title}
 			</h3>
 
@@ -70,7 +70,7 @@ export const SubSection = ({
 			{...props}
 		>
 			{variant === 'flat' ? (
-				<div className="p-10">{content}</div>
+				<div className="p-7 md:p-10">{content}</div>
 			) : (
 				<Polygon
 					variant={variant}
@@ -80,7 +80,7 @@ export const SubSection = ({
 						[width - 5, height],
 						[0, height - 5],
 					]}
-					className="w-auto p-10"
+					className="w-auto p-7 md:p-10"
 				>
 					{content}
 				</Polygon>
