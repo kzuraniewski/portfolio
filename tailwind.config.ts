@@ -20,7 +20,10 @@ export default {
 		},
 		container: {
 			center: true,
-			padding: '1.25rem',
+			padding: {
+				DEFAULT: '1rem',
+				md: '2rem',
+			},
 		},
 		fontFamily: {
 			display: ['Oswald', 'ui-sans-serif'],
