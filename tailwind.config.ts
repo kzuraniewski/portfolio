@@ -1,3 +1,4 @@
+import ContainerQueries from '@tailwindcss/container-queries';
 import type { Config } from 'tailwindcss';
 
 const color = (name: string) => `rgb(var(--color-${name}) / <alpha-value>)`;
@@ -50,5 +51,5 @@ export default {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [ContainerQueries],
 } satisfies Config;

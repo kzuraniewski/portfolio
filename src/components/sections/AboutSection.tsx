@@ -68,7 +68,7 @@ const AboutSection = () => {
 				</div>
 			</div>
 
-			<div className="mx-auto mt-16 grid w-fit grid-cols-1 sm:grid-cols-2 lg:grid-cols-[300px_1fr] lg:gap-x-12 xl:grid-cols-[400px_1fr] xl:gap-x-16">
+			<div className="mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[300px_1fr] lg:gap-x-12 xl:grid-cols-[400px_1fr] xl:gap-x-16">
 				<SubSection title={_(msg`Technologies I've worked with`)}>
 					<IconStack stack={mainTechStack} />
 				</SubSection>

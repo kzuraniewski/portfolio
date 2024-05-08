@@ -6,14 +6,14 @@ import { companies } from '@/lib/data';
 
 export const CompanyHistory = () => {
 	return (
-		<ul className="flex flex-col gap-16">
+		<ul className="@container flex flex-col gap-16">
 			{companies.map((company) => (
 				<li
 					key={company.name}
-					className="grid-rows-[repeat(4, fit-content)] md:gap-x- grid grid-cols-3 text-sm"
+					className="grid-rows-[repeat(4, fit-content)] grid grid-cols-3 text-sm"
 				>
-					<div className="col-span-3 mb-7 text-base md:col-span-1 md:mr-5 md:w-44 md:shrink-0">
-						<h3 className="text-center font-display font-bold uppercase md:text-start">
+					<div className="@lg:col-span-1 @lg:mr-5 @lg:w-44 @lg:shrink-0 col-span-3 mb-7 text-base">
+						<h3 className="@lg:text-start text-center font-display font-bold uppercase">
 							{company.name}
 						</h3>
 					</div>
@@ -25,7 +25,7 @@ export const CompanyHistory = () => {
 							[width - 5, height - 1],
 							[3, height],
 						]}
-						className="col-span-3 mb-3 h-fit w-fit p-3 sm:col-span-2 md:col-span-1 md:ml-0"
+						className="@sm:col-span-2 @lg:col-span-2 @lg:ml-0 @xl:col-span-1 col-span-3 mb-3 h-fit w-fit p-3"
 					>
 						<ul>
 							{company.positions.map((position) => (
@@ -39,11 +39,11 @@ export const CompanyHistory = () => {
 						</ul>
 					</Polygon>
 
-					<div className="col-span-3 ml-3 w-max text-end tracking-wide sm:col-span-1 sm:ml-auto sm:mr-1 sm:mt-2 md:mx-3">
+					<div className="@sm:col-span-1 @sm:ml-auto @sm:mr-1 @sm:mt-2 @lg:mx-3 @lg:mt-0 @lg:col-span-3 @lg:col-start-2 @xl:col-span-1 @xl:order-none col-span-3 ml-3 w-max text-end tracking-wide">
 						<Trans id={company.timeSpan.id} />
 					</div>
 
-					<div className="col-span-3 mt-6 md:col-span-2 md:col-start-2">
+					<div className="@lg:col-span-2 @lg:col-start-2 col-span-3 mt-6">
 						<ul>
 							{company.summary.map((summaryElement) => (
 								<li
