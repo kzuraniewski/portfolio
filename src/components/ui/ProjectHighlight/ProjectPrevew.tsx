@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 
 import Polygon from '@/components/ui/Polygon';
+import cn from '@/lib/cn';
 
-export type ProjectPreviewProps = {
+export type ProjectPreviewProps = HTMLAttributes<HTMLDivElement> & {
 	image: string;
 	link: string;
 	alt: string;
 	banner?: string | null;
 };
 
-const ProjectPreview = ({ image, link, alt, banner }: ProjectPreviewProps) => {
+const ProjectPreview = ({
+	image,
+	link,
+	alt,
+	banner,
+	className,
+	...props
+}: ProjectPreviewProps) => {
 	return (
-		<div className="relative shrink-0">
+		<div className={cn('relative', className)} {...props}>
 			{banner && (
 				<Polygon
 					color="accent"

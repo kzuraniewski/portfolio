@@ -63,7 +63,7 @@ const Polygon = ({
 	return (
 		<div
 			ref={rootRef}
-			className={cn('relative w-fit', className)}
+			className={cn('relative h-fit w-fit', className)}
 			{...other}
 		>
 			<svg

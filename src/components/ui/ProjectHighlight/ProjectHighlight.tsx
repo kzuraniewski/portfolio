@@ -31,52 +31,27 @@ const ProjectHighlight = ({
 	const previewLink = project.links.website ?? project.links.github;
 
 	return (
-		<div className={cn('mb-24 flex gap-16', className)} {...props}>
-			<div className="flex w-80 shrink-0 flex-col">
-				<div className="mb-5 flex w-full items-end justify-between">
-					<h3 className="font-display text-2xl font-bold uppercase">
-						<Trans id={project.name.id} />
-					</h3>
+		<div
+			className={cn(
+				'grid-rows-[repeat(3, fit-content)] mb-24 grid grid-cols-[20rem_1fr] gap-x-16',
+				className,
+			)}
+			{...props}
+		>
+			<div className="mb-5 flex w-full items-end justify-between">
+				<h3 className="font-display text-2xl font-bold uppercase">
+					<Trans id={project.name.id} />
+				</h3>
 
-					<Separated
-						as="ul"
-						className="flex items-center gap-1.5 text-sm"
-						separator={<RxCross2 className="text-xs text-accent" />}
-					>
-						{project.tech.map((el) => (
-							<li key={el}>{el}</li>
-						))}
-					</Separated>
-				</div>
-
-				<ProjectDescription>
-					<Trans id={project.description.id} />
-				</ProjectDescription>
-
-				<div className="grow" />
-
-				<div className="ml-auto mt-10 flex items-center justify-end gap-5">
-					<Button
-						icon
-						as="a"
-						size="big"
-						href={project.links.github}
-						target="_blank"
-					>
-						<FaGithub />
-					</Button>
-
-					{project.links.website && (
-						<Button
-							as="a"
-							variant="primary"
-							href={project.links.website}
-							target="_blank"
-						>
-							<TransMacro>See live</TransMacro>
-						</Button>
-					)}
-				</div>
+				<Separated
+					as="ul"
+					className="flex items-center gap-1.5 text-sm"
+					separator={<RxCross2 className="text-xs text-accent" />}
+				>
+					{project.tech.map((el) => (
+						<li key={el}>{el}</li>
+					))}
+				</Separated>
 			</div>
 
 			<ProjectPreview
@@ -84,7 +59,35 @@ const ProjectHighlight = ({
 				link={previewLink}
 				alt={`${project.name} preview`}
 				banner={project.wip ? _(msg`Working on`) : null}
+				className="row-span-3"
 			/>
+
+			<ProjectDescription>
+				<Trans id={project.description.id} />
+			</ProjectDescription>
+
+			<div className="ml-auto mt-10 flex items-center justify-end gap-5">
+				<Button
+					icon
+					as="a"
+					size="big"
+					href={project.links.github}
+					target="_blank"
+				>
+					<FaGithub />
+				</Button>
+
+				{project.links.website && (
+					<Button
+						as="a"
+						variant="primary"
+						href={project.links.website}
+						target="_blank"
+					>
+						<TransMacro>See live</TransMacro>
+					</Button>
+				)}
+			</div>
 		</div>
 	);
 };
