@@ -12,8 +12,6 @@ import { ProjectData } from '@/lib/data';
 import ProjectDescription from './ProjectDescription';
 import ProjectPreview from './ProjectPrevew';
 
-// FEATURE: Define shape by providing edge angles to preserve it on any size, i.e. [85, 190, 95, 170]
-
 export type ProjectHighlightProps = Omit<
 	React.HTMLAttributes<HTMLDivElement>,
 	'children'

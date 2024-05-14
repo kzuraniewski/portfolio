@@ -12,6 +12,8 @@ import {
 	strokeWidth,
 } from './Polygon.utils';
 
+// FEATURE: Define shape by providing edge angles to preserve it on any size, i.e. [85, 190, 95, 170]
+
 const Polygon = ({
 	variant = 'filled',
 	color = 'secondary',
