@@ -14,11 +14,9 @@ const CompanyHistory = () => {
 					key={company.name}
 					className="grid-rows-[repeat(4, fit-content)] grid grid-cols-3 text-sm"
 				>
-					<div className="col-span-3 mb-7 text-base @lg:col-span-1 @lg:mr-5 @lg:w-44 @lg:shrink-0">
-						<h3 className="text-center font-display font-bold uppercase @lg:text-start">
-							{company.name}
-						</h3>
-					</div>
+					<h3 className="col-span-3 mb-7 text-center font-display text-base font-bold uppercase @lg:col-span-1 @lg:mr-5 @lg:w-44 @lg:shrink-0 @lg:text-start">
+						{company.name}
+					</h3>
 
 					<PositionList
 						className="col-span-3 @sm:col-span-2 @lg:col-span-2 @xl:col-span-1"
