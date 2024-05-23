@@ -3,6 +3,7 @@ import { Trans } from '@lingui/react';
 
 import { companies } from '@/lib/data';
 
+import ListItem from '../ListItem';
 import PositionList from './PositionList';
 
 const CompanyHistory = () => {
@@ -28,20 +29,13 @@ const CompanyHistory = () => {
 						<Trans id={company.timeSpan.id} />
 					</div>
 
-					<div className="col-span-3 mt-6 @lg:col-span-2 @lg:col-start-2">
-						<ul>
-							{company.summary.map((summaryElement) => (
-								<li
-									key={summaryElement.id}
-									className="relative -left-2 mb-1 marker:text-accent marker:content-['-']"
-								>
-									<span className="relative left-2">
-										<Trans id={summaryElement.id} />
-									</span>
-								</li>
-							))}
-						</ul>
-					</div>
+					<ul className="col-span-3 mt-6 @lg:col-span-2 @lg:col-start-2">
+						{company.summary.map((summaryElement) => (
+							<ListItem key={summaryElement.id}>
+								<Trans id={summaryElement.id} />
+							</ListItem>
+						))}
+					</ul>
 				</li>
 			))}
 		</ul>
