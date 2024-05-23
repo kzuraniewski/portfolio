@@ -2,7 +2,7 @@ import React from 'react';
 import { msg, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
-import { CompanyHistory } from '@/components/ui/CompanyHistory';
+import CompanyHistory from '@/components/ui/CompanyHistory';
 import IconStack from '@/components/ui/IconStack';
 import Polygon from '@/components/ui/Polygon';
 import { Section, SubSection } from '@/components/ui/Section';
