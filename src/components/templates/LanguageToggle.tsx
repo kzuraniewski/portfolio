@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 
 import cn from '@/lib/cn';
 import useLocale from '@/hooks/useLocale';

@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import { useLingui } from '@lingui/react';
 
 import { Divider, IndexSelector, Polygon, Separated } from '@/components/ui';

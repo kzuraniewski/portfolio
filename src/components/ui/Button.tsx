@@ -1,4 +1,3 @@
-import React from 'react';
 import { PolymorphicProps } from '@/types';
 
 import cn from '@/lib/cn';

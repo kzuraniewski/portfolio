@@ -1,11 +1,8 @@
-import React from 'react';
 import { msg, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
-import { ProjectHighlight } from '@/components/ui';
+import { ProjectHighlight, Section } from '@/components/ui';
 import { personalLinks, projects } from '@/lib/data';
-
-import { Section } from '@/components/ui';
 
 const ProjectsSection = () => {
 	const { _ } = useLingui();

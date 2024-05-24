@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useState } from 'react';
+import { HTMLAttributes, useState } from 'react';
 import tailwindConfig from '@root/tailwind.config';
 
 import cn from '@/lib/cn';

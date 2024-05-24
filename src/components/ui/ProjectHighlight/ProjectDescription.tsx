@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Polygon } from '@/components/ui';
 
 export type ProjectDescriptionProps = React.PropsWithChildren;

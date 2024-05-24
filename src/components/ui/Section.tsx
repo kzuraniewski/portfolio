@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useRef } from 'react';
+import { HTMLAttributes, useRef } from 'react';
 import cn from 'classnames';
 
 import { Divider } from '@/components/ui';

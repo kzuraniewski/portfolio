@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 

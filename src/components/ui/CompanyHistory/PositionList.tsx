@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Polygon, PolygonProps } from '@/components/ui';
 import cn from '@/lib/cn';
 

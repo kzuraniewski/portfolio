@@ -1,4 +1,3 @@
-import React from 'react';
 import { msg, Trans as TransMacro } from '@lingui/macro';
 import { Trans, useLingui } from '@lingui/react';
 import { FaGithub } from 'react-icons/fa6';

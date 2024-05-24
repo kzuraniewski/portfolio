@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { SeparatedProps } from './Separated.types';
 import { defaultIndexSelector, joinChildren } from './Separated.utils';
 

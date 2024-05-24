@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
-import { getTheme, setTheme } from '@/lib/theme';
-
 import { Button } from '@/components/ui';
+import { getTheme, setTheme } from '@/lib/theme';
 
 export const ThemeToggle = () => {
 	const [isDarkMode, setIsDarkMode] = useState(getTheme() === 'dark');

@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes } from 'react';
 
 import { Polygon } from '@/components/ui';
 import cn from '@/lib/cn';

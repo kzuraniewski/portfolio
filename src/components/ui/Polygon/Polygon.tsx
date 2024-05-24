@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import cn from '@/lib/cn';

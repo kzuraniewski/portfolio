@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { msg, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { Section, Separated, Divider, SubSection, Polygon, CornerBanner } from '@/components/ui';
+
+import {
+	CornerBanner,
+	Divider,
+	Polygon,
+	Section,
+	Separated,
+	SubSection,
+} from '@/components/ui';
 
 const ContactSection = () => {
 	const { _ } = useLingui();

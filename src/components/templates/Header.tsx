@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Trans } from '@lingui/react';
 import { FaBars, FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 import { LanguageToggle, ThemeToggle } from '@/components/templates';
+import { Button, CollapsibleBar } from '@/components/ui';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
-
-import { Button, CollapsibleBar } from '@/components/ui';
 
 export const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
