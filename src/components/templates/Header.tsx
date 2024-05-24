@@ -6,7 +6,7 @@ import { LanguageToggle, ThemeToggle } from '@/components/templates';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
 
-import { Button, CollapsibleBar } from '../ui';
+import { Button, CollapsibleBar } from '@/components/ui';
 
 export const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
