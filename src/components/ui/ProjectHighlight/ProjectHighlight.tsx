@@ -10,7 +10,7 @@ import cn from '@/lib/cn';
 import { ProjectData } from '@/lib/data';
 
 import ProjectDescription from './ProjectDescription';
-import ProjectPreview from './ProjectPrevew';
+import ProjectPreview from './ProjectPreview';
 import ProjectTechStack from './ProjectTechStack';
 
 export type ProjectHighlightProps = Omit<
