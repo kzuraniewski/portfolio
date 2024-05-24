@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+import { DefaultColors } from 'tailwindcss/types/generated/colors';
 
 import { tailwindConfig } from '@/lib/util';
 
@@ -19,7 +20,10 @@ export type PolygonProps = HTMLAttributes<HTMLDivElement> & {
 
 export type PolygonVariant = 'filled' | 'outline' | 'dashed';
 
-export type PolygonColor = keyof typeof tailwindConfig.theme.colors;
+export type PolygonColor = keyof Omit<
+	typeof tailwindConfig.theme.colors,
+	keyof DefaultColors
+>;
 
 export type PolygonPointsFactory = (
 	width: number,
