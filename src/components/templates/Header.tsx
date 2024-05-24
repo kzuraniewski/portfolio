@@ -3,66 +3,23 @@ import { Trans } from '@lingui/react';
 import { FaBars, FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/Button';
+import CollapsibleBar from '@/components/ui/CollapsibleBar';
 import LanguageToggle from '@/components/ui/LanguageToggle';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
-import { tailwindConfig } from '@/lib/util';
-import useMediaQuery from '@/hooks/useMediaQuery';
-import useScroll from '@/hooks/useScroll';
-
-const NO_COLLAPSE_AREA_HEIGHT = 100;
-
-type MountState = 'mounted' | 'floating' | 'collapsed';
-
-// FIXME: after double refresh, header in mounted state. Should depend on scrollY
 
 export const Header = () => {
-	const [mountState, setMountState] = useState<MountState>('mounted');
-	const [isHovered, setIsHovered] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
-
-	const isCollapsible = useMediaQuery(
-		`(min-width: ${tailwindConfig.theme.screens.md})`,
-	);
 
 	const toggleNav = () => {
 		setIsNavOpen((isOpen) => !isOpen);
 	};
 
-	useScroll(
-		(direction) => {
-			if (window.scrollY === 0) {
-				setMountState('mounted');
-				return;
-			}
-
-			if (
-				direction === 'up' ||
-				window.scrollY <= NO_COLLAPSE_AREA_HEIGHT ||
-				isHovered ||
-				!isCollapsible
-			) {
-				setMountState('floating');
-			} else {
-				setMountState('collapsed');
-				setIsNavOpen(false);
-			}
-		},
-		[isHovered, isCollapsible],
-	);
-
 	return (
-		<header
-			// prettier-ignore
-			className={cn(
-				'fixed top-0 z-50 w-full transition-all duration-300 border-b-2 border-dashed border-b-secondary bg-primary',
-				{ 'bg-opacity-0': mountState === 'mounted' },
-				{ '-translate-y-full': mountState === 'collapsed' },
-				{ 'bg-opacity-80 backdrop-blur-sm shadow-xl': mountState === 'floating' || isNavOpen },
-			)}
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
+		<CollapsibleBar
+			expanded={isNavOpen}
+			onCollapse={() => setIsNavOpen(false)}
 		>
 			<div className="container flex min-h-header flex-wrap items-center gap-12 py-5">
 				<Button icon className="mr-auto md:hidden" onClick={toggleNav}>
@@ -120,6 +77,6 @@ export const Header = () => {
 					</li>
 				</ul>
 			</div>
-		</header>
+		</CollapsibleBar>
 	);
 };
