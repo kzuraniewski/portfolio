@@ -3,7 +3,7 @@ import { msg, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
 import ProjectHighlight from '@/components/ui/ProjectHighlight';
-import { Section } from '@/components/ui/Section';
+import Section from '@/components/ui/Section';
 import { personalLinks, projects } from '@/lib/data';
 
 const ProjectsSection = () => {

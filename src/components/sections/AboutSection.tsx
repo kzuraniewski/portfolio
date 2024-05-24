@@ -5,7 +5,8 @@ import { useLingui } from '@lingui/react';
 import CompanyHistory from '@/components/ui/CompanyHistory';
 import IconStack from '@/components/ui/IconStack';
 import Polygon from '@/components/ui/Polygon';
-import { Section, SubSection } from '@/components/ui/Section';
+import Section from '@/components/ui/Section';
+import SubSection from '@/components/ui/SubSection';
 import { learningTechStack, mainTechStack } from '@/lib/data';
 
 const AboutSection = () => {

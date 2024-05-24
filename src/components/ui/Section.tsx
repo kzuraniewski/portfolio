@@ -2,13 +2,12 @@ import React, { forwardRef, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
 import Divider from '@/components/ui/Divider';
-import Polygon, { PolygonVariant } from '@/components/ui/Polygon';
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
 };
 
-export const Section = forwardRef<HTMLDivElement, SectionProps>(
+const Section = forwardRef<HTMLDivElement, SectionProps>(
 	({ title, className, children, ...props }, ref) => {
 		return (
 			<section
@@ -33,59 +32,4 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
 );
 Section.displayName = 'Section';
 
-export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
-	title: string;
-
-	/**
-	 * @default 'filled'
-	 */
-	variant?: PolygonVariant | 'flat';
-};
-
-export const SubSection = ({
-	title,
-	variant = 'filled',
-	className,
-	children,
-	...props
-}: SubSectionProps) => {
-	const content = (
-		<>
-			<h3 className="mb-14 text-center font-display text-xl font-bold uppercase">
-				<span className="text-accent">{'>'}</span> {title}
-			</h3>
-
-			{children}
-		</>
-	);
-
-	return (
-		<div
-			className={cn(
-				'mt-14',
-				{ 'text-on-secondary': variant === 'filled' },
-				className,
-			)}
-			{...props}
-		>
-			{variant === 'flat' ? (
-				<div className="p-7 md:p-10">{content}</div>
-			) : (
-				<Polygon
-					variant={variant}
-					getPoints={(width, height) => [
-						[0, 7],
-						[width, 0],
-						[width - 5, height],
-						[0, height - 5],
-					]}
-					className="w-auto p-7 md:p-10"
-				>
-					{content}
-				</Polygon>
-			)}
-		</div>
-	);
-};
-
-// FEATURE: wider stroke on outlined section, api adjust in Polygon needed
+export default Section;

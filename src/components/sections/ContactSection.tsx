@@ -5,8 +5,9 @@ import { useLingui } from '@lingui/react';
 import { CornerBanner } from '@/components/ui/CornerBanner';
 import Divider from '@/components/ui/Divider';
 import Polygon from '@/components/ui/Polygon';
-import { Section, SubSection } from '@/components/ui/Section';
+import Section from '@/components/ui/Section';
 import { Separated } from '@/components/ui/Separated';
+import SubSection from '@/components/ui/SubSection';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const ContactSection = () => {
