@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { msg, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
@@ -8,19 +8,18 @@ import Polygon from '@/components/ui/Polygon';
 import Section from '@/components/ui/Section';
 import { Separated } from '@/components/ui/Separated';
 import SubSection from '@/components/ui/SubSection';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const ContactSection = () => {
 	const { _ } = useLingui();
-	const rootRef = useRef<HTMLDivElement>(null!);
 	const [hideBanner, setHideBanner] = useState(false);
 
-	useIntersectionObserver(rootRef, (isIntersecting) => {
-		setHideBanner(isIntersecting);
-	});
-
 	return (
-		<Section title={_(msg`Contact me`)} id="contact" ref={rootRef}>
+		<Section
+			title={_(msg`Contact me`)}
+			id="contact"
+			onViewportEnter={() => setHideBanner(true)}
+			onViewportExit={() => setHideBanner(false)}
+		>
 			<Separated
 				separator={<Divider vertical className="h-64 self-center" />}
 				className="mx-auto flex w-4/5 items-start justify-between gap-10"
