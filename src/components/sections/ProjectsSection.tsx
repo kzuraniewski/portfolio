@@ -10,18 +10,18 @@ const ProjectsSection = () => {
 	return (
 		<Section title={_(msg`My Projects`)} id="projects">
 			<div className="flex flex-col items-center">
-				{projects
-					.filter((project) => project.featured)
-					.map((project, index) => (
-						<ProjectHighlight
-							key={project.name.id}
-							project={project}
-							className={
-								'relative ' +
-								(index % 2 ? '-translate-x-4' : 'translate-x-4')
-							}
-						/>
-					))}
+				<ul className="odd:-translate-x-4 even:translate-x-4">
+					{projects
+						.filter((project) => project.featured)
+						.map((project) => (
+							<li key={project.name.id}>
+								<ProjectHighlight
+									project={project}
+									className="relative"
+								/>
+							</li>
+						))}
+				</ul>
 
 				<div className="w-fit">
 					<Trans>
