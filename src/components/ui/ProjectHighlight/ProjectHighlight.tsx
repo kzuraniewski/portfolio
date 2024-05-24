@@ -11,6 +11,7 @@ import { ProjectData } from '@/lib/data';
 
 import ProjectDescription from './ProjectDescription';
 import ProjectPreview from './ProjectPrevew';
+import ProjectTechStack from './ProjectTechStack';
 
 export type ProjectHighlightProps = Omit<
 	React.HTMLAttributes<HTMLDivElement>,
@@ -41,15 +42,7 @@ const ProjectHighlight = ({
 					<Trans id={project.name.id} />
 				</h3>
 
-				<Separated
-					as="ul"
-					className="flex items-center gap-1.5 text-sm"
-					separator={<RxCross2 className="text-xs text-accent" />}
-				>
-					{project.tech.map((el) => (
-						<li key={el}>{el}</li>
-					))}
-				</Separated>
+				<ProjectTechStack tech={project.tech} />
 			</div>
 
 			<ProjectPreview
