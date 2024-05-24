@@ -8,7 +8,10 @@ export type LanguageToggleProps = Omit<
 	'children'
 >;
 
-const LanguageToggle = ({ className, ...props }: LanguageToggleProps) => {
+export const LanguageToggle = ({
+	className,
+	...props
+}: LanguageToggleProps) => {
 	const { activeLocale, setLocale } = useLocale();
 
 	const switchLocale = () => {
@@ -28,5 +31,3 @@ const LanguageToggle = ({ className, ...props }: LanguageToggleProps) => {
 		</button>
 	);
 };
-
-export default LanguageToggle;

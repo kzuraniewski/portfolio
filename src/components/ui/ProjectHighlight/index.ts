@@ -1,3 +1,1 @@
-import ProjectHighlight from './ProjectHighlight';
-
-export default ProjectHighlight;
+export * from './ProjectHighlight';

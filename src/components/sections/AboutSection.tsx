@@ -2,12 +2,10 @@ import React from 'react';
 import { msg, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
-import CompanyHistory from '@/components/ui/CompanyHistory';
-import IconStack from '@/components/ui/IconStack';
-import Polygon from '@/components/ui/Polygon';
-import Section from '@/components/ui/Section';
-import SubSection from '@/components/ui/SubSection';
+import { IconStack, Polygon, Section, SubSection } from '@/components/ui';
 import { learningTechStack, mainTechStack } from '@/lib/data';
+
+import CompanyHistory from '../ui/CompanyHistory/CompanyHistory';
 
 const AboutSection = () => {
 	const { _ } = useLingui();

@@ -8,8 +8,7 @@ import {
 	LandingPage,
 	ProjectsSection,
 } from '@/components/sections';
-import Footer from '@/components/templates/Footer';
-import { Header } from '@/components/templates/Header';
+import { Footer, Header } from '@/components/templates';
 import { setupTheme } from '@/lib/theme';
 import useLocale from '@/hooks/useLocale';
 

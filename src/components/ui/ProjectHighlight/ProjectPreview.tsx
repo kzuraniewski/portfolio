@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 
-import Polygon from '@/components/ui/Polygon';
+import { Polygon } from '@/components/ui';
 import cn from '@/lib/cn';
 
 export type ProjectPreviewProps = HTMLAttributes<HTMLDivElement> & {

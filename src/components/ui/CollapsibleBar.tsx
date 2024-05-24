@@ -20,7 +20,7 @@ export type CollapsibleBarProps = HTMLAttributes<HTMLDivElement> & {
 	onCollapse?: () => void;
 };
 
-const CollapsibleBar = ({
+export const CollapsibleBar = ({
 	expanded,
 	className,
 	children,
@@ -78,5 +78,3 @@ const CollapsibleBar = ({
 		</header>
 	);
 };
-
-export default CollapsibleBar;

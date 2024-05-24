@@ -2,9 +2,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import { FaArrowTurnDown } from 'react-icons/fa6';
 
-import { Button } from '@/components/ui/Button';
-import Divider from '@/components/ui/Divider';
-import Polygon from '@/components/ui/Polygon';
+import { Button, Divider, Polygon } from '../ui';
 
 export default function LandingPage() {
 	return (

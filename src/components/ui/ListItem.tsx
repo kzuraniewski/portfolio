@@ -4,7 +4,7 @@ import cn from '@/lib/cn';
 
 export type ListItemProps = HTMLAttributes<HTMLLIElement>;
 
-const ListItem = ({ children, className, ...props }: ListItemProps) => {
+export const ListItem = ({ children, className, ...props }: ListItemProps) => {
 	return (
 		<li
 			className={cn(
@@ -17,5 +17,3 @@ const ListItem = ({ children, className, ...props }: ListItemProps) => {
 		</li>
 	);
 };
-
-export default ListItem;

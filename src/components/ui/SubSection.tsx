@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react';
 
-import Polygon, { PolygonVariant } from '@/components/ui/Polygon';
+import { Polygon, PolygonVariant } from '@/components/ui';
 import cn from '@/lib/cn';
 
 export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
@@ -12,7 +12,7 @@ export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 	variant?: PolygonVariant | 'flat';
 };
 
-const SubSection = ({
+export const SubSection = ({
 	title,
 	variant = 'filled',
 	className,
@@ -59,5 +59,3 @@ const SubSection = ({
 };
 
 // FEATURE: wider stroke on outlined section, api adjust in Polygon needed
-
-export default SubSection;

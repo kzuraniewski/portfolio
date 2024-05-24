@@ -1,9 +1,9 @@
 import React from 'react';
 import { Trans } from '@lingui/react';
 
+import { ListItem } from '@/components/ui';
 import { companies } from '@/lib/data';
 
-import ListItem from '../ListItem';
 import PositionList from './PositionList';
 
 const CompanyHistory = () => {

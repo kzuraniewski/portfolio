@@ -1,7 +1,7 @@
 import React from 'react';
 import { RxCross2 } from 'react-icons/rx';
 
-import { Separated } from '@/components/ui/Separated';
+import { Separated } from '@/components/ui';
 
 export type ProjectTechStackProps = {
 	tech: string[];

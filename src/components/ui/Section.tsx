@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, useRef } from 'react';
 import cn from 'classnames';
 
-import Divider from '@/components/ui/Divider';
+import { Divider } from '@/components/ui';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> & {
@@ -10,7 +10,7 @@ export type SectionProps = HTMLAttributes<HTMLDivElement> & {
 	onViewportExit?: () => void;
 };
 
-const Section = ({
+export const Section = ({
 	title,
 	onViewportEnter,
 	onViewportExit,
@@ -45,5 +45,3 @@ const Section = ({
 		</section>
 	);
 };
-
-export default Section;

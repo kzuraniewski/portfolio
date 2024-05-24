@@ -1,6 +1,6 @@
 import React, { AnchorHTMLAttributes } from 'react';
 
-import Polygon from '@/components/ui/Polygon';
+import { Polygon } from '@/components/ui';
 import cn from '@/lib/cn';
 
 export type CornerBannerProps = AnchorHTMLAttributes<HTMLAnchorElement> & {

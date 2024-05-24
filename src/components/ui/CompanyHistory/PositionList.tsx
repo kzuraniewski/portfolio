@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Polygon, { PolygonProps } from '@/components/ui/Polygon';
+import { Polygon, PolygonProps } from '@/components/ui';
 import cn from '@/lib/cn';
 
 export type CompanyRolesProps = PolygonProps & {

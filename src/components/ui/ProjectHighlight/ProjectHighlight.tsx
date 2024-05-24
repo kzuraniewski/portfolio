@@ -3,7 +3,7 @@ import { msg, Trans as TransMacro } from '@lingui/macro';
 import { Trans, useLingui } from '@lingui/react';
 import { FaGithub } from 'react-icons/fa6';
 
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui';
 import cn from '@/lib/cn';
 import { ProjectData } from '@/lib/data';
 
@@ -18,7 +18,7 @@ export type ProjectHighlightProps = Omit<
 	project: ProjectData;
 };
 
-const ProjectHighlight = ({
+export const ProjectHighlight = ({
 	project,
 	className,
 	...props
@@ -80,5 +80,3 @@ const ProjectHighlight = ({
 		</div>
 	);
 };
-
-export default ProjectHighlight;

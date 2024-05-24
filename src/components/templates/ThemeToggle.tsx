@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
-import { Button } from '@/components/ui/Button';
 import { getTheme, setTheme } from '@/lib/theme';
 
-const ThemeToggle = () => {
+import { Button } from '../ui';
+
+export const ThemeToggle = () => {
 	const [isDarkMode, setIsDarkMode] = useState(getTheme() === 'dark');
 
 	const changeTheme = () => {
@@ -18,5 +19,3 @@ const ThemeToggle = () => {
 		</Button>
 	);
 };
-
-export default ThemeToggle;

@@ -1,9 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { useLingui } from '@lingui/react';
 
-import Divider from '@/components/ui/Divider';
-import Polygon from '@/components/ui/Polygon';
-import { IndexSelector, Separated } from '@/components/ui/Separated';
+import { Divider, IndexSelector, Polygon, Separated } from '@/components/ui';
 import cn from '@/lib/cn';
 import { TechStack } from '@/lib/data';
 
@@ -18,7 +16,7 @@ export type IconStackProps = Omit<
 	stack: TechStack;
 };
 
-const IconStack = ({ stack, className, ...props }: IconStackProps) => {
+export const IconStack = ({ stack, className, ...props }: IconStackProps) => {
 	const { _ } = useLingui();
 
 	return (
@@ -53,5 +51,3 @@ const IconStack = ({ stack, className, ...props }: IconStackProps) => {
 		</Separated>
 	);
 };
-
-export default IconStack;

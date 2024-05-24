@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
 
-const Footer = () => {
+export const Footer = () => {
 	return (
 		<footer className="border-t-2 border-dashed border-secondary text-center text-sm">
 			<div className="container py-8">
@@ -17,5 +17,3 @@ const Footer = () => {
 		</footer>
 	);
 };
-
-export default Footer;

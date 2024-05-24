@@ -14,7 +14,7 @@ import {
 
 // FEATURE: Define shape by providing edge angles to preserve it on any size, i.e. [85, 190, 95, 170]
 
-const Polygon = ({
+export const Polygon = ({
 	variant = 'filled',
 	color = 'secondary',
 	getPoints = getDefaultPoints,
@@ -112,5 +112,3 @@ const Polygon = ({
 		</div>
 	);
 };
-
-export default Polygon;

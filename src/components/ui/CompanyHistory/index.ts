@@ -1,3 +1,1 @@
-import CompanyHistory from './CompanyHistory';
-
-export default CompanyHistory;
+export * from './CompanyHistory';
