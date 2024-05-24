@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Trans } from '@lingui/react';
 import { FaBars, FaGithub, FaLinkedin } from 'react-icons/fa6';
 
+import LanguageToggle from '@/components/templates/LanguageToggle';
+import ThemeToggle from '@/components/templates/ThemeToggle';
 import { Button } from '@/components/ui/Button';
 import CollapsibleBar from '@/components/ui/CollapsibleBar';
-import LanguageToggle from '@/components/ui/LanguageToggle';
-import ThemeToggle from '@/components/ui/ThemeToggle';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
 
