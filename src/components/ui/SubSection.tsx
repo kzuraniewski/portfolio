@@ -2,6 +2,7 @@ import { HTMLAttributes } from 'react';
 
 import { Polygon, PolygonVariant } from '@/components/ui';
 import cn from '@/lib/cn';
+import tw from '@/lib/tw';
 
 export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 	title: string;
@@ -21,9 +22,9 @@ export const SubSection = ({
 }: SubSectionProps) => {
 	const content = (
 		<>
-			<h3 className="mb-14 text-center font-display text-xl font-bold uppercase">
-				<span className="text-accent">{'>'}</span> {title}
-			</h3>
+			<Title>
+				<TitlePrefix>{'>'}</TitlePrefix> {title}
+			</Title>
 
 			{children}
 		</>
@@ -39,9 +40,9 @@ export const SubSection = ({
 			{...props}
 		>
 			{variant === 'flat' ? (
-				<div className="p-7 md:p-10">{content}</div>
+				<FlatBody>{content}</FlatBody>
 			) : (
-				<Polygon
+				<PolygonBody
 					variant={variant}
 					getPoints={(width, height) => [
 						[0, 7],
@@ -49,13 +50,38 @@ export const SubSection = ({
 						[width - 5, height],
 						[0, height - 5],
 					]}
-					className="w-auto p-7 md:p-10"
 				>
 					{content}
-				</Polygon>
+				</PolygonBody>
 			)}
 		</div>
 	);
 };
+
+const FlatBody = tw.div`
+	p-7
+
+	md:p-10
+`;
+
+const PolygonBody = tw(Polygon)`
+	w-auto
+	p-7
+
+	md:p-10
+`;
+
+const Title = tw.h3`
+	mb-14
+	text-center
+	font-display
+	text-xl
+	font-bold
+	uppercase
+`;
+
+const TitlePrefix = tw.span`
+	text-accent
+`;
 
 // FEATURE: wider stroke on outlined section, api adjust in Polygon needed
