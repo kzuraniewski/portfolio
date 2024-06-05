@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-import cn from '@/lib/cn';
+import tw from '@/lib/tw';
 import useLocale from '@/hooks/useLocale';
 
 export type LanguageToggleProps = Omit<
@@ -8,10 +8,7 @@ export type LanguageToggleProps = Omit<
 	'children'
 >;
 
-export const LanguageToggle = ({
-	className,
-	...props
-}: LanguageToggleProps) => {
+export const LanguageToggle = (props: LanguageToggleProps) => {
 	const { activeLocale, setLocale } = useLocale();
 
 	const switchLocale = () => {
@@ -22,12 +19,14 @@ export const LanguageToggle = ({
 	const label = activeLocale?.split('-')[0].toUpperCase();
 
 	return (
-		<button
-			className={cn('transition-colors hover:text-accent', className)}
-			onClick={switchLocale}
-			{...props}
-		>
+		<Root onClick={switchLocale} {...props}>
 			{label}
-		</button>
+		</Root>
 	);
 };
+
+const Root = tw.button`
+	transition-colors
+
+	hover:text-accent
+`;
