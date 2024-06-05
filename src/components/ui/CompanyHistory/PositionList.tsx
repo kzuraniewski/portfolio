@@ -1,38 +1,43 @@
 import { Polygon, PolygonProps } from '@/components/ui';
-import cn from '@/lib/cn';
+import tw from '@/lib/tw';
 
-export type CompanyRolesProps = PolygonProps & {
+export type PositionListProps = PolygonProps & {
 	positions: string[];
 };
 
-const PositionList = ({
-	positions,
-	className,
-	...props
-}: CompanyRolesProps) => {
+const PositionList = ({ positions, ...props }: PositionListProps) => {
 	return (
-		<Polygon
+		<RootPolygon
 			getPoints={(width, height) => [
 				[0, 5],
 				[width, 0],
 				[width - 5, height - 1],
 				[3, height],
 			]}
-			className={cn('mb-3 h-fit w-fit p-3', className)}
 			{...props}
 		>
 			<ul>
 				{positions.map((position) => (
-					<li
-						key={position}
-						className="w-max font-display font-bold uppercase text-accent"
-					>
-						{position}
-					</li>
+					<Position key={position}>{position}</Position>
 				))}
 			</ul>
-		</Polygon>
+		</RootPolygon>
 	);
 };
+
+const RootPolygon = tw(Polygon)`
+	mb-3
+	h-fit
+	w-fit
+	p-3
+`;
+
+const Position = tw.li`
+	w-max
+	font-display
+	font-bold
+	uppercase
+	text-accent
+`;
 
 export default PositionList;

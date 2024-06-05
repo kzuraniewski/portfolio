@@ -1,5 +1,5 @@
-export * from './CompanyHistory';
 export * from './Polygon';
+export * from './CompanyHistory';
 export * from './ProjectHighlight';
 export * from './Button';
 export * from './CollapsibleBar';
