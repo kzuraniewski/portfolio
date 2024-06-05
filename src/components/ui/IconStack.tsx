@@ -4,6 +4,7 @@ import { useLingui } from '@lingui/react';
 import { Divider, IndexSelector, Polygon, Separated } from '@/components/ui';
 import cn from '@/lib/cn';
 import { TechStack } from '@/lib/data';
+import tw from '@/lib/tw';
 
 const gridIndexSelector: IndexSelector = (index, array) => {
 	return Boolean((index + 1) % 3) && index < array.length - 1;
@@ -27,27 +28,44 @@ export const IconStack = ({ stack, className, ...props }: IconStackProps) => {
 				{ 'grid-cols-5': stack.length >= 3 },
 				className,
 			)}
-			separator={<Divider vertical color="accent" className="h-8" />}
+			separator={<IconDivider vertical color="accent" />}
 			indexSelector={gridIndexSelector}
 			{...props}
 		>
 			{stack.map(({ icon, highlighted }) => (
-				<li key={icon.src} className="relative">
-					<img src={icon.src} alt={_(icon.alt)} className="w-12" />
+				<IconRoot key={icon.src}>
+					<IconImage src={icon.src} alt={_(icon.alt)} />
 
 					{highlighted && (
-						<Polygon
+						<HighlightPolygon
 							color="accent"
 							getPoints={(width, height) => [
 								[height - 3, 0],
 								[0, 6],
 								[height, width],
 							]}
-							className="absolute -right-1 -top-1 h-3 w-3"
 						/>
 					)}
-				</li>
+				</IconRoot>
 			))}
 		</Separated>
 	);
 };
+
+const IconRoot = tw.li`
+	relative
+`;
+
+const IconImage = tw.img`
+	w-12
+`;
+
+const IconDivider = tw(Divider)`h-8`;
+
+const HighlightPolygon = tw(Polygon)`
+	w-3
+	h-3
+	absolute
+	-right-1
+	-top-1
+`;
