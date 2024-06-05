@@ -1,19 +1,27 @@
 import { HTMLAttributes } from 'react';
 
-import cn from '@/lib/cn';
+import tw from '@/lib/tw';
 
 export type ListItemProps = HTMLAttributes<HTMLLIElement>;
 
-export const ListItem = ({ children, className, ...props }: ListItemProps) => {
+export const ListItem = ({ children, ...props }: ListItemProps) => {
 	return (
-		<li
-			className={cn(
-				"relative -left-2 mb-1 marker:text-accent marker:content-['-']",
-				className,
-			)}
-			{...props}
-		>
-			<span className="relative left-2">{children}</span>
-		</li>
+		<Root {...props}>
+			<Text>{children}</Text>
+		</Root>
 	);
 };
+
+const Root = tw.li`
+	relative
+	mb-1
+	-left-2
+
+	marker:content-['-']
+	marker:text-accent
+`;
+
+const Text = tw.span`
+	relative
+	left-2
+`;
