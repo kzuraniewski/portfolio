@@ -2,6 +2,7 @@ import { AnchorHTMLAttributes } from 'react';
 
 import { Polygon } from '@/components/ui';
 import cn from '@/lib/cn';
+import tw from '@/lib/tw';
 
 export type CornerBannerProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 	/**
@@ -25,7 +26,7 @@ export const CornerBanner = ({
 			)}
 			{...props}
 		>
-			<Polygon
+			<BannerPolygon
 				color="accent"
 				getPoints={(width, height) => [
 					[0, 7],
@@ -33,12 +34,26 @@ export const CornerBanner = ({
 					[width, height],
 					[0, height - 7],
 				]}
-				className="w-full px-0 py-3"
 			>
-				<div className="inline-block w-full text-center font-bold uppercase text-on-accent hover:no-underline">
-					{children}
-				</div>
-			</Polygon>
+				<Content>{children}</Content>
+			</BannerPolygon>
 		</a>
 	);
 };
+
+const BannerPolygon = tw(Polygon)`
+	w-full
+	px-0
+	py-3
+`;
+
+const Content = tw.div`
+	inline-block
+	w-full
+	text-center
+	font-bold
+	uppercase
+	text-on-accent
+
+	hover:no-underline
+`;
