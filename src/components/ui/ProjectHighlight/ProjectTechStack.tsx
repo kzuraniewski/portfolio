@@ -1,6 +1,7 @@
 import { RxCross2 } from 'react-icons/rx';
 
 import { Separated } from '@/components/ui';
+import tw from '@/lib/tw';
 
 export type ProjectTechStackProps = {
 	tech: string[];
@@ -11,7 +12,7 @@ const ProjectTechStack = ({ tech }: ProjectTechStackProps) => {
 		<Separated
 			as="ul"
 			className="flex items-center gap-1.5 text-sm"
-			separator={<RxCross2 className="text-xs text-accent" />}
+			separator={<SeparatorIcon />}
 		>
 			{tech.map((el) => (
 				<li key={el}>{el}</li>
@@ -19,5 +20,10 @@ const ProjectTechStack = ({ tech }: ProjectTechStackProps) => {
 		</Separated>
 	);
 };
+
+const SeparatorIcon = tw(RxCross2)`
+	text-xs
+	text-accent
+`;
 
 export default ProjectTechStack;

@@ -3,11 +3,16 @@ import { Trans, useLingui } from '@lingui/react';
 import { FaGithub } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui';
-import cn from '@/lib/cn';
 import { ProjectData } from '@/lib/data';
 
 import ProjectDescription from './ProjectDescription';
-import ProjectPreview from './ProjectPreview';
+import {
+	Actions,
+	Header,
+	ProjectPreview,
+	Root,
+	Title,
+} from './ProjectHighlight.styles';
 import ProjectTechStack from './ProjectTechStack';
 
 export type ProjectHighlightProps = Omit<
@@ -19,7 +24,6 @@ export type ProjectHighlightProps = Omit<
 
 export const ProjectHighlight = ({
 	project,
-	className,
 	...props
 }: ProjectHighlightProps) => {
 	const { _ } = useLingui();
@@ -27,34 +31,27 @@ export const ProjectHighlight = ({
 	const previewLink = project.links.website ?? project.links.github;
 
 	return (
-		<div
-			className={cn(
-				'grid-rows-[repeat(3, fit-content)] mb-24 grid grid-cols-[20rem_1fr] gap-x-16',
-				className,
-			)}
-			{...props}
-		>
-			<div className="mb-5 flex w-full items-end justify-between">
-				<h3 className="font-display text-2xl font-bold uppercase">
+		<Root {...props}>
+			<Header>
+				<Title>
 					<Trans id={project.name.id} />
-				</h3>
+				</Title>
 
 				<ProjectTechStack tech={project.tech} />
-			</div>
+			</Header>
 
 			<ProjectPreview
 				image={project.previewImage}
 				link={previewLink}
 				alt={`${project.name} preview`}
 				banner={project.wip ? _(msg`Working on`) : null}
-				className="row-span-3"
 			/>
 
 			<ProjectDescription>
 				<Trans id={project.description.id} />
 			</ProjectDescription>
 
-			<div className="ml-auto mt-10 flex items-center justify-end gap-5">
+			<Actions>
 				<Button
 					icon
 					as="a"
@@ -75,7 +72,7 @@ export const ProjectHighlight = ({
 						<TransMacro>See live</TransMacro>
 					</Button>
 				)}
-			</div>
-		</div>
+			</Actions>
+		</Root>
 	);
 };

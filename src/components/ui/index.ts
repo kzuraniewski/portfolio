@@ -1,4 +1,5 @@
 export * from './Polygon';
+export * from './Separated';
 export * from './CompanyHistory';
 export * from './ProjectHighlight';
 export * from './Button';
@@ -8,5 +9,4 @@ export * from './Divider';
 export * from './IconStack';
 export * from './ListItem';
 export * from './Section';
-export * from './Separated';
 export * from './SubSection';

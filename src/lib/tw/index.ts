@@ -11,6 +11,7 @@ import {
 } from './types';
 
 // TODO: Custom props for styled components
+// FIXME: Invalid type inference for generic components
 
 const createStyledComponentFactory =
 	<Type extends StyleableElementType>(type: Type) =>

@@ -1,10 +1,11 @@
 import { Polygon } from '@/components/ui';
+import tw from '@/lib/tw';
 
 export type ProjectDescriptionProps = React.PropsWithChildren;
 
 const ProjectDescription = ({ children }: ProjectDescriptionProps) => {
 	return (
-		<Polygon
+		<RootPolygon
 			variant="dashed"
 			color="accent"
 			getPoints={(width, height) => [
@@ -13,21 +14,33 @@ const ProjectDescription = ({ children }: ProjectDescriptionProps) => {
 				[width - 75, height],
 				[15, height - 25],
 			]}
-			className="px-5 py-3"
 		>
-			<Polygon
+			<InnerPolygon
 				getPoints={(width, height) => [
 					[0, 5],
 					[width, 0],
 					[width - 25, height],
 					[5, height - 3],
 				]}
-				className="px-5 py-3"
 			>
-				<p className="text-on-secondary">{children}</p>
-			</Polygon>
-		</Polygon>
+				<Text>{children}</Text>
+			</InnerPolygon>
+		</RootPolygon>
 	);
 };
+
+const RootPolygon = tw(Polygon)`
+	px-5
+	py-3
+`;
+
+const InnerPolygon = tw(Polygon)`
+	px-5
+	py-3
+`;
+
+const Text = tw.p`
+	text-on-secondary
+`;
 
 export default ProjectDescription;
