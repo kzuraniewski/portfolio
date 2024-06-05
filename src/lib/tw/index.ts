@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import cn from '@/lib/cn';
 
@@ -15,11 +15,14 @@ import {
 const createStyledComponentFactory =
 	<Type extends StyleableElementType>(type: Type) =>
 	(classes: TemplateStringsArray) =>
-	({ className, ...other }: React.ComponentProps<Type>) =>
-		React.createElement(type, {
-			className: cn(classes, className),
-			...other,
-		});
+		forwardRef<Type, React.ComponentProps<Type>>(
+			({ className, ...other }, ref) =>
+				React.createElement(type, {
+					className: cn(classes, className),
+					ref,
+					...other,
+				}),
+		) as Component<React.ComponentProps<Type>>;
 
 // prettier-ignore
 const tw = (
