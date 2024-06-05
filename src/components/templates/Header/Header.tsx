@@ -7,6 +7,15 @@ import { Button, CollapsibleBar } from '@/components/ui';
 import cn from '@/lib/cn';
 import { navigation, personalLinks } from '@/lib/data';
 
+import {
+	Content,
+	Links,
+	NavLink,
+	NavList,
+	NavToggleButton,
+	Toggles,
+} from './Header.styles';
+
 export const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -19,10 +28,10 @@ export const Header = () => {
 			expanded={isNavOpen}
 			onCollapse={() => setIsNavOpen(false)}
 		>
-			<div className="container flex min-h-header flex-wrap items-center gap-12 py-5">
-				<Button icon className="mr-auto md:hidden" onClick={toggleNav}>
+			<Content>
+				<NavToggleButton icon onClick={toggleNav}>
 					<FaBars />
-				</Button>
+				</NavToggleButton>
 
 				<nav
 					className={cn(
@@ -30,28 +39,27 @@ export const Header = () => {
 						{ 'max-md:hidden': !isNavOpen },
 					)}
 				>
-					<ul className="flex flex-col gap-5 md:flex-row md:gap-10">
+					<NavList>
 						{navigation.map(({ href, label }, index) => (
 							<li key={`nav-${index}`}>
-								<a
+								<NavLink
 									href={href}
-									className="font-display uppercase tracking-wider text-light before:mr-0.5 before:text-accent before:content-['#'] hover:text-accent hover:no-underline"
 									onClick={() => setIsNavOpen(false)}
 								>
 									<Trans id={label.id} />
-								</a>
+								</NavLink>
 							</li>
 						))}
-					</ul>
+					</NavList>
 				</nav>
 
-				<div className="flex gap-6">
+				<Toggles>
 					<ThemeToggle />
 
 					<LanguageToggle />
-				</div>
+				</Toggles>
 
-				<ul className="flex justify-center gap-8">
+				<Links>
 					<li>
 						<Button
 							icon
@@ -73,8 +81,8 @@ export const Header = () => {
 							<FaLinkedin />
 						</Button>
 					</li>
-				</ul>
-			</div>
+				</Links>
+			</Content>
 		</CollapsibleBar>
 	);
 };
