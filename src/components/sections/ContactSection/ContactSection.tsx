@@ -2,14 +2,19 @@ import { useState } from 'react';
 import { msg, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
+import { CornerBanner, Section } from '@/components/ui';
+
 import {
-	CornerBanner,
-	Divider,
-	Polygon,
-	Section,
-	Separated,
-	SubSection,
-} from '@/components/ui';
+	CenteredText,
+	ContactAlternative,
+	ContactBlock,
+	ContentBlock,
+	ContentDivider,
+	FreelanceSubSection,
+	HighlightPolygonInner,
+	HighlightPolygonOuter,
+	SeparatedContent,
+} from './ContactSection.styles';
 
 export const ContactSection = () => {
 	const { _ } = useLingui();
@@ -22,33 +27,27 @@ export const ContactSection = () => {
 			onViewportEnter={() => setHideBanner(true)}
 			onViewportExit={() => setHideBanner(false)}
 		>
-			<Separated
-				separator={<Divider vertical className="h-64 self-center" />}
-				className="mx-auto flex w-4/5 items-start justify-between gap-10"
-			>
-				<div className="w-2/5 [&>p]:mb-5">
-					<p className="text-center">
+			<SeparatedContent separator={<ContentDivider vertical />}>
+				<ContentBlock>
+					<CenteredText>
 						<Trans>
 							I am currently open to work, so if you found my
 							portfolio interesting, feel free to contact me.
 						</Trans>
-					</p>
+					</CenteredText>
 
-					<SubSection
-						title={_(msg`Need a website?`)}
-						className="mb-0"
-					>
-						<p className="text-center">
+					<FreelanceSubSection title={_(msg`Need a website?`)}>
+						<CenteredText>
 							<Trans>
 								I also develop websites as a freelancer. If you
 								are in need of one, reach out to me.
 							</Trans>
-						</p>
-					</SubSection>
-				</div>
+						</CenteredText>
+					</FreelanceSubSection>
+				</ContentBlock>
 
-				<div className="flex flex-col items-center gap-10">
-					<Polygon
+				<ContactBlock>
+					<HighlightPolygonOuter
 						variant="dashed"
 						color="accent"
 						getPoints={(width, height) => [
@@ -57,30 +56,28 @@ export const ContactSection = () => {
 							[width - 10, height - 20],
 							[55, height - 5],
 						]}
-						className="mt-5 p-3"
 					>
-						<Polygon
+						<HighlightPolygonInner
 							getPoints={(width, height) => [
 								[0, 10],
 								[width, 0],
 								[width - 20, height],
 								[10, height - 5],
 							]}
-							className="w-max px-8 py-5 text-on-secondary"
 						>
 							<Trans>Contact me at</Trans>{' '}
 							<a href="mailto:zuraniewski.karol@gmail.com">
 								zuraniewski.karol@gmail.com
 							</a>
-						</Polygon>
-					</Polygon>
+						</HighlightPolygonInner>
+					</HighlightPolygonOuter>
 
-					<div className="text-sm">
+					<ContactAlternative>
 						<Trans>Or call me:</Trans>{' '}
 						<a href="tel:+48503129246">503 129 246</a>
-					</div>
-				</div>
-			</Separated>
+					</ContactAlternative>
+				</ContactBlock>
+			</SeparatedContent>
 
 			<CornerBanner hidden={hideBanner} href="#contact">
 				<Trans>Need a website?</Trans>
