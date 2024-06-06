@@ -10,9 +10,38 @@ export type Component<Props extends UnknownProps = undefined> = (
 	props: Props,
 ) => JSX.Element;
 
-export type StyledComponentFactory<Props extends UnknownPropsWithClassName> = (
+export type TemplateArgumentPrimitive = string | number | false | undefined;
+
+export const isTemplateArgumentPrimitive = (
+	value: unknown,
+): value is TemplateArgumentPrimitive => {
+	if (typeof value === 'boolean' && value === true) return false;
+
+	return (['string', 'number', 'undefined'] as unknown[]).includes(
+		typeof value,
+	);
+};
+
+export type TempalteArgumentFunction<Props extends UnknownProps> = (
+	props: Props,
+) => TemplateArgumentPrimitive;
+
+export type TemplateArgument<Props extends UnknownProps> =
+	| TempalteArgumentFunction<Props>
+	| TemplateArgumentPrimitive;
+
+export type StyledComponentFactory<Props extends UnknownPropsWithClassName> = <
+	CustomProps extends UnknownProps = object,
+>(
 	classes: TemplateStringsArray,
-) => Component<Props>;
+	...args: TemplateArgument<Props & CustomProps>[]
+) => Component<Props & CustomProps>;
+
+export type ClassTemplateParser = <Props extends UnknownPropsWithClassName>(
+	props: Props,
+	classes: TemplateStringsArray,
+	...args: TemplateArgument<Props>[]
+) => string;
 
 export type StyleableComponent = Component<UnknownPropsWithClassName>;
 
