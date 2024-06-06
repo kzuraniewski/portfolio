@@ -1,7 +1,6 @@
 import { AnchorHTMLAttributes } from 'react';
 
 import { Polygon } from '@/components/ui';
-import cn from '@/lib/cn';
 import tw from '@/lib/tw';
 
 export type CornerBannerProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -13,19 +12,11 @@ export type CornerBannerProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 export const CornerBanner = ({
 	hidden = false,
-	className,
 	children,
 	...props
 }: CornerBannerProps) => {
 	return (
-		<a
-			className={cn(
-				'pointer-events-none fixed bottom-0 left-0 w-56 origin-[center_100px] -translate-x-1/2 -translate-y-[50px] rotate-45 opacity-0 transition-opacity duration-500',
-				{ 'lg:pointer-events-auto lg:opacity-100': !hidden },
-				className,
-			)}
-			{...props}
-		>
+		<RootLink visible={!hidden} {...props}>
 			<BannerPolygon
 				color="accent"
 				getPoints={(width, height) => [
@@ -37,9 +28,26 @@ export const CornerBanner = ({
 			>
 				<Content>{children}</Content>
 			</BannerPolygon>
-		</a>
+		</RootLink>
 	);
 };
+
+const RootLink = tw.a<{ visible: boolean }>`
+	w-56
+	fixed
+	bottom-0
+	left-0
+	origin-[center_100px]
+	-translate-x-1/2
+	-translate-y-[50px]
+	rotate-45
+	transition-opacity
+	duration-500
+	opacity-0
+	pointer-events-none
+
+	${(p) => p.visible && 'lg:pointer-events-auto lg:opacity-100'}
+`;
 
 const BannerPolygon = tw(Polygon)`
 	w-full
