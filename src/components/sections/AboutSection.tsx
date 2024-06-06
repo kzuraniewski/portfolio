@@ -6,7 +6,7 @@ import { learningTechStack, mainTechStack } from '@/lib/data';
 
 import CompanyHistory from '../ui/CompanyHistory/CompanyHistory';
 
-const AboutSection = () => {
+export const AboutSection = () => {
 	const { _ } = useLingui();
 
 	return (
@@ -86,5 +86,3 @@ const AboutSection = () => {
 		</Section>
 	);
 };
-
-export default AboutSection;

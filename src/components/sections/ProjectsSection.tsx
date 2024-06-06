@@ -4,7 +4,7 @@ import { useLingui } from '@lingui/react';
 import { ProjectHighlight, Section } from '@/components/ui';
 import { personalLinks, projects } from '@/lib/data';
 
-const ProjectsSection = () => {
+export const ProjectsSection = () => {
 	const { _ } = useLingui();
 
 	return (
@@ -39,5 +39,3 @@ const ProjectsSection = () => {
 		</Section>
 	);
 };
-
-export default ProjectsSection;

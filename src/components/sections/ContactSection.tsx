@@ -11,7 +11,7 @@ import {
 	SubSection,
 } from '@/components/ui';
 
-const ContactSection = () => {
+export const ContactSection = () => {
 	const { _ } = useLingui();
 	const [hideBanner, setHideBanner] = useState(false);
 
@@ -88,5 +88,3 @@ const ContactSection = () => {
 		</Section>
 	);
 };
-
-export default ContactSection;

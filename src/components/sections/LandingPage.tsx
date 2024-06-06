@@ -3,7 +3,7 @@ import { FaArrowTurnDown } from 'react-icons/fa6';
 
 import { Button, Divider, Polygon } from '@/components/ui';
 
-export default function LandingPage() {
+export const LandingPage = () => {
 	return (
 		<section
 			id="home"
@@ -61,4 +61,4 @@ export default function LandingPage() {
 			</div>
 		</section>
 	);
-}
+};
