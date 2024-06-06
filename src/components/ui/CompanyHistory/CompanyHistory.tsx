@@ -12,7 +12,7 @@ import {
 	Title,
 } from './CompanyHistory.styles';
 
-const CompanyHistory = () => {
+export const CompanyHistory = () => {
 	return (
 		<CompanyList>
 			{companies.map((company) => (
@@ -37,5 +37,3 @@ const CompanyHistory = () => {
 		</CompanyList>
 	);
 };
-
-export default CompanyHistory;
