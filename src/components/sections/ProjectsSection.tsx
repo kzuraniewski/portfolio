@@ -3,14 +3,15 @@ import { useLingui } from '@lingui/react';
 
 import { ProjectHighlight, Section } from '@/components/ui';
 import { personalLinks, projects } from '@/lib/data';
+import tw from '@/lib/tw';
 
 export const ProjectsSection = () => {
 	const { _ } = useLingui();
 
 	return (
 		<Section title={_(msg`My Projects`)} id="projects">
-			<div className="flex flex-col items-center">
-				<ul className="odd:-translate-x-4 even:translate-x-4">
+			<Content>
+				<ProjectList>
 					{projects
 						.filter((project) => project.featured)
 						.map((project) => (
@@ -21,9 +22,9 @@ export const ProjectsSection = () => {
 								/>
 							</li>
 						))}
-				</ul>
+				</ProjectList>
 
-				<div className="w-fit">
+				<Appendix>
 					<Trans>
 						See more projects on my{' '}
 						<a
@@ -34,8 +35,23 @@ export const ProjectsSection = () => {
 							GitHub
 						</a>
 					</Trans>
-				</div>
-			</div>
+				</Appendix>
+			</Content>
 		</Section>
 	);
 };
+
+const Content = tw.div`
+	flex
+	flex-col
+	items-center
+`;
+
+const ProjectList = tw.ul`
+	odd:-translate-x-4
+	even:translate-x-4
+`;
+
+const Appendix = tw.div`
+	w-fit
+`;
