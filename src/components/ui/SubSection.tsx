@@ -1,7 +1,6 @@
 import { HTMLAttributes } from 'react';
 
 import { Polygon, PolygonVariant } from '@/components/ui';
-import cn from '@/lib/cn';
 import tw from '@/lib/tw';
 
 export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
@@ -16,7 +15,6 @@ export type SubSectionProps = HTMLAttributes<HTMLDivElement> & {
 export const SubSection = ({
 	title,
 	variant = 'filled',
-	className,
 	children,
 	...props
 }: SubSectionProps) => {
@@ -31,14 +29,7 @@ export const SubSection = ({
 	);
 
 	return (
-		<div
-			className={cn(
-				'mt-14',
-				{ 'text-on-secondary': variant === 'filled' },
-				className,
-			)}
-			{...props}
-		>
+		<Root filled={variant === 'filled'} {...props}>
 			{variant === 'flat' ? (
 				<FlatBody>{content}</FlatBody>
 			) : (
@@ -54,9 +45,15 @@ export const SubSection = ({
 					{content}
 				</PolygonBody>
 			)}
-		</div>
+		</Root>
 	);
 };
+
+const Root = tw.div<{ filled: boolean }>`
+	mt-14
+
+	${(p) => p.filled && `text-on-secondary`}
+`;
 
 const FlatBody = tw.div`
 	p-7
